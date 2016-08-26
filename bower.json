@@ -1,0 +1,27 @@
+{
+  "name": "web-capture-service",
+  "authors": [
+    "Atalasoft"
+  ],
+  "description": "Scanning service for web-scenning",
+  "main": "atalaWebCapture.js",
+  "keywords": [
+    "Atalasoft",
+    "web-capture",
+    "capture",
+    "web-scanning"
+  ],
+  "license": "https://www.atalasoft.com/Pricing/Licensing-Overview",
+  "homepage": "https://www.atalasoft.com/Products/DotImage",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests",
+    "favicon.ico"
+  ],
+  "dependencies": {
+    "jquery": "^1.7.1"
+  }
+}
