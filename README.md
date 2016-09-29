@@ -24,7 +24,7 @@ bower update
 > Note that web-capture-service requires Jquery package as dependency.
 
 ### Using web-capture-service
-Here is a sample on how to create a client-side view for web-capture-service using web-document-viewer.
+Here is a sample on how to create a client-side view for web-capture-service using [web-document-viewer](https://github.com/Atalasoft/web-document-viewer).
 All installed dependencies should be referenced in the head section.
 
 ```HTML
