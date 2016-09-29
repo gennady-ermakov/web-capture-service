@@ -34,14 +34,14 @@ All installed dependencies should be referenced in the head section.
     <title>Atalasoft Web Capture Service</title>
 
     <!-- Script includes for Web Viewing and Scanning -->
-    <script src="Scripts/jquery-1.7.1.min.js" type="text/javascript"></script>
-    <script src="Scripts/jquery-ui-1.8.14.min.js" type="text/javascript"></script>
-    <script src="Scripts/atalaWebDocumentViewer.js" type="text/javascript"></script>
-    <script src="Scripts/atalaWebCapture.js" type="text/javascript"></script>
+    <script src="bower_components/jquery/jquery.min.js" type="text/javascript"></script>
+    <script src="bower_components/jquery-ui/jquery-ui.min.js" type="text/javascript"></script>
+    <script src="bower_components/web-document-viewer/atalaWebDocumentViewer.js" type="text/javascript"></script>
+    <script src="bower_components/web-capture-service/atalaWebCapture.js" type="text/javascript"></script>
 
     <!-- Style for Web Viewer  -->
-    <link href="Content/themes/base/jquery.ui.all.css" rel="stylesheet" type="text/css" />
-    <link href="Scripts/atalaWebDocumentViewer.css" rel="stylesheet" type="text/css" />   
+    <link href="bower_components/jquery-ui/themes/base/jquery-ui.css" rel="stylesheet" type="text/css" />
+    <link href="bower_components/web-document-viewer/atalaWebDocumentViewer.css" rel="stylesheet" type="text/css" />   
 
     <script src="Scripts/sampleScript.js" type="text/javascript"></script>
 </head>
@@ -216,7 +216,7 @@ function collectScanSettings() {
 
 ```
 
-WebDocViewerHandler.ashx as serverurl is the name of the class inherited from WebCaptureRequestHandler [C#]. And WebCaptureHandler.ashx as handlerUrl is the name of the class inherited from WebDocumentRequestHandler [C#]. More details about this code you can find in the [NuGet Tutorial II - Web Capture Service](http://atalasoft.github.io/2016/08/03/nuget-tutorial-wcs/). The only difference is the package source.
+WebDocViewerHandler.ashx as a serverurl is the name of the class inherited from WebCaptureRequestHandler [C#]. And WebCaptureHandler.ashx as a handler serverUrl is the name of the class inherited from WebDocumentRequestHandler [C#]. More details about this code you can find in the [NuGet Tutorial II - Web Capture Service](http://atalasoft.github.io/2016/08/03/nuget-tutorial-wcs/). The only difference is the package source.
 
 ### Licensing 
 
