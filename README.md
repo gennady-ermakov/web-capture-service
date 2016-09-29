@@ -225,7 +225,7 @@ To run the projects locally, you need to have a DotImage license. There are vari
  - Use [DotImage Activation Wizard Visual Studio extension](https://visualstudiogallery.msdn.microsoft.com/88ff07c9-fe68-48bd-bfdc-3fbc8a0ec1db)
  - Download a complete DotImage installation package from the [Atalasoft web site](https://atalasoft.com). You will be prompted to activate the product during installation
 
-Web Document Viewer object cross browser client-side script. 
+Web Capture Service object cross browser client-side script. 
 Copyright 2003-2016 Atalasoft Inc. All Rights Reserved.
 
 This source code is property of Atalasoft, Inc. (http://www.atalasoft.com/)
