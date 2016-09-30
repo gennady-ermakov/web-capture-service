@@ -129,6 +129,8 @@ All installed dependencies should be referenced in the head section.
 
 ```
 
+The app.js file, mentioned above, should be created and placed in the 'Scripts' folder. It contains some business logic for Atalasoft components initialization, event handlers and helper functions:
+
 ```JavaScript
 // Initialize Web Scanning and Web Viewing
 $(function () {
