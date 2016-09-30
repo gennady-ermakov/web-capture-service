@@ -43,7 +43,7 @@ All installed dependencies should be referenced in the head section.
     <link href="bower_components/jquery-ui/themes/base/jquery-ui.css" rel="stylesheet" type="text/css" />
     <link href="bower_components/web-document-viewer/atalaWebDocumentViewer.css" rel="stylesheet" type="text/css" />   
 
-    <script src="Scripts/sampleScript.js" type="text/javascript"></script>
+    <script src="Scripts/app.js" type="text/javascript"></script>
 </head>
 <body>
     <h1>Kofax Web Capture - Web Scan Demo</h1>
@@ -128,6 +128,8 @@ All installed dependencies should be referenced in the head section.
 </html>
 
 ```
+
+The app.js file, mentioned above, should be created and placed in the 'Scripts' folder. It contains some business logic for Atalasoft components initialization, event handlers and helper functions:
 
 ```JavaScript
 // Initialize Web Scanning and Web Viewing
