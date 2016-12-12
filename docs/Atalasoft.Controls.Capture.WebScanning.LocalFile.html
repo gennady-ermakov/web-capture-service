@@ -1,0 +1,1559 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="IE=edge" >
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>LocalFile - Documentation</title>
+
+    <script src="scripts/prettify/prettify.js"></script>
+    <script src="scripts/prettify/lang-css.js"></script>
+    <script src="scripts/jquery.min.js"></script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
+    <link type="text/css" rel="stylesheet" href="styles/prettify-tomorrow.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc-default.css">
+</head>
+<body>
+
+<input type="checkbox" id="nav-trigger" class="nav-trigger" />
+<label for="nav-trigger" class="navicon-button x">
+  <div class="navicon"></div>
+</label>
+
+<label for="nav-trigger" class="overlay"></label>
+
+<nav>
+    <img class="logo" src="http://atalasoft.github.io/public/logo.png"></img>
+    <input class="search" type="search" placeholder="Search API Reference"/>
+
+    <h2><a href="index.html">Home</a></h2><h3>Namespaces</h3><ul><li class="item"><a href="Atalasoft.html">Atalasoft</a></li><li class="item"><a href="Atalasoft.Controls.html">Controls</a></li><li class="item"><a href="Atalasoft.Controls.Capture.html">Capture</a><ul class='members'><li data-type='member' data-name='Atalasoft.Controls.Capture.Errors' ><a href="Atalasoft.Controls.Capture.html#.Errors">Errors</a></li><li data-type='member' data-name='Atalasoft.Controls.Capture.PixelType' ><a href="Atalasoft.Controls.Capture.html#.PixelType">PixelType</a></li></ul></li><li class="item"><a href="Atalasoft.Controls.Capture.WebScanning.html">WebScanning</a><ul class='methods'><li data-type='method' data-name='Atalasoft.Controls.Capture.WebScanning.abortScan' ><a href="Atalasoft.Controls.Capture.WebScanning.html#.abortScan">abortScan</a></li><li data-type='method' data-name='Atalasoft.Controls.Capture.WebScanning.dispose' ><a href="Atalasoft.Controls.Capture.WebScanning.html#.dispose">dispose</a></li><li data-type='method' data-name='Atalasoft.Controls.Capture.WebScanning.enumerateScanners' ><a href="Atalasoft.Controls.Capture.WebScanning.html#.enumerateScanners">enumerateScanners</a></li><li data-type='method' data-name='Atalasoft.Controls.Capture.WebScanning.getProfile' ><a href="Atalasoft.Controls.Capture.WebScanning.html#.getProfile">getProfile</a></li><li data-type='method' data-name='Atalasoft.Controls.Capture.WebScanning.getSupportedValues' ><a href="Atalasoft.Controls.Capture.WebScanning.html#.getSupportedValues">getSupportedValues</a></li><li data-type='method' data-name='Atalasoft.Controls.Capture.WebScanning.getVersion' ><a href="Atalasoft.Controls.Capture.WebScanning.html#.getVersion">getVersion</a></li><li data-type='method' data-name='Atalasoft.Controls.Capture.WebScanning.importFiles' ><a href="Atalasoft.Controls.Capture.WebScanning.html#.importFiles">importFiles</a></li><li data-type='method' data-name='Atalasoft.Controls.Capture.WebScanning.initialize' ><a href="Atalasoft.Controls.Capture.WebScanning.html#.initialize">initialize</a></li><li data-type='method' data-name='Atalasoft.Controls.Capture.WebScanning.isInitialized' ><a href="Atalasoft.Controls.Capture.WebScanning.html#.isInitialized">isInitialized</a></li><li data-type='method' data-name='Atalasoft.Controls.Capture.WebScanning.scan' ><a href="Atalasoft.Controls.Capture.WebScanning.html#.scan">scan</a></li><li data-type='method' data-name='Atalasoft.Controls.Capture.WebScanning.setBarcodeLicense' ><a href="Atalasoft.Controls.Capture.WebScanning.html#.setBarcodeLicense">setBarcodeLicense</a></li><li data-type='method' data-name='Atalasoft.Controls.Capture.WebScanning.setProfile' ><a href="Atalasoft.Controls.Capture.WebScanning.html#.setProfile">setProfile</a></li><li data-type='method' data-name='Atalasoft.Controls.Capture.WebScanning.showSettingsDialog' ><a href="Atalasoft.Controls.Capture.WebScanning.html#.showSettingsDialog">showSettingsDialog</a></li><li data-type='method' class='deprecated' data-name='Atalasoft.Controls.Capture.WebScanning.deleteLocalFile' ><a href="Atalasoft.Controls.Capture.WebScanning.html#.deleteLocalFile">deleteLocalFile</a></li><li data-type='method' class='deprecated' data-name='Atalasoft.Controls.Capture.WebScanning.encryptedLocalFileAsBase64String' ><a href="Atalasoft.Controls.Capture.WebScanning.html#.encryptedLocalFileAsBase64String">encryptedLocalFileAsBase64String</a></li><li data-type='method' class='deprecated' data-name='Atalasoft.Controls.Capture.WebScanning.listLocalFiles' ><a href="Atalasoft.Controls.Capture.WebScanning.html#.listLocalFiles">listLocalFiles</a></li><li data-type='method' class='deprecated' data-name='Atalasoft.Controls.Capture.WebScanning.saveBase64ToEncryptedLocalFile' ><a href="Atalasoft.Controls.Capture.WebScanning.html#.saveBase64ToEncryptedLocalFile">saveBase64ToEncryptedLocalFile</a></li><li data-type='method' class='deprecated' data-name='Atalasoft.Controls.Capture.WebScanning.setSymmetricEncryptionKey' ><a href="Atalasoft.Controls.Capture.WebScanning.html#.setSymmetricEncryptionKey">setSymmetricEncryptionKey</a></li></ul><ul class='events'><li data-type='event' data-name='Atalasoft.Controls.Capture.WebScanning#event:onImageAcquired' ><a href="Atalasoft.Controls.Capture.WebScanning.html#event:onImageAcquired">onImageAcquired</a></li><li data-type='event' data-name='Atalasoft.Controls.Capture.WebScanning#event:onScanClientReady' ><a href="Atalasoft.Controls.Capture.WebScanning.html#event:onScanClientReady">onScanClientReady</a></li><li data-type='event' data-name='Atalasoft.Controls.Capture.WebScanning#event:onScanCompleted' ><a href="Atalasoft.Controls.Capture.WebScanning.html#event:onScanCompleted">onScanCompleted</a></li><li data-type='event' data-name='Atalasoft.Controls.Capture.WebScanning#event:onScanError' ><a href="Atalasoft.Controls.Capture.WebScanning.html#event:onScanError">onScanError</a></li><li data-type='event' data-name='Atalasoft.Controls.Capture.WebScanning#event:onScanStarted' ><a href="Atalasoft.Controls.Capture.WebScanning.html#event:onScanStarted">onScanStarted</a></li><li data-type='event' data-name='Atalasoft.Controls.Capture.WebScanning#event:onUploadCompleted' ><a href="Atalasoft.Controls.Capture.WebScanning.html#event:onUploadCompleted">onUploadCompleted</a></li><li data-type='event' data-name='Atalasoft.Controls.Capture.WebScanning#event:onUploadError' ><a href="Atalasoft.Controls.Capture.WebScanning.html#event:onUploadError">onUploadError</a></li><li data-type='event' data-name='Atalasoft.Controls.Capture.WebScanning#event:onUploadStarted' ><a href="Atalasoft.Controls.Capture.WebScanning.html#event:onUploadStarted">onUploadStarted</a></li></ul><ul class='members'><li data-type='member' data-name='Atalasoft.Controls.Capture.WebScanning.scanningOptions' ><a href="Atalasoft.Controls.Capture.WebScanning.html#.scanningOptions">scanningOptions</a></li></ul></li><li class="item"><a href="Atalasoft.Controls.Capture.WebScanning.LocalFile.html">LocalFile</a><ul class='methods'><li data-type='method' data-name='Atalasoft.Controls.Capture.WebScanning.LocalFile.asBase64String' ><a href="Atalasoft.Controls.Capture.WebScanning.LocalFile.html#.asBase64String">asBase64String</a></li><li data-type='method' data-name='Atalasoft.Controls.Capture.WebScanning.LocalFile.fromBase64String' ><a href="Atalasoft.Controls.Capture.WebScanning.LocalFile.html#.fromBase64String">fromBase64String</a></li><li data-type='method' data-name='Atalasoft.Controls.Capture.WebScanning.LocalFile.globalPurgeByAge' ><a href="Atalasoft.Controls.Capture.WebScanning.LocalFile.html#.globalPurgeByAge">globalPurgeByAge</a></li><li data-type='method' data-name='Atalasoft.Controls.Capture.WebScanning.LocalFile.list' ><a href="Atalasoft.Controls.Capture.WebScanning.LocalFile.html#.list">list</a></li><li data-type='method' data-name='Atalasoft.Controls.Capture.WebScanning.LocalFile.remove' ><a href="Atalasoft.Controls.Capture.WebScanning.LocalFile.html#.remove">remove</a></li><li data-type='method' data-name='Atalasoft.Controls.Capture.WebScanning.LocalFile.removeAll' ><a href="Atalasoft.Controls.Capture.WebScanning.LocalFile.html#.removeAll">removeAll</a></li><li data-type='method' data-name='Atalasoft.Controls.Capture.WebScanning.LocalFile.setEncryptionKey' ><a href="Atalasoft.Controls.Capture.WebScanning.LocalFile.html#.setEncryptionKey">setEncryptionKey</a></li><li data-type='method' data-name='Atalasoft.Controls.Capture.WebScanning.LocalFile.splitToFiles' ><a href="Atalasoft.Controls.Capture.WebScanning.LocalFile.html#.splitToFiles">splitToFiles</a></li></ul></li></ul><h3>Classes</h3><ul><li class="item"><a href="BaseImage.html">BaseImage</a><ul class='methods'><li data-type='method' data-name='BaseImage#asBase64String' ><a href="BaseImage.html#asBase64String">asBase64String</a></li><li data-type='method' data-name='BaseImage#clear' ><a href="BaseImage.html#clear">clear</a></li><li data-type='method' data-name='BaseImage#saveEncryptedLocal' ><a href="BaseImage.html#saveEncryptedLocal">saveEncryptedLocal</a></li><li data-type='method' class='deprecated' data-name='BaseImage#AsBase64String' ><a href="BaseImage.html#AsBase64String">AsBase64String</a></li><li data-type='method' class='deprecated' data-name='BaseImage#SaveEncryptedLocalFile' ><a href="BaseImage.html#SaveEncryptedLocalFile">SaveEncryptedLocalFile</a></li></ul><ul class='members'><li data-type='member' data-name='BaseImage#barcodes' ><a href="BaseImage.html#barcodes">barcodes</a></li><li data-type='member' data-name='BaseImage#bitsPerPixel' ><a href="BaseImage.html#bitsPerPixel">bitsPerPixel</a></li><li data-type='member' data-name='BaseImage#discard' ><a href="BaseImage.html#discard">discard</a></li><li data-type='member' data-name='BaseImage#dpi' ><a href="BaseImage.html#dpi">dpi</a></li><li data-type='member' data-name='BaseImage#filename' ><a href="BaseImage.html#filename">filename</a></li><li data-type='member' data-name='BaseImage#front' ><a href="BaseImage.html#front">front</a></li><li data-type='member' data-name='BaseImage#height' ><a href="BaseImage.html#height">height</a></li><li data-type='member' data-name='BaseImage#imprintedText' ><a href="BaseImage.html#imprintedText">imprintedText</a></li><li data-type='member' data-name='BaseImage#localFile' ><a href="BaseImage.html#localFile">localFile</a></li><li data-type='member' data-name='BaseImage#newSheet' ><a href="BaseImage.html#newSheet">newSheet</a></li><li data-type='member' data-name='BaseImage#originalImage' ><a href="BaseImage.html#originalImage">originalImage</a></li><li data-type='member' data-name='BaseImage#patchCode' ><a href="BaseImage.html#patchCode">patchCode</a></li><li data-type='member' data-name='BaseImage#pixelType' ><a href="BaseImage.html#pixelType">pixelType</a></li><li data-type='member' data-name='BaseImage#sheetNo' ><a href="BaseImage.html#sheetNo">sheetNo</a></li><li data-type='member' data-name='BaseImage#width' ><a href="BaseImage.html#width">width</a></li><li data-type='member' data-name='BaseImage#xdpi' ><a href="BaseImage.html#xdpi">xdpi</a></li><li data-type='member' data-name='BaseImage#ydpi' ><a href="BaseImage.html#ydpi">ydpi</a></li><li data-type='member' class='deprecated' data-name='BaseImage#Barcodes' ><a href="BaseImage.html#Barcodes">Barcodes</a></li><li data-type='member' class='deprecated' data-name='BaseImage#BitsPerPixel' ><a href="BaseImage.html#BitsPerPixel">BitsPerPixel</a></li><li data-type='member' class='deprecated' data-name='BaseImage#Filename' ><a href="BaseImage.html#Filename">Filename</a></li><li data-type='member' class='deprecated' data-name='BaseImage#Height' ><a href="BaseImage.html#Height">Height</a></li><li data-type='member' class='deprecated' data-name='BaseImage#ImprintedText' ><a href="BaseImage.html#ImprintedText">ImprintedText</a></li><li data-type='member' class='deprecated' data-name='BaseImage#PatchCode' ><a href="BaseImage.html#PatchCode">PatchCode</a></li><li data-type='member' class='deprecated' data-name='BaseImage#PixelType' ><a href="BaseImage.html#PixelType">PixelType</a></li><li data-type='member' class='deprecated' data-name='BaseImage#SheetNo' ><a href="BaseImage.html#SheetNo">SheetNo</a></li><li data-type='member' class='deprecated' data-name='BaseImage#Width' ><a href="BaseImage.html#Width">Width</a></li><li data-type='member' class='deprecated' data-name='BaseImage#XResolution' ><a href="BaseImage.html#XResolution">XResolution</a></li><li data-type='member' class='deprecated' data-name='BaseImage#YResolution' ><a href="BaseImage.html#YResolution">YResolution</a></li></ul></li><li class="item"><a href="Image.html">Image</a><ul class='methods'><li data-type='method' data-name='Image#thumbnail' ><a href="Image.html#thumbnail">thumbnail</a></li><li data-type='method' class='deprecated' data-name='Image#Thumbnail' ><a href="Image.html#Thumbnail">Thumbnail</a></li></ul><ul class='members'></ul></li><li class="item"><a href="Thumbnail.html">Thumbnail</a><ul class='methods'></ul><ul class='members'><li data-type='member' data-name='Thumbnail#base64' ><a href="Thumbnail.html#base64">base64</a></li><li data-type='member' data-name='Thumbnail#format' ><a href="Thumbnail.html#format">format</a></li><li data-type='member' data-name='Thumbnail#jpegCompression' ><a href="Thumbnail.html#jpegCompression">jpegCompression</a></li><li data-type='member' data-name='Thumbnail#quality' ><a href="Thumbnail.html#quality">quality</a></li><li data-type='member' data-name='Thumbnail#requestedHeight' ><a href="Thumbnail.html#requestedHeight">requestedHeight</a></li><li data-type='member' data-name='Thumbnail#requestedWidth' ><a href="Thumbnail.html#requestedWidth">requestedWidth</a></li></ul></li></ul><h3>Globals</h3><ul><li class="item"><a href="global.html#onImageAcquiredCallback">onImageAcquiredCallback</a></li><li class="item"><a href="global.html#onScanErrorCallback">onScanErrorCallback</a></li><li class="item"><a href="global.html#ScanningOptions">ScanningOptions</a></li></ul><h3><a href="global.html">Global</a></h3>
+</nav>
+
+<div id="main">
+    
+    <h1 class="page-title">LocalFile</h1>
+    
+
+    
+
+
+
+
+<section>
+
+<header>
+    
+        <h2>
+            <span class="ancestors"><a href="Atalasoft.html">Atalasoft</a><a href="Atalasoft.Controls.html">.Controls</a><a href="Atalasoft.Controls.Capture.html">.Capture</a><a href="Atalasoft.Controls.Capture.WebScanning.html">.WebScanning</a>.</span>
+        
+        LocalFile
+        </h2>
+        
+    
+</header>
+
+<article>
+    <div class="container-overview">
+    
+        
+            <div class="description"><p>Local files are stored in this folder: </p>
+<pre><code>%LOCALAPPDATA%\Kofax\WebCapture\Persistent</code></pre>
+
+<p>The file names follow this pattern: </p>
+<p><pre><code>(T|U)<sessionid>-<filenumber>.elf</pre></code></p>
+<p><strong>T</strong> indicates a <em>trusted</em> file – WebCapture generated the contents.</p>
+<p><strong>U</strong> indicates an <em>untrusted</em> file – contents came from outside the plugin e.g. via LocalFile.fromBase64String</p>
+<p>The <strong>session-id</strong> is generated each time the plugin is instantiated, and should be unique on any given computer for ~13 years.</p>
+<p>The <strong>filenumber</strong> is generated sequentially within each session, starting from 1.</p>
+<p><strong>.elf</strong> stands for Encrypted Local File.</p></div>
+        
+
+        
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+        
+    
+    </div>
+
+    
+
+    
+
+    
+
+     
+
+    
+
+    
+
+    
+        <h3 class="subsection-title">Methods</h3>
+
+        
+            
+
+    
+
+    <h4 class="name" id=".asBase64String"><span class="type-signature">(static) </span>asBase64String<span class="signature">(fid, format<span class="signature-attributes">opt</span>, options<span class="signature-attributes">opt</span>, callback<span class="signature-attributes">opt</span>)</span><span class="type-signature"> &rarr; {undefined}</span></h4>
+
+    
+
+
+
+<div class="description">
+    <p>Decrypts a locally-saved file and returns it as a base64-encoded string.</p>
+<p>If format is specified, returns the data in the specified file format.</p>
+<p>If no encryption key has been set, throws an exception.</p>
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+        <th>Attributes</th>
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>fid</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last"><p>Local file identifier.</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>format</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last"><p>File format to use.</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>options</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">FileOptions</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last"><p>Additional file options.</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>callback</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">function</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last"><p>Completion callback function.</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+
+
+<dl class="param-type">
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">undefined</span>
+
+
+    </dd>
+</dl>
+
+    
+
+
+
+        
+            
+
+    
+
+    <h4 class="name" id=".fromBase64String"><span class="type-signature">(static) </span>fromBase64String<span class="signature">(base64, callback<span class="signature-attributes">opt</span>)</span><span class="type-signature"> &rarr; {undefined}</span></h4>
+
+    
+
+
+
+<div class="description">
+    <p>Saves the specified base64-encoded binary data to an encrypted local file, and returns a unique file-identifier for that local file.</p>
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+        <th>Attributes</th>
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>base64</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last"><p>Base64 data to save.</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>callback</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">function</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last"><p>Completion callback function.</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+
+
+<dl class="param-type">
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">undefined</span>
+
+
+    </dd>
+</dl>
+
+    
+
+
+
+        
+            
+
+    
+
+    <h4 class="name" id=".globalPurgeByAge"><span class="type-signature">(static) </span>globalPurgeByAge<span class="signature">(hours, callback<span class="signature-attributes">opt</span>)</span><span class="type-signature"> &rarr; {undefined}</span></h4>
+
+    
+
+
+
+<div class="description">
+    <p>Immediately deletes all local files written more than <em>hours</em> ago. Deletes ALL local files meeting the age criterion, 
+no matter how or when they were created, or by which instance of WingScan. Obviously, use with caution.</p>
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+        <th>Attributes</th>
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>hours</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">number</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last"><p>Age of local files, in hours.</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>callback</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">function</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last"><p>Completion callback function.</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+
+
+<dl class="param-type">
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">undefined</span>
+
+
+    </dd>
+</dl>
+
+    
+
+
+
+        
+            
+
+    
+
+    <h4 class="name" id=".list"><span class="type-signature">(static) </span>list<span class="signature">(callback<span class="signature-attributes">opt</span>)</span><span class="type-signature"> &rarr; {undefined}</span></h4>
+
+    
+
+
+
+<div class="description">
+    <p>Returns an array of the identifiers of all the existing saved local files associated with this instance of WingScan.</p>
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+        <th>Attributes</th>
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>callback</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">function</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last"><p>Completion callback function.</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+
+
+<dl class="param-type">
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">undefined</span>
+
+
+    </dd>
+</dl>
+
+    
+
+
+
+        
+            
+
+    
+
+    <h4 class="name" id=".remove"><span class="type-signature">(static) </span>remove<span class="signature">(fid, callback<span class="signature-attributes">opt</span>)</span><span class="type-signature"> &rarr; {undefined}</span></h4>
+
+    
+
+
+
+<div class="description">
+    <p>Immediately deletes a local file and any data associated with it. This is irreversible and non-recoverable.</p>
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+        <th>Attributes</th>
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>fid</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last"><p>Local file identifier.</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>callback</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">function</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last"><p>Completion callback function.</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+
+
+<dl class="param-type">
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">undefined</span>
+
+
+    </dd>
+</dl>
+
+    
+
+
+
+        
+            
+
+    
+
+    <h4 class="name" id=".removeAll"><span class="type-signature">(static) </span>removeAll<span class="signature">(callback<span class="signature-attributes">opt</span>)</span><span class="type-signature"> &rarr; {undefined}</span></h4>
+
+    
+
+
+
+<div class="description">
+    <p>Immediately deletes all local files associated with (created by) this instance of WingScan. 
+Has no effect on local files created in other instances of the client application, or files created by previous incarnations of WingScan.</p>
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+        <th>Attributes</th>
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>callback</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">function</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last"><p>Completion callback function.</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+
+
+<dl class="param-type">
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">undefined</span>
+
+
+    </dd>
+</dl>
+
+    
+
+
+
+        
+            
+
+    
+
+    <h4 class="name" id=".setEncryptionKey"><span class="type-signature">(static) </span>setEncryptionKey<span class="signature">(basis, callback<span class="signature-attributes">opt</span>)</span><span class="type-signature"> &rarr; {undefined}</span></h4>
+
+    
+
+
+
+<div class="description">
+    <p>Sets the encryption key for subsequent encrypted local file load/saves. The basis is an arbitrary string, 
+which is used to generate the symmetric encryption key.</p>
+<p>The basis is immediately discarded, and the generated key is moved into the Windows secure cryptographic storage.</p>
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+        <th>Attributes</th>
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>basis</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last"><p>Basis for the encryption key.</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>callback</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">function</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last"><p>Completion callback function.</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+
+
+<dl class="param-type">
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">undefined</span>
+
+
+    </dd>
+</dl>
+
+    
+
+
+
+        
+            
+
+    
+
+    <h4 class="name" id=".splitToFiles"><span class="type-signature">(static) </span>splitToFiles<span class="signature">()</span><span class="type-signature"></span></h4>
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-todo">To Do:</dt>
+    <dd class="tag-todo">
+        <ul>
+            <li>Document the function properly</li>
+        </ul>
+    </dd>
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+
+        
+
+    
+
+    
+
+    
+</article>
+
+</section>
+
+
+
+
+</div>
+
+<br class="clear">
+
+<footer>
+    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.4.3</a> on Mon Dec 12 2016 15:32:59 GMT+0300 (Russia TZ 2 Standard Time) using the Minami theme.
+</footer>
+
+<script>prettyPrint();</script>
+<script src="scripts/linenumber.js"></script>
+<script src="scripts/atalasoft-jsdoc.js"></script>
+</body>
+</html>
