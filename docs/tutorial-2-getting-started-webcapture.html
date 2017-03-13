@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="IE=edge" >
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <title>Image - Documentation</title>
+    <title>Tutorial: Getting Started with Web Capture - Documentation</title>
 
     <script src="scripts/prettify/prettify.js"></script>
     <script src="scripts/prettify/lang-css.js"></script>
@@ -34,314 +34,71 @@
 
 <div id="main">
     
-    <h1 class="page-title">Image</h1>
+    <h1 class="page-title">Tutorial: Getting Started with Web Capture</h1>
     
 
-    
-
-
-
-
-<section>
+    <section>
 
 <header>
     
-        <h2>
-        Image
-        </h2>
-        
+    <ul>
+        <li><a href="tutorial-2-1-installation.html">Installation</a></li>
     
+        <li><a href="tutorial-2-2-demo-application.html">Demo Application</a></li>
+    
+        <li><a href="tutorial-2-3-connect-to-ui.html">Connect to UI Controls</a></li>
+    
+        <li><a href="tutorial-2-4-capture-server-handlers.html">Capture Handlers Configuration</a></li>
+    </ul>
+    
+
+    <h2>Getting Started with Web Capture</h2>
 </header>
 
 <article>
-    <div class="container-overview">
-    
-        
-
-    
-
-    
-        <h4 class="name" id="Image"><span class="type-signature"></span>new Image<span class="signature">()</span><span class="type-signature"></span></h4>
-    
-    
-
-
-
-<div class="description">
-    <p>Image implementation.</p>
-</div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-<dl class="details">
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-</dl>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    
-    </div>
-
-    
-        <h3 class="subsection-title">Extends</h3>
-
-        
-
-
-    <ul>
-        <li><a href="BaseImage.html">BaseImage</a></li>
-    </ul>
-
-
-    
-
-    
-
-    
-
-     
-
-    
-
-    
-        <h3 class="subsection-title">Members</h3>
-
-        
-
-        
-
-    
-
-    
-        <h3 class="subsection-title">Methods</h3>
-
-        
-            
-
-    
-
-    
-        <h4 class="name" id="thumbnail"><span class="type-signature"></span>thumbnail<span class="signature">()</span><span class="type-signature"></span></h4>
-    
-    
-
-
-
-<div class="description">
-    <p>Gets thumbnail image.</p>
-</div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-<dl class="details">
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-</dl>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-        
-
-        
-            
-
-    
-
-    
-        <h4 class="name" id="Thumbnail"><span class="type-signature"></span>Thumbnail<span class="signature">()</span><span class="type-signature"></span></h4>
-    
-    
-
-
-
-<div class="description">
-    <p>Gets thumbnail image.</p>
-</div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-<dl class="details">
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-        <dt class="important tag-deprecated">Deprecated:</dt><dd><ul class="dummy"><li>Use thumbnail instead.</li></ul></dd>
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-</dl>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-        
-
-    
-
-    
-
-    
+    <h2>Web scanning</h2><p>Web Capture Service includes a set of integrated components that can be used to easily capture-enable a website.
+It uses Javascript, supported by an local scanning service on the client machine which 
+could be deployed either as windows service or regular windows application. </p>
+<p>Also Web Capture Service supports scanning in multiuser environments - MS Terminal Server and Citrix. On these environments, multiple users work with Web Capture Service at the same time from different Windows logon sessions with the same user experience as on single-user machine.</p>
+<p>The Web Capture Service SDK includes a demo web application that can scan, upload and import documents into Kofax Capture.</p>
+<h2>System requirements</h2><h3>Server</h3><ul>
+<li>Any Web Capture assemblies you use are licensed in your request handler</li>
+<li>Using .NET handlers for ASP.NET deployment and </li>
+<li>IIS 6 or higher</li>
+<li>In case of automatic scanned images upload, a writable location for files to be uploaded on the disk that the application can read and write to.</li>
+</ul>
+<p><em>Note This is needed only if there is a need to save the scanned images. It is possible to simply
+discard the images after they have been processed.</em></p>
+<h3>Client machine</h3><ul>
+<li>Windows Vista or higher, Windows Server 2008 or higher</li>
+<li>A scanning device with a working TWAIN driver.</li>
+<li>Microsoft Internet Explorer 8 or higher, Edge, Mozilla Firefox 4.0 or higher, or Google Chrome.</li>
+<li>Web Capture Service must be installed or be allowed to install.</li>
+</ul>
+<p><strong><em>Note</em></strong></p>
+<p><em>When multiple Web Capture Service workers are running concurrently in the same browser, the
+general responsiveness of the system may slow down, especially in 32bit browsers. This is caused by the browser limitation of the number of the simultaneous tcp connections opened. The precise number of workers at which this becomes noticeable depends on which browser is being used, how many active requests are being
+processed, and how many tabs are open.</em></p>
+<p><em>If your browser allows you to configure the number of allowed active connections, increasing that value
+may help.
+Also, when using Citrix, the WebCapture.Host can create only about 50 WebCapture.Workers
+(sessions) per server. This large a number is uncommon, and should not affect the majority of users.</em></p>
+<h3>Multiuser environments</h3><h4>Terminal server</h4><p>When using a terminal server, users can connect to the scan server simultaneously and perform scanning
+tasks or import files in parallel.
+In this case, the Web Capture Service Host determines who exactly has made a request to it, and
+forwards the request to the appropriate Web Capture Service Worker which, in turn, works with devices
+and files that are available to the specific user. For the end user, this detection process is transparent, and
+takes the same as in the simple single-user environment.
+Web Capture Service can work only with scanners attached to a remote Terminal Server. Locally
+connected scanners are not available in this scenario. The same goes for file import – Web Capture
+Service provides access to files on a Terminal Server.</p>
+<h4>Citrix</h4><p>The major difference, in comparison with the standalone scenario, when both the Browser app and Web
+Capture Service are installed on client machine, is that Web Capture Service is physically running on a
+remote Citrix server, while a scanner is connected to the client user’s computer. This works transparently
+for Web Capture Service when Citrix TWAIN Redirection is enabled.</p>
 </article>
 
 </section>
-
-
-
 
 </div>
 
