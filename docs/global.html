@@ -1,0 +1,4142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="IE=edge" >
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Global - Documentation</title>
+
+    <script src="scripts/prettify/prettify.js"></script>
+    <script src="scripts/prettify/lang-css.js"></script>
+    <script src="scripts/jquery.min.js"></script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
+    <link type="text/css" rel="stylesheet" href="styles/prettify-tomorrow.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc-default.css">
+</head>
+<body>
+
+<input type="checkbox" id="nav-trigger" class="nav-trigger" />
+<label for="nav-trigger" class="navicon-button x">
+  <div class="navicon"></div>
+</label>
+
+<label for="nav-trigger" class="overlay"></label>
+
+<nav>
+    <img class="logo" src="http://atalasoft.github.io/public/logo.png"></img>
+    <input class="search" type="search" placeholder="Search API Reference"/>
+
+    <h2><a href="index.html">Home</a></h2><h3>Tutorials</h3><ul><li class="item"><a href="tutorial-1-preface.html">Preface</a></li><li class="item"><a href="tutorial-2-getting-started-webcapture.html">Getting Started with Web Capture</a><ul><li class="item"><a href="tutorial-2-1-installation.html">Installation</a></li><li class="item"><a href="tutorial-2-2-demo-application.html">Demo Application</a></li><li class="item"><a href="tutorial-2-3-connect-to-ui.html">Connect to UI Controls</a></li><li class="item"><a href="tutorial-2-4-capture-server-handlers.html">Capture Handlers Configuration</a></li></ul></li><li class="item"><a href="tutorial-3-handling-errors.html">Handling Errors</a></li><li class="item"><a href="tutorial-4-automatic-upload.html">Upload to Capture Handler</a></li></ul><h3>Namespaces</h3><ul><li class="item"><a href="Atalasoft.html">Atalasoft</a></li><li class="item"><a href="Atalasoft.Controls.html">Controls</a></li><li class="item"><a href="Atalasoft.Controls.Capture.html">Capture</a><ul class='members'><li data-type='member' data-name='Atalasoft.Controls.Capture.Errors' ><a href="Atalasoft.Controls.Capture.html#.Errors">Errors</a></li><li data-type='member' data-name='Atalasoft.Controls.Capture.FeederType' ><a href="Atalasoft.Controls.Capture.html#.FeederType">FeederType</a></li><li data-type='member' data-name='Atalasoft.Controls.Capture.Orientation' ><a href="Atalasoft.Controls.Capture.html#.Orientation">Orientation</a></li><li data-type='member' data-name='Atalasoft.Controls.Capture.PaperSize' ><a href="Atalasoft.Controls.Capture.html#.PaperSize">PaperSize</a></li><li data-type='member' data-name='Atalasoft.Controls.Capture.PixelType' ><a href="Atalasoft.Controls.Capture.html#.PixelType">PixelType</a></li><li data-type='member' data-name='Atalasoft.Controls.Capture.ScanMode' ><a href="Atalasoft.Controls.Capture.html#.ScanMode">ScanMode</a></li></ul></li><li class="item"><a href="Atalasoft.Controls.Capture.CaptureService.html">CaptureService</a><ul class='methods'><li data-type='method' data-name='Atalasoft.Controls.Capture.CaptureService.dispose' ><a href="Atalasoft.Controls.Capture.CaptureService.html#.dispose">dispose</a></li><li data-type='method' data-name='Atalasoft.Controls.Capture.CaptureService.importDocument' ><a href="Atalasoft.Controls.Capture.CaptureService.html#.importDocument">importDocument</a></li><li data-type='method' data-name='Atalasoft.Controls.Capture.CaptureService.importIndexFieldDocument' ><a href="Atalasoft.Controls.Capture.CaptureService.html#.importIndexFieldDocument">importIndexFieldDocument</a></li><li data-type='method' data-name='Atalasoft.Controls.Capture.CaptureService.importLoosePageDocument' ><a href="Atalasoft.Controls.Capture.CaptureService.html#.importLoosePageDocument">importLoosePageDocument</a></li><li data-type='method' data-name='Atalasoft.Controls.Capture.CaptureService.setBatchFieldValues' ><a href="Atalasoft.Controls.Capture.CaptureService.html#.setBatchFieldValues">setBatchFieldValues</a></li><li data-type='method' data-name='Atalasoft.Controls.Capture.CaptureService.setIndexFieldValues' ><a href="Atalasoft.Controls.Capture.CaptureService.html#.setIndexFieldValues">setIndexFieldValues</a></li></ul><ul class='events'><li data-type='event' data-name='Atalasoft.Controls.Capture.CaptureService#event:onBatchFieldCompleted' ><a href="Atalasoft.Controls.Capture.CaptureService.html#event:event:onBatchFieldCompleted">event:onBatchFieldCompleted</a></li><li data-type='event' data-name='Atalasoft.Controls.Capture.CaptureService#event:onBatchFieldImportValidationError' ><a href="Atalasoft.Controls.Capture.CaptureService.html#event:event:onBatchFieldImportValidationError">event:onBatchFieldImportValidationError</a></li><li data-type='event' data-name='Atalasoft.Controls.Capture.CaptureService#event:onError' ><a href="Atalasoft.Controls.Capture.CaptureService.html#event:event:onError">event:onError</a></li><li data-type='event' data-name='Atalasoft.Controls.Capture.CaptureService#event:onImportComplete' ><a href="Atalasoft.Controls.Capture.CaptureService.html#event:event:onImportComplete">event:onImportComplete</a></li><li data-type='event' data-name='Atalasoft.Controls.Capture.CaptureService#event:onIndexFieldCompleted' ><a href="Atalasoft.Controls.Capture.CaptureService.html#event:event:onIndexFieldCompleted">event:onIndexFieldCompleted</a></li><li data-type='event' data-name='Atalasoft.Controls.Capture.CaptureService#event:onIndexFieldImportValidationError' ><a href="Atalasoft.Controls.Capture.CaptureService.html#event:event:onIndexFieldImportValidationError">event:onIndexFieldImportValidationError</a></li><li data-type='event' data-name='Atalasoft.Controls.Capture.CaptureService#event:onTrackStatus' ><a href="Atalasoft.Controls.Capture.CaptureService.html#event:event:onTrackStatus">event:onTrackStatus</a></li></ul></li><li class="item"><a href="Atalasoft.Controls.Capture.UploadToCaptureServer.html">UploadToCaptureServer</a><ul class='methods'><li data-type='method' data-name='Atalasoft.Controls.Capture.UploadToCaptureServer.dispose' ><a href="Atalasoft.Controls.Capture.UploadToCaptureServer.html#.dispose">dispose</a></li><li data-type='method' data-name='Atalasoft.Controls.Capture.UploadToCaptureServer.getUploadCallback' ><a href="Atalasoft.Controls.Capture.UploadToCaptureServer.html#.getUploadCallback">getUploadCallback</a></li><li data-type='method' data-name='Atalasoft.Controls.Capture.UploadToCaptureServer.initialize' ><a href="Atalasoft.Controls.Capture.UploadToCaptureServer.html#.initialize">initialize</a></li><li data-type='method' data-name='Atalasoft.Controls.Capture.UploadToCaptureServer.uploadToServer' ><a href="Atalasoft.Controls.Capture.UploadToCaptureServer.html#.uploadToServer">uploadToServer</a></li></ul><ul class='events'><li data-type='event' data-name='Atalasoft.Controls.Capture.UploadToCaptureServer#event:onUploadCompleted' ><a href="Atalasoft.Controls.Capture.UploadToCaptureServer.html#event:event:onUploadCompleted">event:onUploadCompleted</a></li><li data-type='event' data-name='Atalasoft.Controls.Capture.UploadToCaptureServer#event:onUploadError' ><a href="Atalasoft.Controls.Capture.UploadToCaptureServer.html#event:event:onUploadError">event:onUploadError</a></li><li data-type='event' data-name='Atalasoft.Controls.Capture.UploadToCaptureServer#event:onUploadStarted' ><a href="Atalasoft.Controls.Capture.UploadToCaptureServer.html#event:event:onUploadStarted">event:onUploadStarted</a></li></ul></li><li class="item"><a href="Atalasoft.Controls.Capture.WebScanning.html">WebScanning</a><ul class='methods'><li data-type='method' data-name='Atalasoft.Controls.Capture.WebScanning.abortScan' ><a href="Atalasoft.Controls.Capture.WebScanning.html#.abortScan">abortScan</a></li><li data-type='method' data-name='Atalasoft.Controls.Capture.WebScanning.dispose' ><a href="Atalasoft.Controls.Capture.WebScanning.html#.dispose">dispose</a></li><li data-type='method' data-name='Atalasoft.Controls.Capture.WebScanning.enumerateScanners' ><a href="Atalasoft.Controls.Capture.WebScanning.html#.enumerateScanners">enumerateScanners</a></li><li data-type='method' data-name='Atalasoft.Controls.Capture.WebScanning.getProfile' ><a href="Atalasoft.Controls.Capture.WebScanning.html#.getProfile">getProfile</a></li><li data-type='method' data-name='Atalasoft.Controls.Capture.WebScanning.getScanStationName' ><a href="Atalasoft.Controls.Capture.WebScanning.html#.getScanStationName">getScanStationName</a></li><li data-type='method' data-name='Atalasoft.Controls.Capture.WebScanning.getSupportedValues' ><a href="Atalasoft.Controls.Capture.WebScanning.html#.getSupportedValues">getSupportedValues</a></li><li data-type='method' data-name='Atalasoft.Controls.Capture.WebScanning.getVersion' ><a href="Atalasoft.Controls.Capture.WebScanning.html#.getVersion">getVersion</a></li><li data-type='method' data-name='Atalasoft.Controls.Capture.WebScanning.importFiles' ><a href="Atalasoft.Controls.Capture.WebScanning.html#.importFiles">importFiles</a></li><li data-type='method' data-name='Atalasoft.Controls.Capture.WebScanning.initialize' ><a href="Atalasoft.Controls.Capture.WebScanning.html#.initialize">initialize</a></li><li data-type='method' data-name='Atalasoft.Controls.Capture.WebScanning.isInitialized' ><a href="Atalasoft.Controls.Capture.WebScanning.html#.isInitialized">isInitialized</a></li><li data-type='method' data-name='Atalasoft.Controls.Capture.WebScanning.scan' ><a href="Atalasoft.Controls.Capture.WebScanning.html#.scan">scan</a></li><li data-type='method' data-name='Atalasoft.Controls.Capture.WebScanning.setBarcodeLicense' ><a href="Atalasoft.Controls.Capture.WebScanning.html#.setBarcodeLicense">setBarcodeLicense</a></li><li data-type='method' data-name='Atalasoft.Controls.Capture.WebScanning.setProfile' ><a href="Atalasoft.Controls.Capture.WebScanning.html#.setProfile">setProfile</a></li><li data-type='method' data-name='Atalasoft.Controls.Capture.WebScanning.showSettingsDialog' ><a href="Atalasoft.Controls.Capture.WebScanning.html#.showSettingsDialog">showSettingsDialog</a></li><li data-type='method' class='deprecated' data-name='Atalasoft.Controls.Capture.WebScanning.deleteLocalFile' ><a href="Atalasoft.Controls.Capture.WebScanning.html#.deleteLocalFile">deleteLocalFile</a></li><li data-type='method' class='deprecated' data-name='Atalasoft.Controls.Capture.WebScanning.encryptedLocalFileAsBase64String' ><a href="Atalasoft.Controls.Capture.WebScanning.html#.encryptedLocalFileAsBase64String">encryptedLocalFileAsBase64String</a></li><li data-type='method' class='deprecated' data-name='Atalasoft.Controls.Capture.WebScanning.listLocalFiles' ><a href="Atalasoft.Controls.Capture.WebScanning.html#.listLocalFiles">listLocalFiles</a></li><li data-type='method' class='deprecated' data-name='Atalasoft.Controls.Capture.WebScanning.saveBase64ToEncryptedLocalFile' ><a href="Atalasoft.Controls.Capture.WebScanning.html#.saveBase64ToEncryptedLocalFile">saveBase64ToEncryptedLocalFile</a></li><li data-type='method' class='deprecated' data-name='Atalasoft.Controls.Capture.WebScanning.setSymmetricEncryptionKey' ><a href="Atalasoft.Controls.Capture.WebScanning.html#.setSymmetricEncryptionKey">setSymmetricEncryptionKey</a></li></ul><ul class='events'><li data-type='event' data-name='Atalasoft.Controls.Capture.WebScanning#event:onImageAcquired' ><a href="Atalasoft.Controls.Capture.WebScanning.html#event:onImageAcquired">onImageAcquired</a></li><li data-type='event' data-name='Atalasoft.Controls.Capture.WebScanning#event:onScanClientReady' ><a href="Atalasoft.Controls.Capture.WebScanning.html#event:onScanClientReady">onScanClientReady</a></li><li data-type='event' data-name='Atalasoft.Controls.Capture.WebScanning#event:onScanCompleted' ><a href="Atalasoft.Controls.Capture.WebScanning.html#event:onScanCompleted">onScanCompleted</a></li><li data-type='event' data-name='Atalasoft.Controls.Capture.WebScanning#event:onScanError' ><a href="Atalasoft.Controls.Capture.WebScanning.html#event:onScanError">onScanError</a></li><li data-type='event' data-name='Atalasoft.Controls.Capture.WebScanning#event:onScanStarted' ><a href="Atalasoft.Controls.Capture.WebScanning.html#event:onScanStarted">onScanStarted</a></li><li data-type='event' data-name='Atalasoft.Controls.Capture.WebScanning#event:onUploadCompleted' ><a href="Atalasoft.Controls.Capture.WebScanning.html#event:onUploadCompleted">onUploadCompleted</a></li><li data-type='event' data-name='Atalasoft.Controls.Capture.WebScanning#event:onUploadError' ><a href="Atalasoft.Controls.Capture.WebScanning.html#event:onUploadError">onUploadError</a></li><li data-type='event' data-name='Atalasoft.Controls.Capture.WebScanning#event:onUploadStarted' ><a href="Atalasoft.Controls.Capture.WebScanning.html#event:onUploadStarted">onUploadStarted</a></li></ul></li><li class="item"><a href="Atalasoft.Controls.Capture.WebScanning.LocalFile.html">LocalFile</a><ul class='methods'><li data-type='method' data-name='Atalasoft.Controls.Capture.WebScanning.LocalFile.asBase64String' ><a href="Atalasoft.Controls.Capture.WebScanning.LocalFile.html#.asBase64String">asBase64String</a></li><li data-type='method' data-name='Atalasoft.Controls.Capture.WebScanning.LocalFile.fromBase64String' ><a href="Atalasoft.Controls.Capture.WebScanning.LocalFile.html#.fromBase64String">fromBase64String</a></li><li data-type='method' data-name='Atalasoft.Controls.Capture.WebScanning.LocalFile.globalPurgeByAge' ><a href="Atalasoft.Controls.Capture.WebScanning.LocalFile.html#.globalPurgeByAge">globalPurgeByAge</a></li><li data-type='method' data-name='Atalasoft.Controls.Capture.WebScanning.LocalFile.list' ><a href="Atalasoft.Controls.Capture.WebScanning.LocalFile.html#.list">list</a></li><li data-type='method' data-name='Atalasoft.Controls.Capture.WebScanning.LocalFile.remove' ><a href="Atalasoft.Controls.Capture.WebScanning.LocalFile.html#.remove">remove</a></li><li data-type='method' data-name='Atalasoft.Controls.Capture.WebScanning.LocalFile.removeAll' ><a href="Atalasoft.Controls.Capture.WebScanning.LocalFile.html#.removeAll">removeAll</a></li><li data-type='method' data-name='Atalasoft.Controls.Capture.WebScanning.LocalFile.setEncryptionKey' ><a href="Atalasoft.Controls.Capture.WebScanning.LocalFile.html#.setEncryptionKey">setEncryptionKey</a></li><li data-type='method' data-name='Atalasoft.Controls.Capture.WebScanning.LocalFile.splitToFiles' ><a href="Atalasoft.Controls.Capture.WebScanning.LocalFile.html#.splitToFiles">splitToFiles</a></li></ul></li></ul><h3>Classes</h3><ul><li class="item"><a href="Atalasoft.Controls.Capture.UploadToCaptureServer.UploadParams.html">UploadParams</a></li><li class="item"><a href="Atalasoft.Controls.Capture.WebScanning.ScanningOptions.html">ScanningOptions</a><ul class='members'><li data-type='member' data-name='Atalasoft.Controls.Capture.WebScanning.ScanningOptions.applyVRS' ><a href="Atalasoft.Controls.Capture.WebScanning.ScanningOptions.html#.applyVRS">applyVRS</a></li><li data-type='member' data-name='Atalasoft.Controls.Capture.WebScanning.ScanningOptions.autoCrop' ><a href="Atalasoft.Controls.Capture.WebScanning.ScanningOptions.html#.autoCrop">autoCrop</a></li><li data-type='member' data-name='Atalasoft.Controls.Capture.WebScanning.ScanningOptions.autoRotate' ><a href="Atalasoft.Controls.Capture.WebScanning.ScanningOptions.html#.autoRotate">autoRotate</a></li><li data-type='member' data-name='Atalasoft.Controls.Capture.WebScanning.ScanningOptions.barcodes' ><a href="Atalasoft.Controls.Capture.WebScanning.ScanningOptions.html#.barcodes">barcodes</a></li><li data-type='member' data-name='Atalasoft.Controls.Capture.WebScanning.ScanningOptions.brightness' ><a href="Atalasoft.Controls.Capture.WebScanning.ScanningOptions.html#.brightness">brightness</a></li><li data-type='member' data-name='Atalasoft.Controls.Capture.WebScanning.ScanningOptions.contrast' ><a href="Atalasoft.Controls.Capture.WebScanning.ScanningOptions.html#.contrast">contrast</a></li><li data-type='member' data-name='Atalasoft.Controls.Capture.WebScanning.ScanningOptions.deskew' ><a href="Atalasoft.Controls.Capture.WebScanning.ScanningOptions.html#.deskew">deskew</a></li><li data-type='member' data-name='Atalasoft.Controls.Capture.WebScanning.ScanningOptions.despeckle' ><a href="Atalasoft.Controls.Capture.WebScanning.ScanningOptions.html#.despeckle">despeckle</a></li><li data-type='member' data-name='Atalasoft.Controls.Capture.WebScanning.ScanningOptions.disableVRSIfInstalledOnWorkstation' ><a href="Atalasoft.Controls.Capture.WebScanning.ScanningOptions.html#.disableVRSIfInstalledOnWorkstation">disableVRSIfInstalledOnWorkstation</a></li><li data-type='member' data-name='Atalasoft.Controls.Capture.WebScanning.ScanningOptions.discardBlankPages' ><a href="Atalasoft.Controls.Capture.WebScanning.ScanningOptions.html#.discardBlankPages">discardBlankPages</a></li><li data-type='member' data-name='Atalasoft.Controls.Capture.WebScanning.ScanningOptions.dpi' ><a href="Atalasoft.Controls.Capture.WebScanning.ScanningOptions.html#.dpi">dpi</a></li><li data-type='member' data-name='Atalasoft.Controls.Capture.WebScanning.ScanningOptions.duplex' ><a href="Atalasoft.Controls.Capture.WebScanning.ScanningOptions.html#.duplex">duplex</a></li><li data-type='member' data-name='Atalasoft.Controls.Capture.WebScanning.ScanningOptions.evrsSettings' ><a href="Atalasoft.Controls.Capture.WebScanning.ScanningOptions.html#.evrsSettings">evrsSettings</a></li><li data-type='member' data-name='Atalasoft.Controls.Capture.WebScanning.ScanningOptions.feeder' ><a href="Atalasoft.Controls.Capture.WebScanning.ScanningOptions.html#.feeder">feeder</a></li><li data-type='member' data-name='Atalasoft.Controls.Capture.WebScanning.ScanningOptions.holeFill' ><a href="Atalasoft.Controls.Capture.WebScanning.ScanningOptions.html#.holeFill">holeFill</a></li><li data-type='member' data-name='Atalasoft.Controls.Capture.WebScanning.ScanningOptions.importEDocs' ><a href="Atalasoft.Controls.Capture.WebScanning.ScanningOptions.html#.importEDocs">importEDocs</a></li><li data-type='member' data-name='Atalasoft.Controls.Capture.WebScanning.ScanningOptions.jpeg' ><a href="Atalasoft.Controls.Capture.WebScanning.ScanningOptions.html#.jpeg">jpeg</a></li><li data-type='member' data-name='Atalasoft.Controls.Capture.WebScanning.ScanningOptions.maxPages' ><a href="Atalasoft.Controls.Capture.WebScanning.ScanningOptions.html#.maxPages">maxPages</a></li><li data-type='member' data-name='Atalasoft.Controls.Capture.WebScanning.ScanningOptions.orientation' ><a href="Atalasoft.Controls.Capture.WebScanning.ScanningOptions.html#.orientation">orientation</a></li><li data-type='member' data-name='Atalasoft.Controls.Capture.WebScanning.ScanningOptions.paperSize' ><a href="Atalasoft.Controls.Capture.WebScanning.ScanningOptions.html#.paperSize">paperSize</a></li><li data-type='member' data-name='Atalasoft.Controls.Capture.WebScanning.ScanningOptions.patchCodes' ><a href="Atalasoft.Controls.Capture.WebScanning.ScanningOptions.html#.patchCodes">patchCodes</a></li><li data-type='member' data-name='Atalasoft.Controls.Capture.WebScanning.ScanningOptions.pixelType' ><a href="Atalasoft.Controls.Capture.WebScanning.ScanningOptions.html#.pixelType">pixelType</a></li><li data-type='member' data-name='Atalasoft.Controls.Capture.WebScanning.ScanningOptions.resultPixelType' ><a href="Atalasoft.Controls.Capture.WebScanning.ScanningOptions.html#.resultPixelType">resultPixelType</a></li><li data-type='member' data-name='Atalasoft.Controls.Capture.WebScanning.ScanningOptions.scanner' ><a href="Atalasoft.Controls.Capture.WebScanning.ScanningOptions.html#.scanner">scanner</a></li><li data-type='member' data-name='Atalasoft.Controls.Capture.WebScanning.ScanningOptions.showProgress' ><a href="Atalasoft.Controls.Capture.WebScanning.ScanningOptions.html#.showProgress">showProgress</a></li><li data-type='member' data-name='Atalasoft.Controls.Capture.WebScanning.ScanningOptions.showScannerUI' ><a href="Atalasoft.Controls.Capture.WebScanning.ScanningOptions.html#.showScannerUI">showScannerUI</a></li><li data-type='member' data-name='Atalasoft.Controls.Capture.WebScanning.ScanningOptions.suppressBackgroundColor' ><a href="Atalasoft.Controls.Capture.WebScanning.ScanningOptions.html#.suppressBackgroundColor">suppressBackgroundColor</a></li><li data-type='member' data-name='Atalasoft.Controls.Capture.WebScanning.ScanningOptions.threshold' ><a href="Atalasoft.Controls.Capture.WebScanning.ScanningOptions.html#.threshold">threshold</a></li><li data-type='member' data-name='Atalasoft.Controls.Capture.WebScanning.ScanningOptions.tiff' ><a href="Atalasoft.Controls.Capture.WebScanning.ScanningOptions.html#.tiff">tiff</a></li></ul></li><li class="item"><a href="BaseImage.html">BaseImage</a><ul class='methods'><li data-type='method' data-name='BaseImage#asBase64String' ><a href="BaseImage.html#asBase64String">asBase64String</a></li><li data-type='method' data-name='BaseImage#clear' ><a href="BaseImage.html#clear">clear</a></li><li data-type='method' data-name='BaseImage#saveEncryptedLocal' ><a href="BaseImage.html#saveEncryptedLocal">saveEncryptedLocal</a></li><li data-type='method' class='deprecated' data-name='BaseImage#AsBase64String' ><a href="BaseImage.html#AsBase64String">AsBase64String</a></li><li data-type='method' class='deprecated' data-name='BaseImage#SaveEncryptedLocalFile' ><a href="BaseImage.html#SaveEncryptedLocalFile">SaveEncryptedLocalFile</a></li></ul><ul class='members'><li data-type='member' data-name='BaseImage#barcodes' ><a href="BaseImage.html#barcodes">barcodes</a></li><li data-type='member' data-name='BaseImage#bitsPerPixel' ><a href="BaseImage.html#bitsPerPixel">bitsPerPixel</a></li><li data-type='member' data-name='BaseImage#discard' ><a href="BaseImage.html#discard">discard</a></li><li data-type='member' data-name='BaseImage#dpi' ><a href="BaseImage.html#dpi">dpi</a></li><li data-type='member' data-name='BaseImage#filename' ><a href="BaseImage.html#filename">filename</a></li><li data-type='member' data-name='BaseImage#front' ><a href="BaseImage.html#front">front</a></li><li data-type='member' data-name='BaseImage#height' ><a href="BaseImage.html#height">height</a></li><li data-type='member' data-name='BaseImage#imprintedText' ><a href="BaseImage.html#imprintedText">imprintedText</a></li><li data-type='member' data-name='BaseImage#localFile' ><a href="BaseImage.html#localFile">localFile</a></li><li data-type='member' data-name='BaseImage#newSheet' ><a href="BaseImage.html#newSheet">newSheet</a></li><li data-type='member' data-name='BaseImage#originalImage' ><a href="BaseImage.html#originalImage">originalImage</a></li><li data-type='member' data-name='BaseImage#patchCode' ><a href="BaseImage.html#patchCode">patchCode</a></li><li data-type='member' data-name='BaseImage#pixelType' ><a href="BaseImage.html#pixelType">pixelType</a></li><li data-type='member' data-name='BaseImage#sheetNo' ><a href="BaseImage.html#sheetNo">sheetNo</a></li><li data-type='member' data-name='BaseImage#width' ><a href="BaseImage.html#width">width</a></li><li data-type='member' data-name='BaseImage#xdpi' ><a href="BaseImage.html#xdpi">xdpi</a></li><li data-type='member' data-name='BaseImage#ydpi' ><a href="BaseImage.html#ydpi">ydpi</a></li><li data-type='member' class='deprecated' data-name='BaseImage#Barcodes' ><a href="BaseImage.html#Barcodes">Barcodes</a></li><li data-type='member' class='deprecated' data-name='BaseImage#BitsPerPixel' ><a href="BaseImage.html#BitsPerPixel">BitsPerPixel</a></li><li data-type='member' class='deprecated' data-name='BaseImage#Filename' ><a href="BaseImage.html#Filename">Filename</a></li><li data-type='member' class='deprecated' data-name='BaseImage#Height' ><a href="BaseImage.html#Height">Height</a></li><li data-type='member' class='deprecated' data-name='BaseImage#ImprintedText' ><a href="BaseImage.html#ImprintedText">ImprintedText</a></li><li data-type='member' class='deprecated' data-name='BaseImage#PatchCode' ><a href="BaseImage.html#PatchCode">PatchCode</a></li><li data-type='member' class='deprecated' data-name='BaseImage#PixelType' ><a href="BaseImage.html#PixelType">PixelType</a></li><li data-type='member' class='deprecated' data-name='BaseImage#SheetNo' ><a href="BaseImage.html#SheetNo">SheetNo</a></li><li data-type='member' class='deprecated' data-name='BaseImage#Width' ><a href="BaseImage.html#Width">Width</a></li><li data-type='member' class='deprecated' data-name='BaseImage#XResolution' ><a href="BaseImage.html#XResolution">XResolution</a></li><li data-type='member' class='deprecated' data-name='BaseImage#YResolution' ><a href="BaseImage.html#YResolution">YResolution</a></li></ul></li><li class="item"><a href="Deliveralbes.html">Deliveralbes</a><ul class='members'><li data-type='member' data-name='Deliveralbes.localFile' ><a href="Deliveralbes.html#.localFile">localFile</a></li><li data-type='member' data-name='Deliveralbes.originalImageFile' ><a href="Deliveralbes.html#.originalImageFile">originalImageFile</a></li><li data-type='member' data-name='Deliveralbes.thumbnail' ><a href="Deliveralbes.html#.thumbnail">thumbnail</a></li></ul></li><li class="item"><a href="Image.html">Image</a><ul class='methods'><li data-type='method' data-name='Image#thumbnail' ><a href="Image.html#thumbnail">thumbnail</a></li><li data-type='method' class='deprecated' data-name='Image#Thumbnail' ><a href="Image.html#Thumbnail">Thumbnail</a></li></ul><ul class='members'></ul></li><li class="item"><a href="Thumbnail.html">Thumbnail</a><ul class='methods'></ul><ul class='members'><li data-type='member' data-name='Thumbnail#base64' ><a href="Thumbnail.html#base64">base64</a></li><li data-type='member' data-name='Thumbnail#format' ><a href="Thumbnail.html#format">format</a></li><li data-type='member' data-name='Thumbnail#jpegCompression' ><a href="Thumbnail.html#jpegCompression">jpegCompression</a></li><li data-type='member' data-name='Thumbnail#quality' ><a href="Thumbnail.html#quality">quality</a></li><li data-type='member' data-name='Thumbnail#requestedHeight' ><a href="Thumbnail.html#requestedHeight">requestedHeight</a></li><li data-type='member' data-name='Thumbnail#requestedWidth' ><a href="Thumbnail.html#requestedWidth">requestedWidth</a></li></ul></li></ul><h3>Globals</h3><ul><li class="item"><a href="global.html#CaptureOptions">CaptureOptions</a></li><li class="item"><a href="global.html#DeliverablesConfig">DeliverablesConfig</a></li><li class="item"><a href="global.html#DeliverablesThumbnailConfig">DeliverablesThumbnailConfig</a></li><li class="item"><a href="global.html#imageDataCallback">imageDataCallback</a></li><li class="item"><a href="global.html#notificationCallback">notificationCallback</a></li><li class="item"><a href="global.html#onBeforeImportCallback">onBeforeImportCallback</a></li><li class="item"><a href="global.html#onCaptureCompleteCallback">onCaptureCompleteCallback</a></li><li class="item"><a href="global.html#onCaptureErrorCallback">onCaptureErrorCallback</a></li><li class="item"><a href="global.html#onFieldRenderComplete">onFieldRenderComplete</a></li><li class="item"><a href="global.html#onFieldsValidationErrorCallback">onFieldsValidationErrorCallback</a></li><li class="item"><a href="global.html#onImageAcquiredCallback">onImageAcquiredCallback</a></li><li class="item"><a href="global.html#onScanCompletedCallback">onScanCompletedCallback</a></li><li class="item"><a href="global.html#onScanErrorCallback">onScanErrorCallback</a></li><li class="item"><a href="global.html#onTrackStatusReceivedCallback">onTrackStatusReceivedCallback</a></li><li class="item"><a href="global.html#onUploadCompletedCallback">onUploadCompletedCallback</a></li><li class="item"><a href="global.html#onUploadErrorCallback">onUploadErrorCallback</a></li><li class="item"><a href="global.html#onUploadStartedCallback">onUploadStartedCallback</a></li><li class="item"><a href="global.html#saveLocalFileCallback">saveLocalFileCallback</a></li><li class="item"><a href="global.html#splitToFilesCallback.">splitToFilesCallback.</a></li><li class="item"><a href="global.html#UploadOptions">UploadOptions</a></li></ul><h3><a href="global.html">Global</a></h3>
+</nav>
+
+<div id="main">
+    
+    <h1 class="page-title">Global</h1>
+    
+
+    
+
+
+
+
+<section>
+
+<header>
+    
+        <h2>
+        
+        </h2>
+        
+    
+</header>
+
+<article>
+    <div class="container-overview">
+    
+        
+
+        
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+        
+    
+    </div>
+
+    
+
+    
+
+    
+
+     
+
+    
+
+    
+
+    
+
+    
+        <h3 class="subsection-title">Type Definitions</h3>
+
+        
+                
+<h4 class="name" id="CaptureOptions">CaptureOptions</h4>
+
+
+
+
+<div class="description">
+    <p><a href="Atalasoft.Controls.Capture.CaptureService.html"><code>Atalasoft.Controls.Capture.CaptureService</code></a> initialization parameters.</p>
+</div>
+
+
+
+
+
+
+
+    <h5 class="subsection-title">Properties:</h5>
+
+    
+
+<table class="props">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+        <th>Attributes</th>
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>handlerUrl</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last"><p>The URL to the web capture request handler. See <a href="tutorial-2-4-capture-server-handlers.html">Capture Handlers Configuration</a> for handler configuration details.</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>onImportCompleted</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type"><a href="global.html#onCaptureCompleteCallback">onCaptureCompleteCallback</a></span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last"><p><a href="Atalasoft.Controls.Capture.CaptureService.html#event:event:onImportComplete"><code>Document import complete</code></a> event handler.</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>onError</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type"><a href="global.html#onCaptureErrorCallback">onCaptureErrorCallback</a></span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last"><p><a href="Atalasoft.Controls.Capture.CaptureService.html#event:event:onError"><code> Document import error</code></a> event handler.</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>onBeforeImport</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type"><a href="global.html#onBeforeImportCallback">onBeforeImportCallback</a></span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last"><p>The function passed in through this parameter will be run prior to importing a document to SharePoint, or KC.</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>onTrackStatusReceived</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type"><a href="global.html#onTrackStatusReceivedCallback">onTrackStatusReceivedCallback</a></span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last"><p><a href="Atalasoft.Controls.Capture.CaptureService.html#event:event:onTrackStatus"><code>Document import status</code></a> event handler</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>onContentTypesCreated</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type"><a href="global.html#notificationCallback">notificationCallback</a></span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last"><p>Callback that is called when content type selection box has been populated.</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>onContentTypeDescriptionsCreated</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type"><a href="global.html#notificationCallback">notificationCallback</a></span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last"><p>Callback that is called when content type description selection box has been populated.</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>onIndexFieldImportValidationError</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type"><a href="global.html#onFieldsValidationErrorCallback">onFieldsValidationErrorCallback</a></span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last"><p><code> onIndexFieldImportValidationError</code> event handler.</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>onBatchFieldImportValidationError</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type"><a href="global.html#onFieldsValidationErrorCallback">onFieldsValidationErrorCallback</a></span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last"><p><a href="Atalasoft.Controls.Capture.CaptureService.html#event:event:onBatchFieldImportValidationError"><code> onBatchFieldImportValidationError</code></a> event handler.</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>onIndexFieldCompleted</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type"><a href="global.html#onFieldRenderComplete">onFieldRenderComplete</a></span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last"><p>Use this parameter to customize event behavior when an index field label, and input field have been created.</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>onBatchFieldCompleted</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type"><a href="global.html#onFieldRenderComplete">onFieldRenderComplete</a></span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last"><p>Use this parameter to customize behavior after each batch field label, and input field have been created.</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>onIndexFieldsCompleted</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type"><a href="global.html#notificationCallback">notificationCallback</a></span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last"><p>Use this parameter to customize event behavior for after all index field labels and input fields have been created.</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>onBatchFieldsCompleted</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type"><a href="global.html#notificationCallback">notificationCallback</a></span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last"><p>Use this parameter to customize behavior after all of the batch fields labels and input fields have been created.</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>contentType</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last"><p>Use this parameter when the client is not bound to any UI elements in a page to set the batch class or repository name for KIC, and SharePoint respectively. See <a href="tutorial-2-3-connect-to-ui.html">Connect to UI Controls</a>.</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>defaultContentType</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last"><p>Use this parameter to specify one content type to be the content type first displayed and selected when the list is populated.</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>contentTypeDescriptionName</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last"><p>Use this parameter when the client is not bound to any UI elements in a page to set the KIC document class/form type pair, or the SharePoint list content type.</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>removedContentTypes</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last"><p>Use this parameter to filter the list of content types displayed in the content type selection drop down. The list (comma separated) specified in the parameter will be removed from the list.</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>removedContentTypeDescriptions</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last"><p>Use this parameter to filter the list of content type descriptions displayed in the content type document list selection drop down. The list (comma separated) specified in the parameter will be removed from the list.</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>loosePages</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last"><p>This parameter enables importing loose pages in to KC through KIC only. Set to &quot;true&quot; to enable. Default is false. To specify a loose pages selection text in the <code>atala-contenttype-document-list</code> selection set the parameter to &quot;true, <any text>&quot;, if unspecified a blank entry is created. See <a href="tutorial-2-3-connect-to-ui.html">Connect to UI Controls</a></p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>displayedLoosePagesForContentType</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last"><p>Use this parameter in conjunction with the <code>loosePages</code> parameter. Will only apply to clients connecting to a KIC service. This take a comma separated list of batch class names which should have the loose pages option included in the content type description name drop down list.</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>indexFields</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last"><p>Comma separated list of index fields name-value pairs. Format <code>&quot;Field1: Value1, Field2: Value2&quot;</code>.</p>
+<p>Use this parameter when the client is not bound to the indexfield UI div to set the <code>indexfields</code> for the specified KC/KIC document class or SharePoint list content type.
+See <a href="tutorial-2-3-connect-to-ui.html">Connect to UI Controls</a></p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>displayedIndexFields</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last"><p>Comma separated list of displayed index fields.</p>
+<p>Use this parameter when the client is bound to the index field dive element to inclusively filter the list of index fields displayed. See <a href="tutorial-2-3-connect-to-ui.html">Connect to UI Controls</a></p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>batchFields</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last"><p>Comma separated list of batch fields name-value pairs. Format <code>&quot;Field1: Value1, Field2: Value2&quot;</code>
+Use this parameter when the client is not bound to the batchfield UI div to set the batch fields for the specified KC/KIC batch class. The batch field value pairs cannot be used when connecting to the handler used to connect to SharePoint.</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>displayedBatchFields</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last"><p>Comma separated list of displayed batch fields.
+Use this parameter when the client is bound to the index field dive element to inclusively filter the list of batch fields displayed. See <a href="tutorial-2-3-connect-to-ui.html">Connect to UI Controls</a></p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+            
+                
+<h4 class="name" id="DeliverablesConfig">DeliverablesConfig</h4>
+
+
+
+
+<div class="description">
+    <p>Image deliverables configuration</p>
+</div>
+
+
+
+
+
+
+
+    <h5 class="subsection-title">Properties:</h5>
+
+    
+
+<table class="props">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+        <th>Attributes</th>
+        
+
+        
+        <th>Default</th>
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>format</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+
+                
+                </td>
+            
+
+            
+                <td class="default">
+                
+                </td>
+            
+
+            <td class="description last"><p>specifies the image format to store image data.</p>
+<p>Supported format values are:</p>
+<table>
+<thead>
+<tr>
+<th>Value</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>&quot;bmp&quot;</td>
+<td>Windows BMP file</td>
+</tr>
+<tr>
+<td>&quot;gif&quot;</td>
+<td>Standard GIF file</td>
+</tr>
+<tr>
+<td>&quot;jpg&quot; or 'jpeg'</td>
+<td>standard JPEG (technically, JFIF)</td>
+</tr>
+<tr>
+<td>&quot;png&quot;</td>
+<td>standard PNG file</td>
+</tr>
+<tr>
+<td>&quot;tif&quot; or &quot;tiff&quot;</td>
+<td>TIFF file TIFF file</td>
+</tr>
+</tbody>
+</table>
+<p>Bitonal images are written to TIFF with CCITT G4 compression. Color and grayscale are written uncompressed, unless the tiff.jpegCompression option is true. |</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>jpegCompression</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">boolean</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+                </td>
+            
+
+            
+                <td class="default">
+                
+                    false
+                
+                </td>
+            
+
+            <td class="description last"><p>indicates whether to use JPEG compression for TIFF files.</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>quality</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">number</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+                </td>
+            
+
+            
+                <td class="default">
+                
+                    75
+                
+                </td>
+            
+
+            <td class="description last"><p>specifies the quality parameter if JPEG compression is enabled or  JPEG format is requested.</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+            
+                
+<h4 class="name" id="DeliverablesThumbnailConfig">DeliverablesThumbnailConfig</h4>
+
+
+
+
+<div class="description">
+    <p>Pre-generated image thumbnail configuration</p>
+</div>
+
+
+
+
+
+
+
+    <h5 class="subsection-title">Properties:</h5>
+
+    
+
+<table class="props">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+        <th>Attributes</th>
+        
+
+        
+        <th>Default</th>
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>format</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+
+                
+                </td>
+            
+
+            
+                <td class="default">
+                
+                </td>
+            
+
+            <td class="description last"><p>specifies the image format to store image data.</p>
+<p>For the list of supported formats see <a href="global.html#DeliverablesConfig"><code>DeliverablesConfig</code></a>.</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>jpegCompression</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">boolean</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+                </td>
+            
+
+            
+                <td class="default">
+                
+                    false
+                
+                </td>
+            
+
+            <td class="description last"><p>indicates whether to use JPEG compression for TIFF files.</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>quality</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">number</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+                </td>
+            
+
+            
+                <td class="default">
+                
+                    75
+                
+                </td>
+            
+
+            <td class="description last"><p>specifies the quality parameter if JPEG compression is enabled or  JPEG format is requested.</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>height</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">number</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+                </td>
+            
+
+            
+                <td class="default">
+                
+                </td>
+            
+
+            <td class="description last"><p>thumbnail height.</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>width</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">number</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+                </td>
+            
+
+            
+                <td class="default">
+                
+                </td>
+            
+
+            <td class="description last"><p>thumbnail width.</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+            
+                
+
+    
+
+    
+        <h4 class="name" id="imageDataCallback"><span class="type-signature"></span>imageDataCallback<span class="signature">(data)</span><span class="type-signature"></span></h4>
+    
+    
+
+
+
+<div class="description">
+    <p>Callback signature for API methods retrieving image data from local file.</p>
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>data</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>Base64 representation of the image data.</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            
+                
+
+    
+
+    
+        <h4 class="name" id="notificationCallback"><span class="type-signature"></span>notificationCallback<span class="signature">()</span><span class="type-signature"></span></h4>
+    
+    
+
+
+
+<div class="description">
+    <p>Notification callback signature. The callback function that is called without parameters.</p>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            
+                
+
+    
+
+    
+        <h4 class="name" id="onBeforeImportCallback"><span class="type-signature"></span>onBeforeImportCallback<span class="signature">()</span><span class="type-signature"> &rarr; {boolean}</span></h4>
+    
+    
+
+
+
+<div class="description">
+    <p>Callback signature for <a href="global.html#CaptureOptions"><code>onBeforeImport</code></a> parameter.</p>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+<div class="param-desc">
+    <ul>
+<li>Value indicating whether import should be started.</li>
+</ul>
+<p>This callback could be used to intercept import triggered from automatically generated UI.</p>
+</div>
+
+
+
+<dl class="param-type">
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">boolean</span>
+
+
+    </dd>
+</dl>
+
+    
+
+
+
+            
+                
+
+    
+
+    
+        <h4 class="name" id="onCaptureCompleteCallback"><span class="type-signature"></span>onCaptureCompleteCallback<span class="signature">(data, id)</span><span class="type-signature"></span></h4>
+    
+    
+
+
+
+<div class="description">
+    <p>Callback signature for <a href="Atalasoft.Controls.Capture.CaptureService.html#event:event:onImportComplete"><code> onImportComplete</code></a> event.</p>
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>data</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Object</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>Data object received from server.</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>id</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>imported document identifier.</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            
+                
+
+    
+
+    
+        <h4 class="name" id="onCaptureErrorCallback"><span class="type-signature"></span>onCaptureErrorCallback<span class="signature">(error, data)</span><span class="type-signature"></span></h4>
+    
+    
+
+
+
+<div class="description">
+    <p>Callback signature for <a href="Atalasoft.Controls.Capture.CaptureService.html#event:event:onError"><code> onError</code></a> event.</p>
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>error</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>Error identifier, one of <a href="Atalasoft.Controls.Capture.html#.Errors"><code>Atalasoft.Controls.Capture.Errors</code></a>.</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>data</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Object</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>Additional error data.</p>
+                <h6>Properties</h6>
+                
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>message</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>Technical error message.</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+            </td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            
+                
+
+    
+
+    
+        <h4 class="name" id="onFieldRenderComplete"><span class="type-signature"></span>onFieldRenderComplete<span class="signature">(field)</span><span class="type-signature"></span></h4>
+    
+    
+
+
+
+<div class="description">
+    <p>Callback signature for <a href="Atalasoft.Controls.Capture.CaptureService.html#event:event:onIndexFieldCompleted"><code>onIndexFieldCompleted</code></a> and <a href="Atalasoft.Controls.Capture.CaptureService.html#event:event:onBatchFieldCompleted"><code>onBatchFieldCompleted</code></a> events.</p>
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>field</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>The field name.</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            
+                
+
+    
+
+    
+        <h4 class="name" id="onFieldsValidationErrorCallback"><span class="type-signature"></span>onFieldsValidationErrorCallback<span class="signature">(error, validationResults)</span><span class="type-signature"></span></h4>
+    
+    
+
+
+
+<div class="description">
+    <p>Callback signature for <a href="Atalasoft.Controls.Capture.CaptureService.html#event:event:onIndexFieldImportValidationError"><code>onIndexFieldImportValidationError</code></a> event.</p>
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>error</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>Error identifier, one of <a href="Atalasoft.Controls.Capture.html#.Errors"><code>Atalasoft.Controls.Capture.Errors</code></a>.</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>validationResults</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Array.&lt;boolean></span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>Array of field validation results.</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            
+                
+
+    
+
+    
+        <h4 class="name" id="onImageAcquiredCallback"><span class="type-signature"></span>onImageAcquiredCallback<span class="signature">(index, image)</span><span class="type-signature"></span></h4>
+    
+    
+
+
+
+<div class="description">
+    <p>Callback signature for <a href="Atalasoft.Controls.Capture.WebScanning.html#event:onImageAcquired"><code>onImageAcquired</code></a> event.</p>
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>index</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">number</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>Image index.</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>image</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type"><a href="Image.html">Image</a></span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>Acquired image object.</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            
+                
+
+    
+
+    
+        <h4 class="name" id="onScanCompletedCallback"><span class="type-signature"></span>onScanCompletedCallback<span class="signature">(params)</span><span class="type-signature"></span></h4>
+    
+    
+
+
+
+<div class="description">
+    <p>Callback signature for <a href="Atalasoft.Controls.Capture.WebScanning.html#event:onScanCompleted"><code>onScanCompleted</code></a> event.</p>
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>params</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">object</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>Completion info.</p>
+                <h6>Properties</h6>
+                
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>success</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">boolean</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>Indicates whether scan was completed successfully.</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>error</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">object</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>Error details if completion was unsuccessful.</p>
+                <h6>Properties</h6>
+                
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>message</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>Error identifier, one of <a href="Atalasoft.Controls.Capture.html#.Errors"><code>Atalasoft.Controls.Capture.Errors</code></a>.</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>details</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>Additional technical error information.</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+            </td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+            </td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            
+                
+
+    
+
+    
+        <h4 class="name" id="onScanErrorCallback"><span class="type-signature"></span>onScanErrorCallback<span class="signature">(error, params)</span><span class="type-signature"></span></h4>
+    
+    
+
+
+
+<div class="description">
+    <p>Callback signature for <a href="Atalasoft.Controls.Capture.WebScanning.html#event:onScanError"><code>onScanError</code></a> event. See <a href="tutorial-3-handling-errors.html">Handling Errors</a></p>
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>error</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>Error identifier, one of <a href="Atalasoft.Controls.Capture.html#.Errors"><code>Atalasoft.Controls.Capture.Errors</code></a>.</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>params</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">object</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>additional error metadata. Object structure depends on particular error type.</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            
+                
+
+    
+
+    
+        <h4 class="name" id="onTrackStatusReceivedCallback"><span class="type-signature"></span>onTrackStatusReceivedCallback<span class="signature">(status)</span><span class="type-signature"></span></h4>
+    
+    
+
+
+
+<div class="description">
+    <p>Callback signature for <a href="Atalasoft.Controls.Capture.CaptureService.html#event:event:onTrackStatus"><code>onTrackStatus</code></a> event.</p>
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>status</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>Document import status.</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            
+                
+
+    
+
+    
+        <h4 class="name" id="onUploadCompletedCallback"><span class="type-signature"></span>onUploadCompletedCallback<span class="signature">(success, documentFilename, response, responseStatus<span class="signature-attributes">opt</span>)</span><span class="type-signature"></span></h4>
+    
+    
+
+
+
+<div class="description">
+    <p>Callback signature for <a href="Atalasoft.Controls.Capture.UploadToCaptureServer.html#event:event:onUploadCompleted"><code>onUploadCompleted</code></a></p>
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+        <th>Attributes</th>
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>success</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">boolean</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last"><p>indicates whether upload was successful</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>documentFilename</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last"><p>uploaded file name received from server</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>response</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Object</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last"><p>arbitrary json object received from server</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>responseStatus</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">int</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last"><p>HTTP response status code if upload failed</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            
+                
+
+    
+
+    
+        <h4 class="name" id="onUploadErrorCallback"><span class="type-signature"></span>onUploadErrorCallback<span class="signature">(errorMsg, params)</span><span class="type-signature"></span></h4>
+    
+    
+
+
+
+<div class="description">
+    <p>Callback signature for <a href="Atalasoft.Controls.Capture.UploadToCaptureServer.html#event:event:onUploadError"><code>onUploadError</code></a></p>
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>errorMsg</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>error message from <a href="Atalasoft.Controls.Capture.html#.Errors"><code>Atalasoft.Controls.Capture.Errors</code></a></p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>params</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Object</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>additional error metadata</p>
+                <h6>Properties</h6>
+                
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+        <th>Attributes</th>
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>handlerUrl</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last"><p>url of the upload handler</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>responseStatusMsg</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">int</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last"><p>HTTP response status code if response finished without timeout</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>responseObject</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Object</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last"><p>server response object if response finished without timeout</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>timeout</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">int</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last"><p>ajax timeout value for this upload in milliseconds in case if response finished timeout error</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+            </td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            
+                
+
+    
+
+    
+        <h4 class="name" id="onUploadStartedCallback"><span class="type-signature"></span>onUploadStartedCallback<span class="signature">()</span><span class="type-signature"></span></h4>
+    
+    
+
+
+
+<div class="description">
+    <p>Callback signature for <a href="Atalasoft.Controls.Capture.UploadToCaptureServer.html#event:event:onUploadStarted"><code>onUploadStarted</code></a> event.</p>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            
+                
+
+    
+
+    
+        <h4 class="name" id="saveLocalFileCallback"><span class="type-signature"></span>saveLocalFileCallback<span class="signature">(fileId)</span><span class="type-signature"></span></h4>
+    
+    
+
+
+
+<div class="description">
+    <p>Callback signature for API methods that saving data to local file.</p>
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>fileId</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>Identifier of the created local file.</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            
+                
+
+    
+
+    
+        <h4 class="name" id="splitToFilesCallback."><span class="type-signature"></span>splitToFilesCallback.<span class="signature">(chunkFiles)</span><span class="type-signature"></span></h4>
+    
+    
+
+
+
+<div class="description">
+    <p>Callback signature for <a href="Atalasoft.Controls.Capture.WebScanning.LocalFile.html#.splitToFiles"><code> splitToFiles</code></a> method.</p>
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>chunkFiles</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Array.&lt;string></span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>Array of split chunks identifiers.</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            
+                
+<h4 class="name" id="UploadOptions">UploadOptions</h4>
+
+
+
+
+<div class="description">
+    <p>Additional data for upload HTTP requests</p>
+</div>
+
+
+
+
+
+
+
+    <h5 class="subsection-title">Properties:</h5>
+
+    
+
+<table class="props">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+        <th>Attributes</th>
+        
+
+        
+        <th>Default</th>
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>formData</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Object</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+                </td>
+            
+
+            
+                <td class="default">
+                
+                    null
+                
+                </td>
+            
+
+            <td class="description last"><p>arbitrary plain object containing additional data that should be passed to server. See <a href="tutorial-4-automatic-upload.html">Upload to Capture Handler</a></p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>extraParts</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Array.&lt;string></span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+                </td>
+            
+
+            
+                <td class="default">
+                
+                </td>
+            
+
+            <td class="description last"><p>a list of additional parts to be inserted in the multipart body of each upload. See <a href="tutorial-4-automatic-upload.html">Upload to Capture Handler</a></p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+            
+    
+
+    
+</article>
+
+</section>
+
+
+
+
+</div>
+
+<br class="clear">
+
+<footer>
+    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.4.3</a> on Mon Mar 13 2017 16:29:54 GMT+0300 (Russia TZ 2 Standard Time) using the Minami theme.
+</footer>
+
+<script>prettyPrint();</script>
+<script src="scripts/linenumber.js"></script>
+<script src="scripts/atalasoft-jsdoc.js"></script>
+</body>
+</html>
