@@ -576,10 +576,12 @@ dl.param-type {
   #main {
     width: 100%;
     min-width: 360px;
+    float: left;
   }
 
   #main h1.page-title {
     margin: 1em 0;
+    line-height: 100%
   }
 
   #main section {
