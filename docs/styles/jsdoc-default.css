@@ -91,6 +91,10 @@ tt, code, kbd, samp {
   border-radius: 5px;
 }
 
+img {
+  max-width: 100%
+}
+
 .class-description {
   font-size: 130%;
   line-height: 140%;
@@ -316,6 +320,10 @@ footer {
   margin: 0 30px;
   background-color: #fff;
   color: #4D4E53;
+}
+
+.prettyprint code:empty:before {
+  content: '';
 }
 
 .prettyprint > code {
@@ -579,9 +587,12 @@ dl.param-type {
     float: left;
   }
 
-  #main h1.page-title {
-    margin: 1em 0;
+  #main h1{    
     line-height: 100%
+  }
+  
+  #main h1.page-title {
+    margin: 1em 0;    
   }
 
   #main section {
@@ -590,6 +601,10 @@ dl.param-type {
 
   footer {
     margin-left: 0;
+  }
+  
+  th.default, td.default {
+    display: none;
   }
 }
 

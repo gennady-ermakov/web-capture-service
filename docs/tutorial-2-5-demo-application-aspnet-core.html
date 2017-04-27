@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="IE=edge" >
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <title>Tutorial: Document Capture Server Configuration - Documentation</title>
+    <title>Tutorial: Demo Application (ASP.NET Core) - Documentation</title>
 
     <script src="scripts/prettify/prettify.js"></script>
     <script src="scripts/prettify/lang-css.js"></script>
@@ -34,7 +34,7 @@
 
 <div id="main">
     
-    <h1 class="page-title">Tutorial: Document Capture Server Configuration</h1>
+    <h1 class="page-title">Tutorial: Demo Application (ASP.NET Core)</h1>
     
 
     <section>
@@ -42,209 +42,130 @@
 <header>
     
 
-    <h2>Document Capture Server Configuration</h2>
+    <h2>Demo Application (ASP.NET Core)</h2>
 </header>
 
 <article>
-    <p>﻿
-This section covers documents to remote services such as Kofax Import Connector and SharePoint.</p>
-<h2>Connect to SharePoint</h2><h5>SharepointHandler limitations</h5><ul>
-<li>Sub-sites are not supported.</li>
-<li>Folder navigation is not currently supported, documents will only be imported into the top.</li>
-<li>Document libraries are currently the only type of SharePoint list support for document import.</li>
-<li>Setting additional fields other than the title, and name for specific list ContentTypes is not supported.</li>
-</ul>
-<h5>Add a SharepointHandler to a project</h5><p>These are the basic steps to add a SharePoint handler to your application.</p>
+    <p>﻿Starting with DotImage 11.0 WebCapture supports <a href="https://www.asp.net/core">ASP.NET Core</a> framework. 
+This topic tells you how to create a sample application using <a href="https://nuget.org">Nuget</a> and <a href="https://bower.io">Bower</a> packages. 
+It's quite similar to the <a href="tutorial-2-2-demo-application.html">original topic</a>, but with some differences specific to the new framework.</p>
+<p>Follow these steps to create a new capture-enabled web project.
+Topics include adding the document viewer and scanning controls to your web page and handling uploaded content on the server.</p>
+<p>This guide is intended to be followed precisely, but it is not supposed to give you a solution that is ready to
+deploy. Once you have succeeded building the example project, you can begin modifying it to fit your organization.</p>
+<h2>Set up a new project</h2><p>A capture-enabled web application requires these essential elements:</p>
 <ul>
-<li><p><strong>General setup</strong></p>
-<ul>
-<li>Create or open a web application project in your development environment.</li>
-<li>Add the Atalasoft.dotImage.WebControls reference .</li>
-<li>Add licensing information to the project.</li>
-<li>Make the necessary configuration changes to your project.</li>
+<li>A client-side HTML page containing the web scanning controls and document viewer.</li>
+<li>A server-side startup class that will be used for configuring our web host.</li>
+<li>WebCapture and WebDocumentViewer resources files.</li>
+<li>An upload location for scanned documents.</li>
 </ul>
-</li>
-<li><p><strong>Add the handler</strong></p>
-<ul>
-<li>Add a new generic handler to the project.</li>
-<li>Extend the new handler from the <code>SharepointHandler</code> class found in the <code>Atalasoft.dotImage.WebControls.Capture</code> namespace in the <code>Atalasoft.dotImage.WebControls</code> assembly.</li>
-<li>Add any additional authentication or handler logic if you need it.</li>
-</ul>
-</li>
-<li><p><strong>Add the client</strong></p>
-<ul>
-<li>Add the WebDocViewer client files and handler to your project.</li>
-<li>Modify the JavaScript API configuration to point to the correct WebDocViewer and SharePoint handler URLs.</li>
-</ul>
-</li>
-</ul>
-<p>Refer to the included WebCaptureDemo for an already configured project. The demo's client .aspx file will need to be modified to point to the <code>SharepointHandler</code> for its capture handler instead of another capture service.</p>
-<h3>Extend and configure SharepointHandler</h3><p>The SharepointHandler needs to be extended to handle SharePoint authentication and to configure the services connection. The minimum required configuration that must be specified is the SharepointWsdlLocation for connecting with SharePoint Web services. In addition to the standard WCF elements, endpoints and bindings must be added for each of the CMIS services, and the SharePoint List Service. In the examples below only a <code>basicHttpBinding</code> is shown. Use of a different type of binding is possible.</p>
-<ul>
-<li><p><strong>Add the endpoints to web.config</strong></p>
-<p>  Endpoints must be specified for the Copy, Lists, and Web SharePoint Web services, which should be placed in the <code>&lt;client&gt;</code> section of<code>&lt;system.serviceModel&gt;</code> in your configuration. If you are extending the <code>SharepointHandler</code> and <code>SharepointConnector</code>, you may need to specify endpoints to additional SharePoint Web services. For a complete list of SharePoint 2010 Web services, see: http://msdn.microsoft.com/enus/library/ee705814.aspx.</p>
-<pre class="prettyprint source"><code>  &lt;endpoint address=&quot;http://your.sp2010server.com/_vti_bin/Lists.asmx&quot;binding=&quot;basicHttpBinding&quot; bindingConfiguration=&quot;ListsSoap&quot; contract=&quot;ListsSoap&quot; name=&quot;ListsSoap&quot; />
-  &lt;endpoint address=&quot;http://your.sp2010server.com/_vti_bin/Copy.asmx&quot; binding=&quot;basicHttpBinding&quot; bindingConfiguration=&quot;CopySoap&quot; contract=&quot;CopySoap&quot; name=&quot;CopySoap&quot; />
-  &lt;endpoint address=&quot;http://your.sp2010server.com/_vti_bin/Webs.asmx&quot; binding=&quot;basicHttpBinding&quot; bindingConfiguration=&quot;WebsSoap&quot; contract=&quot;WebsSoap&quot; name=&quot;WebsSoap&quot; /></code></pre></li>
-<li><p><strong>Add the bindings to web.config</strong></p>
-<p>  For each endpoint, specify a corresponding binding. All SharePoint bindings require an <code>MTOM</code>
-  message encoding. </p>
-<p>  The following block shows the binding to pair with the SharePoint Lists service endpoint bindings</p>
-<pre class="prettyprint source"><code>  &lt;binding name=&quot;ListsSoap&quot; closeTimeout=&quot;00:01:00&quot; openTimeout=&quot;00:01:00&quot; receivei``meout=&quot;00:10:00&quot; sendTimeout=&quot;00:01:00&quot; allowCookies=&quot;false&quot;
-            bypassProxyOnLocal=&quot;false&quot; hostNameComparisonMode=&quot;StrongWildcard&quot; maxBufferSize=&quot;65536&quot; maxBufferPoolSize=&quot;524288&quot; 
-            maxReceivedMessageSize=&quot;65536&quot; messageEncoding=&quot;Mtom&quot; textEncoding=&quot;utf-8&quot; transferMode=&quot;Buffered&quot; useDefaultWebProxy=&quot;true&quot;>
-    &lt;readerQuotas maxDepth=&quot;32&quot; maxStringContentLength=&quot;8192&quot; maxArrayLength=&quot;16384&quot; maxBytesPerRead=&quot;4096&quot; maxNameTableCharCount=&quot;16384&quot;/>
-    &lt;security mode=&quot;TransportCredentialOnly&quot;>
-      &lt;transport clientCredentialType=&quot;Windows&quot;/>
-    &lt;/security>
-  &lt;/binding></code></pre></li>
-</ul>
-<pre class="prettyprint source"><code>Using this binding as a template, create a binding for each of the following names, which correspond to endpoints.
-1. ListsSoap
-2. CopySoap
-3. WebsSoap
-
-Apart from the name attribute, each of these bindings will have the same configuration unless you have a reason to customize. The `maxReceivedMessageSize` attribute may need to be adjusted depending on the amount of content that will be returned for a specific repository.</code></pre><ul>
-<li><p><strong>Set the atala-upload folder location</strong></p>
-<p>  By default, the client javascript api uploads scanned documents to a folder named <code>atala-upload-folder</code> in the root of the website. To change the location where scanned documents are stored, add the following to the <code>&lt;appSettings&gt;</code> section of your configuration.</p>
-<p>  <code>&lt;add key=&quot;atala_uploadpath&quot; value=&quot;C:\explicit\path\to\upload\directory&quot;/&gt;</code></p>
-</li>
-</ul>
-<ul>
-<li><p><strong>Web applications authentication</strong></p>
-<p>  If you are configuring a web application, make sure the following settings are in the web.config file, <code>&lt;system.web&gt;</code> section.</p>
-<pre class="prettyprint source"><code>  &lt;authentication mode=&quot;Windows&quot;/>
-  &lt;identity impersonate=&quot;true&quot; /></code></pre></li>
-</ul>
-<h5>Authentication</h5><p>The available authentication options depend upon how SharePoint and the web application containing the SharepointHandler are deployed. Due to restrictions in the Windows security model, communicating with SharePoint using client impersonation is not possible when the SharePoint server and hosted web application reside on different servers. The delegating IIS server in the middle is not able to forward network requests of the originating client on to the remote SharePoint server. In this environment, you are limited to the following options to successfully communicate between the client scanning application and SharePoint</p>
-<ul>
-<li><p><strong>Specify a User Account in web.config</strong></p>
-<p>  Specify the username and password of an ActiveDirectory user in the <code>&lt;identity&gt;</code> tag in your web.config.
-  IIS will impersonate the specified user when making requests to the remote SharePoint server.</p>
-<p>  <code>&lt;identity impersonate=&quot;true&quot; userName=&quot;DOMAIN\username&quot; password=&quot;password&quot; /&gt;</code></p>
-</li>
-<li><p><strong>Override CreateAuthenticationSession in your handler</strong></p>
-<p>  <code>AuthenticationSession</code> objects are used by the <code>SharepointHandler</code> to perform actions before and after making requests to SharePoint. Overriding <code>CreateAuthenticationSession</code> allows you to specify what <code>AuthenticationSession</code> object should be used at those points.     By default the <code>SharepointHandler</code> uses a <code>NullAuthenticationSession</code>, which performs no actions. Another available type is the <code>CredentialAuthenticationSession</code>, which is constructed with the domain, username, and password of a Windows account, and instructs IIS to impersonate the specified user. This is similar to specifying an account in web.config, but the impersonation is only used while making SharePoint requests, rather than being used across the entire website.</p>
-<pre class="prettyprint source lang-c#"><code>  public class Handler : SharepointHandler
-  {
-      protected override AuthenticationSession CreateAuthenticationSession()
-      {
-          return new CredentialAuthenticationSession(&quot;DOMAIN&quot;, &quot;username&quot;, &quot;password&quot;);
-      }
-  }</code></pre><p>  It is also possible to write your own types by deriving from <code>AuthenticationSession</code> and implementing the abstract methods <code>Enter</code> and <code>Leave</code>, which setup and undo any changes in authentication. </p>
-<p>  You may want to write your own <code>AuthenticationSession</code> if you need to impersonate a user that is dynamically fetched from your own user store, rather than specifying a single account to use for all requests.</p>
-</li>
-</ul>
-<h5>Certificates</h5><p>By default, only valid certificates can be used to successfully connect the handler to SharePoint over a secure connection. For more information on setting up certificates and certificate stores, see: http://msdn.microsoft.com/en-us/library/ff648360.aspx.</p>
-<h2>Connect to KIC</h2><p>These instruction are for configuring an application to connect to an existing Kofax Import Connector server.</p>
-<h5>Extend the KicHandler</h5><ol>
-<li>Open the web application project in you development environment.</li>
-<li>Add a generic handler to the project.</li>
-<li>Extend the handler that was just created with the <code>KicHandler</code> found in the <code>Atalasoft.dotImage.WebControls.Capture</code> namespace in the <code>Atalasoft.dotImage.WebControls</code> assembly.</li>
-</ol>
-<pre class="prettyprint source lang-c#"><code>
-
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-namespace TheApplicationNamespace
+<p><em><strong>Note</strong></em> <code>It's highly recommended to use Visual Studio 2017 for this demo.</code></p>
+<p>Start by creating a new <code>ASP.NET Core Web Application (.NET Framework)</code> in Visual Studio targeting .NET 4.5.2.</p>
+<p><em><strong>Note</strong></em> <code>In the following instructions the project is called BasicWebCapture.</code></p>
+<p>Choose <code>Empty</code> template on the following window</p>
+<p><img src="img/EmptyTemplate.png" alt=""></p>
+<p>Visual Studio automatically will create you a project with &quot;Hello world&quot; application. It already has a <code>Startup</code> class and
+all necessary Nuget packages for running this application as self-hosted, of course, you can use IIS Express instead. </p>
+<h3>Add Nuget packages for server-side</h3><p>Add the Nuget package <code>Atalasoft.DotImage.WebControls.Core.x86</code> it automatically downloads all necessary
+dependencies on other DotImage and ASP.NET Core components. If you plan to run your application on a 64-bit server,
+you should use the package <code>Atalasoft.DotImage.WebControls.Core.x64</code>.</p>
+<p>Since the Web Document Viewer and Web Capture Service use a file system to save scan results or show results on the page,
+you also need the package <code>Microsoft.AspNetCore.StaticFiles</code>.</p>
+<h3>Add Bower packages for client-side</h3><p>First of all, you need to manually a <code>Bower configuration file</code> from the template with the same name.
+By default, this file will be called <code>bower.json</code>, it also adds a file <code>.bowerrc</code> which will contain
+a directory where all packages will be stored.</p>
+<p>Now you can add a Bower packages <code>web-document-viewer</code> and <code>web-capture-service</code> they also automatically add all
+necessary dependencies.</p>
+<h3>Create the upload location</h3><p>Create a new directory under the <code>wwwroot</code> folder of your project called <code>atala-capture-upload</code>. This is the default path that will be used for storing images uploaded by the web scanning controls.</p>
+<h3>Prepare <code>Startup</code> class</h3><p>Before we can use DotImage middlewares, we need to configure our application for them.</p>
+<h4><code>ConfigureServices</code> method</h4><p>Web Capture Service uses multipart content-type to upload scanned or imported images to a server.
+So, we need to setup our server length limits of these requests. To simplify our code, we extend limits to the maximum values.
+To do this, we configure a <code>FormOptions</code> using next code:</p>
+<pre class="prettyprint source lang-csharp"><code>services.Configure&lt;FormOptions>(opt =>
 {
-    public class MyKicHandler : KicHandler
-    {
+    opt.BufferBodyLengthLimit = Int64.MaxValue;
+    opt.ValueLengthLimit = Int32.MaxValue;
+    opt.MultipartBodyLengthLimit = Int64.MaxValue;
+});</code></pre><h4><code>Configure</code> method</h4><p>How was mentioned before, Web Document Viewer and Web Capture need to access to the file system.
+So, we need to add middlewares to work with files. To do this, you need to add following strings in the <code>Startup.Configure</code> method:</p>
+<pre class="prettyprint source lang-csharp"><code>app.UseDefaultFiles();
+app.UseStaticFiles();</code></pre><p>Also, you need to delete &quot;Hello world&quot; code string, since we don't need it.</p>
+<h2>Set up server-side components</h2><h3>Add the Web Document Viewer middleware</h3><p>The Web Document Viewer middleware is responsible for communicating with the Web Document Viewer
+embedded in your page, and is separate from the capture middleware.</p>
+<p>Add a new line of code to the <code>Startup.Configure</code> method:</p>
+<pre class="prettyprint source lang-csharp"><code>app.Map(&quot;/wdv&quot;, wdvApp => { wdvApp.UseWebDocumentViewerMiddleware(); });</code></pre><p>That's all! If you want to customize this middleware, you can choose another overload of the method
+<code>UseWebDocumentViewerMiddleware</code> that accepts implementation of the interface <code>IWebDocumentViewerCallbacks</code>.</p>
+<h3>Add the Web Capture middleware</h3><p>The Web Capture middleware is responsible for handling file uploads from the scanning controls embedded in your page,
+and routing them to their next destination along with any necessary metadata.
+It is also responsible for supplying the scanning controls with the available content and document types, and status information.</p>
+<p>For this guide, we will create a default middleware, without any customization.
+But you can implement the interface <code>IWebCaptureServiceCallbacks</code> and pass it to the method <code>UseWebcaptureMiddleware</code>.</p>
+<p>Add a new line of code to the <code>Startup.Configure</code> method:</p>
+<pre class="prettyprint source lang-csharp"><code>app.Map(&quot;/wcs&quot;, wcsApp => { wcsApp.UseWebCaptureMiddleware(); });</code></pre><h2>Set up the scanning controls and viewer</h2><p>The setup for web scanning just requires placing some JavaScript, CSS, and HTML into your page.</p>
+<h3>Include the web resources</h3><p>Add the following script and link tags in your page's head section to include the necessary Web Document Viewer and Web Capture code and dependencies.</p>
+<pre class="prettyprint source lang-html"><code>&lt;head>
+    &lt;!-- Scripts for Web Viewing -->
+    &lt;script src=&quot;lib/jquery/jquery.min.js&quot; type=&quot;text/javascript&quot;>&lt;/script>
+    &lt;script src=&quot;lib/jquery-ui/jquery-ui.min.js&quot; type=&quot;text/javascript&quot;>&lt;/script>
+    &lt;script src=&quot;lib/web-document-viewer/atalaWebDocumentViewer.js&quot; type=&quot;text/javascript&quot;>&lt;/script>
+
+    &lt;!-- Script for Web Capture -->
+    &lt;script src=&quot;lib/web-capture-service/atalaWebCapture.js&quot; type=&quot;text/javascript&quot;>&lt;/script>
+
+    &lt;!-- Style for Web Viewer -->
+    &lt;link href=&quot;lib/jquery-ui/themes/base/jquery.ui.all.css&quot; rel=&quot;stylesheet&quot;/>
+    &lt;link href=&quot;lib/web-document-viewer/atalaWebDocumentViewer.css&quot; rel=&quot;stylesheet&quot;/>
+
+&lt;/head></code></pre><h3>Configure the controls</h3><p>The web scanning and web viewing controls need to be initialized and configured to set up connections to the right middlewares,
+specify behavior for events, and so forth.
+This can be done with another block of JavaScript, either included or pasted directly within your page's head somewhere
+below the added dependencies.</p>
+<pre class="prettyprint source lang-html"><code>&lt;script type=&quot;text/javascript&quot;>
+// Initialize Web Scanning and Web Viewing
+$(function() {
+    try {
+        var viewer = new Atalasoft.Controls.WebDocumentViewer({
+            parent: $('.atala-document-container'),
+            toolbarparent: $('.atala-document-toolbar'),
+            serverurl: 'wdv'
+        });
+        Atalasoft.Controls.Capture.WebScanning.initialize({
+            handlerUrl: 'wcs',
+            onUploadCompleted: function(eventName, eventObj) {
+                if (eventObj.success) {
+                    viewer.OpenUrl(&quot;atala-capture-upload/&quot; + eventObj.documentFilename);
+                    Atalasoft.Controls.Capture.CaptureService.documentFilename =
+                    eventObj.documentFilename;
+                }
+            },
+            scanningOptions: { pixelType: 0 }
+        });
     }
-}</code></pre><h5>Configure KicHandler</h5><ul>
-<li><p><strong>Add the KIC endpoints to web.config</strong></p>
-<p>  To connect to Kofax Import Connector a WCF endpoint, a binding must be added to the application’s web.config. In the provided example a standard basicHttpBinding will be used, but other appropriate binding types are possible choices to use as the WCF binding.</p>
-<pre class="prettyprint source"><code>  &lt;system.serviceModel>
-      &lt;client>
-          &lt;endpoint address=&quot;http://servername.domain.com:[port]/soap/tsl&quot;  binding=&quot;basicHttpBinding&quot; bindingConfiguration=&quot;importBinding&quot; contract=&quot;importPortType&quot; name=&quot;importPort&quot; />
-      &lt;/client>
-  &lt;/system.serviceModel></code></pre></li>
-<li><p><strong>Add the bindings to web.config</strong></p>
-<ul>
-<li><p>HTTP</p>
-<pre class="prettyprint source"><code>   &lt;system.serviceModel>
-     &lt;bindings>
-       &lt;basicHttpBinding>
-         &lt;binding name=&quot;importBinding&quot; closeTimeout=&quot;00:01:00&quot; openTimeout=&quot;00:01:00&quot; receiveTimeout=&quot;00:10:00&quot; sendTimeout=&quot;00:01:00&quot; 
-                   allowCookies=&quot;false&quot; bypassProxyOnLocal=&quot;false&quot; hostNameComparisonMode=&quot;StrongWildcard&quot; maxBufferSize=&quot;1655360&quot;
-                   maxBufferPoolSize=&quot;15242880&quot; maxReceivedMessageSize=&quot;1655360&quot; messageEncoding=&quot;Text&quot; textEncoding=&quot;utf-8&quot; 
-                   transferMode=&quot;Buffered&quot; useDefaultWebProxy=&quot;true&quot;>
-
-             &lt;readerQuotas maxDepth=&quot;32&quot; maxStringContentLength=&quot;256000&quot; maxArrayLength=&quot;16384&quot; maxBytesPerRead=&quot;4096&quot; maxNameTableCharCount=&quot;16384&quot; />
-             &lt;security mode=&quot;None&quot;>
-             &lt;transport clientCredentialType=&quot;None&quot; proxyCredentialType=&quot;None&quot; realm=&quot;&quot; />
-             &lt;message clientCredentialType=&quot;UserName&quot; algorithmSuite=&quot;Default&quot; />
-           &lt;/security>
-         &lt;/binding>
-       &lt;basicHttpBinding>
-     &lt;/bindings>
-   &lt;/system.serviceModel></code></pre><ul>
-<li><p>HTTPS</p>
-<pre class="prettyprint source"><code> &lt;system.serviceModel>
-   &lt;bindings>
-     &lt;basicHttpBinding>
-       &lt;binding name=&quot;importBinding&quot; closeTimeout=&quot;00:01:00&quot; openTimeout=&quot;00:01:00&quot; receiveTimeout=&quot;00:10:00&quot; sendTimeout=&quot;00:01:00&quot; 
-                allowCookies=&quot;false&quot; bypassProxyOnLocal=&quot;false&quot; hostNameComparisonMode=&quot;StrongWildcard&quot; maxBufferSize=&quot;1655360&quot; 
-                maxBufferPoolSize=&quot;15242880&quot; maxReceivedMessageSize=&quot;1655360&quot; messageEncoding=&quot;Text&quot; textEncoding=&quot;utf-8&quot;
-                transferMode=&quot;Buffered&quot; useDefaultWebProxy=&quot;true&quot;>
-
-       &lt;readerQuotas maxDepth=&quot;32&quot; maxStringContentLength=&quot;256000&quot; maxArrayLength=&quot;16384&quot; maxBytesPerRead=&quot;4096&quot; maxNameTableCharCount=&quot;16384&quot; />
-       &lt;security mode=&quot;Transport&quot;>
-         &lt;transport clientCredentialType=&quot;None&quot; proxyCredentialType=&quot;None&quot; realm=&quot;&quot; />
-         &lt;message clientCredentialType=&quot;UserName&quot; algorithmSuite=&quot;Default&quot; />
-       &lt;/security>
-     &lt;/binding>
-     &lt;basicHttpBinding>
-   &lt;/bindings>
- &lt;/system.serviceModel></code></pre></li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-<h5>Configure Kofax Import Connector</h5><p>This is not intended to be a full set of instructions to install, setting up, and maintain a Kofax Import Connector server. The following information provides the minimum amount of configuration needed for the Web Capture Service to successfully connect, and import into Kofax Import Connector.</p>
-<ul>
-<li><p><strong>Required license</strong></p>
-<p>  For the KIC web server to accept documents imported from the Web Capture Service the license must be installed on your KIC server.</p>
-<p>  To verify that the correct minimum license has been installed go to the Message Connector Monitor, which by default is located on the KIC server at<br>  https://localhost:25086/file/index.html under the Status -&gt; license section.</p>
-</li>
-<li><p><strong>Configure the web service</strong></p>
-<p>  The Web Capture Service connects via KIC’s web service via a server-side handler that
-  extends the KicHandler found in the <code>Atalasoft.dotImage.WebControls</code> assembly.</p>
-<p>  Once in the message connector, go to the “General” section, and verify that</p>
-<ol>
-<li><p>From the App Programs list, select Kofax &gt; KIC Electronic Documents &gt; Message Connector
-Configuration. The message connector opens.</p>
-</li>
-<li><p>In the General section, verify the Own Computer Name is filled in with the current server’s domain qualified name.</p>
-</li>
-<li><p>Next, go to the Web-Service Input section.</p>
-<ul>
-<li>If only a HTTP based connection is desired set the HTTPS port to 0
-This will be the port which the endpoint in the application's will point to. If HTTPS is desired, then enter the port which will be used.</li>
-<li>If HTTPS is enabled the HTTP port will not be able to be connected to, and the endpoint in the application's will need to point at the URL using the HTTPS port.</li>
-</ul>
-</li>
-<li><p>Once all of the desired changes to the KIC Message Connector have been made save, and restart the Message Connector service.</p>
-</li>
-</ol>
-</li>
-<li><p><strong>Configure the Electronic Documents plugin</strong>
-  In the Kofax Capture (KC) Administration application, open the <em>'Electronic Documents -&gt; Configuration'</em> window, and configure the necessary Connections, and Destinations.</p>
-<p>  When finished, stop and start the service.</p>
-</li>
-<li><p><strong>Test the configuration</strong></p>
-<p>  To test that the KIC server has been minimally configured correctly in a browser either on the server, or at a client that might connect to the server enter the following URLs:</p>
-<ul>
-<li><p>HTTP enabled webservice</p>
-<pre class="prettyprint source"><code>http://[kic_servername]:[http_port]/soap/tsl/Import?&lt;OwnerReference>myref&lt;/OwnerReference>&lt;Address>importaddr&lt;/Address>&lt;Part>&lt;ContentType>text/plain&lt;/ContentType>    &lt;Content>&lt;Text>hello&lt;/Text>&lt;/Content>&lt;/Part></code></pre></li>
-<li><p>HTTPS enabled webservice</p>
-<pre class="prettyprint source"><code>https://[kic_servername]:[https_port]/soap/tsl/Import?&lt;OwnerReference>myref&lt;/OwnerReference>&lt;Address>importaddr&lt;/Address>&lt;Part>&lt;ContentType>text/plain&lt;/ContentType>    &lt;Content>&lt;Text>hello&lt;/Text>&lt;/Content>&lt;/Part></code></pre></li>
-</ul>
-</li>
-</ul>
+    catch (error) {
+        alert('Thrown error: ' + error.description);
+    }
+});
+&lt;/script></code></pre><p>Several additional options and handlers can be specified in the initialization routines for web scanning and viewing.
+However, this example represents the minimal configuration necessary for web scanning with an integrated document viewer.
+Additional information can be found in the <a href="https://atalasoft.github.io/2016/08/03/nuget-tutorial-wcs/">blog post</a> about Web Capture Service.</p>
+<h3>Add the UI</h3><p>Insert the following HTML code to your project to create a basic viewer UI.
+This includes the Web Document Viewer, drop-down box to choose scanners and buttons to drive the UI.
+The web scanning demos included with DotImage also include more complete examples.</p>
+<pre class="prettyprint source lang-html"><code>&lt;p>
+    Select Scanner:
+    &lt;select class=&quot;atala-scanner-list&quot; disabled=&quot;disabled&quot; name=&quot;scannerList&quot; style=&quot;width: 22em&quot;>
+        &lt;option selected=&quot;selected&quot;>(no scanners available)&lt;/option>
+    &lt;/select>
+&lt;/p>
+&lt;p>
+    &lt;input type=&quot;button&quot; class=&quot;atala-scan-button&quot; value=&quot;Scan&quot; />
+    &lt;input type=&quot;button&quot; class=&quot;atala-import-button&quot; value=&quot;Import&quot; />
+&lt;/p>
+&lt;div>
+    &lt;div class=&quot;atala-document-toolbar&quot; style=&quot;width: 670px;&quot;>&lt;/div>
+    &lt;div class=&quot;atala-document-container&quot; style=&quot;width: 670px; height: 500px;&quot;>&lt;/div>
+&lt;/div></code></pre>
 </article>
 
 </section>
