@@ -3,7 +3,7 @@
   "authors": [
     "Atalasoft"
   ],
-  "description": "Scanning service for web-scenning",
+  "description": "Atalasoft JavaScript library for requesting documents from a client-side scanner.",
   "main": "atalaWebCapture.js",
   "keywords": [
     "Atalasoft",
@@ -22,7 +22,7 @@
     "favicon.ico"
   ],
   "dependencies": {
-    "jquery": "^1.7.1"
+    "jquery": ">=1.7.1"
   },
-  "version": "10.7.8"
+  "version": "10.7.10"
 }
