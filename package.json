@@ -1,6 +1,6 @@
 {
   "name": "web-capture-service",
-  "version": "10.7.11",
+  "version": "10.7.12",
   "description": "Atalasoft JavaScript library for requesting documents from a client-side scanner.",
   "main": "atalaWebCapture.js",
   "scripts": {

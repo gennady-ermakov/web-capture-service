@@ -1,6 +1,7 @@
 # Atalasoft Web Capture Service
-[![Bower version](https://badge.fury.io/bo/web-capture-service.svg)](https://badge.fury.io/bo/web-capture-service)
+[![npm version](https://badge.fury.io/js/web-capture-service.svg)](https://badge.fury.io/js/web-capture-service)
 [![NuGet version](https://badge.fury.io/nu/Atalasoft.Web.Capture.Service.svg)](https://badge.fury.io/nu/Atalasoft.Web.Capture.Service)
+[![Bower version](https://badge.fury.io/bo/web-capture-service.svg)](https://badge.fury.io/bo/web-capture-service)
 
 Web Capture Service includes a set of integrated components that can be used to easily capture-enable a website.
 It uses Javascript, supported by an local scanning service on the client machine which 
