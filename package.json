@@ -1,0 +1,30 @@
+{
+  "name": "web-capture-service",
+  "version": "11.0.0",
+  "description": "Atalasoft JavaScript library for requesting documents from a client-side scanner.",
+  "main": "atalaWebCapture.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Atalasoft/web-capture-service.git"
+  },
+  "keywords": [
+    "Atalasoft",
+    "imaging",
+    "image",
+    "web",
+    "scanning",
+    "javascript"
+  ],
+  "author": "Atalasoft (https://atalasoft.com)",
+  "license": "SEE LICENSE IN LICENSE",
+  "bugs": {
+    "url": "https://github.com/Atalasoft/web-capture-service/issues"
+  },
+  "homepage": "https://github.com/Atalasoft/web-capture-service#readme",
+  "dependencies": {
+    "jquery": ">=1.11.0"
+  }
+}
