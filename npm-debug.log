@@ -45,7 +45,7 @@
 21 silly publish   dependencies: { jquery: '>=1.11.0' },
 21 silly publish   readme: '# Atalasoft Web Capture Service\r\n[![npm version](https://badge.fury.io/js/web-capture-service.svg)](https://badge.fury.io/js/web-capture-service)\r\n[![NuGet version](https://badge.fury.io/nu/Atalasoft.Web.Capture.Service.svg)](https://badge.fury.io/nu/Atalasoft.Web.Capture.Service)\r\n[![Bower version](https://badge.fury.io/bo/web-capture-service.svg)](https://badge.fury.io/bo/web-capture-service)\r\n\r\nWeb Capture Service includes a set of integrated components that can be used to easily capture-enable a website.\r\nIt uses Javascript, supported by an local scanning service on the client machine which \r\ncould be deployed either as windows service or regular windows application. \r\n\r\nAlso Web Capture Service supports scanning in multiuser environments - MS Terminal Server and Citrix. On these environments, multiple users work with Web Capture Service at the same time from different Windows logon sessions with the same user experience as on single-user machine.\r\n\r\n### Installation\r\n\r\n#### Bower\r\n```bash\r\nbower install web-capture-service\r\n```\r\n\r\n#### Nuget\r\n```bash\r\nPM> Install-Package Atalasoft.Web.Capture.Service\r\n```\r\n\r\n#### NPM\r\n```bash\r\nnpm install web-capture-service\r\n```\r\n\r\n### How to use\r\nYou can find a tutorial about how to create a simple capture application in the [Atalasoft team blog](http://atalasoft.github.io/2016/08/03/nuget-tutorial-wcs/)\r\n\r\nThe other way is to read a [tutorial](https://atalasoft.github.io/web-capture-service/tutorial-2-2-demo-application.html) in the Web Capture documentation.\r\nThere is also a version of [sample for ASP.NET Core](https://atalasoft.github.io/web-capture-service/tutorial-2-5-demo-application-aspnet-core.html)\r\n\r\n### Licensing \r\n\r\nTo run the projects locally, you need to have a DotImage license. There are various way to acquire the license:\r\n\r\n - Use [DotImage Activation Wizard Visual Studio extension](https://visualstudiogallery.msdn.microsoft.com/88ff07c9-fe68-48bd-bfdc-3fbc8a0ec1db)\r\n - Download a complete DotImage installation package from the [Atalasoft web site](https://atalasoft.com). You will be prompted to activate the product during installation\r\n\r\nThis source code is property of Atalasoft, Inc. (http://www.atalasoft.com/)  \r\nPermission for usage and modification of this code is only permitted \r\nwith the purchase of a source code license.\r\n\r\n### Related Articles\r\n\r\n - [Web Capture Service documentation](https://atalasoft.github.io/web-capture-service/)\r\n - [Introducing NuGet Packages](http://atalasoft.github.io/2016/05/03/introducing-nuget/)\r\n - [Introducing Activation Wizard Extension](http://atalasoft.github.io/2016/05/14/introducing-activation-wizard-extension/) \r\n - [NuGet Tutorial II - Web Capture Service](http://atalasoft.github.io/2016/08/03/nuget-tutorial-wcs/)\r\n',
 21 silly publish   readmeFilename: 'README.md',
-21 silly publish   gitHead: '690603aa1b1bae6752ebe2a09816c679c4751764',
+21 silly publish   gitHead: '543e0ac1807562be8c472a306ec61ec10757b7e9',
 21 silly publish   _id: 'web-capture-service@11.0.0',
 21 silly publish   _shasum: '89c7cc62d277e3842c5c8404dadb21431098178f',
 21 silly publish   _from: '.' }
@@ -66,22 +66,22 @@
 29 silly publish uploading C:\Users\gilbert.ruiz\AppData\Roaming\npm-cache\web-capture-service\11.0.0\package.tgz
 30 verbose request uri https://registry.npmjs.org/web-capture-service
 31 verbose request sending authorization for write operation
-32 info attempt registry request try #1 at 2:28:10 PM
+32 info attempt registry request try #1 at 2:38:59 PM
 33 verbose request using bearer token for auth
-34 verbose request id f7e11f48abed378e
+34 verbose request id 1461b4b74b465b1b
 35 http request PUT https://registry.npmjs.org/web-capture-service
 36 http 403 https://registry.npmjs.org/web-capture-service
 37 verbose headers { 'content-type': 'application/json',
 37 verbose headers   'cache-control': 'max-age=300',
 37 verbose headers   'content-length': '92',
 37 verbose headers   'accept-ranges': 'bytes',
-37 verbose headers   date: 'Tue, 03 Oct 2017 21:28:13 GMT',
+37 verbose headers   date: 'Tue, 03 Oct 2017 21:39:02 GMT',
 37 verbose headers   via: '1.1 varnish',
 37 verbose headers   connection: 'keep-alive',
-37 verbose headers   'x-served-by': 'cache-lax8642-LAX',
+37 verbose headers   'x-served-by': 'cache-lax8649-LAX',
 37 verbose headers   'x-cache': 'MISS',
 37 verbose headers   'x-cache-hits': '0',
-37 verbose headers   'x-timer': 'S1507066091.161632,VS0,VE2201',
+37 verbose headers   'x-timer': 'S1507066740.192051,VS0,VE2506',
 37 verbose headers   vary: 'Accept-Encoding, Accept' }
 38 verbose request invalidating C:\Users\gilbert.ruiz\AppData\Roaming\npm-cache\registry.npmjs.org\web-capture-service on PUT
 39 error publish Failed PUT 403
