@@ -1251,6 +1251,49 @@ Default chunk size is 10mb if split is enabled.</p></td>
         </tr>
 
     
+
+        <tr>
+            
+                <td class="name"><code>currentValuesValues.autoDiscardBlankPages</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">number</span>
+
+
+            
+            </td>
+
+            
+
+            <td class="description last"><p>if supported by scanner, returns a value indicating whether the scanner is supposed to discard blank pages.</p>
+<h4>Available values</h4><table>
+<thead>
+<tr>
+<th>Value</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>-2</td>
+<td>blank pages discarding is disabled</td>
+</tr>
+<tr>
+<td>-1</td>
+<td>the scanner decides whether the page is blank or not and discard as appropriate</td>
+</tr>
+<tr>
+<td>0..2^31-1</td>
+<td>the value is used to specify the byte size cutoff point to identify which images are to be discarded. If the size of the image is less than or equal to this value, then it will be discarded. If the size of the image is greater than this value, then it will be kept so that it can be transferred to the Application.</td>
+</tr>
+</tbody>
+</table></td>
+        </tr>
+
+    
     </tbody>
 </table>
 

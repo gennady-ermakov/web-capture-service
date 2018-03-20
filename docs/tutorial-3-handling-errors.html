@@ -61,7 +61,8 @@
     catch (error) {
         console.log(&quot;WebScanning initialization error: &quot; + error.description);
     }
-})();</code></pre><h2>Errors identification</h2><p>Web Capture Service JavaScript API provides as set of typed error identifiers, so the application could distinguish and appropriate handle different kinds that errors.</p>
+})();
+</code></pre><h2>Errors identification</h2><p>Web Capture Service JavaScript API provides as set of typed error identifiers, so the application could distinguish and appropriate handle different kinds that errors.</p>
 <p>All WebCapture errors are string members of <a href="Atalasoft.Controls.Capture.html#.Errors"><code>Atalasoft.Controls.Capture.Errors</code></a>. Each of the property of that object represents a particular error - the property name is the error identifier while the property value is the message that could be presented to user.</p>
 <p> The value of the corresponding <a href="Atalasoft.Controls.Capture.html#.Errors"><code>Atalasoft.Controls.Capture.Errors</code></a> property is passed to the error-handling functions as the firs parameter. So the error handling could be based on a comparison of msg with different <a href="Atalasoft.Controls.Capture.html#.Errors"><code>Atalasoft.Controls.Capture.Errors</code></a> values.
  The second parameter of the error-handling function is the additional data having structure specific to particular error.</p>

@@ -132,7 +132,8 @@ By default this parameter is set to <code>false</code>. When set to <code>true</
     loosePages: &quot;true, Loose Page: Test&quot;,
     onError: function(msg, params) { console.log(msg + &quot;: &quot; + params.statusText); },
     onImportCompleted: function(params) { console.log(params.id + &quot;: &quot; + params.status); }
-});</code></pre><p><strong><em>Note</em></strong>, <code>With UI assumes that batch fields will be displayed, along with the atala-contenttype-list, and atala-contenttype-document-list.</code></p>
+});
+</code></pre><p><strong><em>Note</em></strong>, <code>With UI assumes that batch fields will be displayed, along with the atala-contenttype-list, and atala-contenttype-document-list.</code></p>
 <p>Without UI</p>
 <pre class="prettyprint source lang-javascript"><code>Atalasoft.Controls.Capture.CaptureService.initialize({
     handlerUrl: 'KicWebHandler.ashx',
