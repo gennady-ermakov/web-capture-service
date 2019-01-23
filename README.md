@@ -5,7 +5,7 @@
 
 Web Capture Service includes a set of integrated components that can be used to easily capture-enable a website.
 It uses Javascript, supported by an local scanning service on the client machine which 
-could be deployed either as windows service or regular windows application. 
+could be deployed either on Windows as service or regular application, or on macOS as desktop application. 
 
 Also Web Capture Service supports scanning in multiuser environments - MS Terminal Server and Citrix. On these environments, multiple users work with Web Capture Service at the same time from different Windows logon sessions with the same user experience as on single-user machine.
 
