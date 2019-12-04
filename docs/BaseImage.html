@@ -275,65 +275,6 @@
         
             
 
-    <h4 class="name" id="bitsPerPixel"><span class="type-signature"></span>bitsPerPixel<span class="type-signature"> :number</span></h4>
-
-
-
-
-
-<div class="description">
-    <p>Number of bits used to represent a pixel (typically 1,8, or 24).</p>
-</div>
-
-
-
-
-
-
-
-<dl class="details">
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-</dl>
-
-
-
-
-
-
-        
-            
-
     <h4 class="name" id="ydpi"><span class="type-signature"></span>ydpi<span class="type-signature"> :number</span></h4>
 
 
@@ -393,6 +334,65 @@
         
             
 
+    <h4 class="name" id="bitsPerPixel"><span class="type-signature"></span>bitsPerPixel<span class="type-signature"> :number</span></h4>
+
+
+
+
+
+<div class="description">
+    <p>Number of bits used to represent a pixel (typically 1,8, or 24).</p>
+</div>
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+        
+            
+
     <h4 class="name" id="discard"><span class="type-signature"></span>discard<span class="type-signature"> :boolean</span></h4>
 
 
@@ -400,7 +400,7 @@
 
 
 <div class="description">
-    <p>This property is initialized to false. If set to true by the <a href="Atalasoft.Controls.Capture.WebScanning.html#event:onImageAcquired"><code>onImageAcquired</code></a> handler, 
+    <p>This property is initialized to false. If set to true by the <a href="Atalasoft.Controls.Capture.WebScanning.html#event:onImageAcquired"><code>onImageAcquired</code></a> handler,
 the image is discarded (deleted from the control's memory) when the handler returns.</p>
 <p><em><strong>Note</strong></em>, that this property is processed synchronously in <a href="Atalasoft.Controls.Capture.WebScanning.html#event:onImageAcquired"><code>onImageAcquired</code></a> handler, i.e. if set in asynchronous operation callback, the change won't be reflected.</p>
 </div>
@@ -697,9 +697,9 @@ the image is discarded (deleted from the control's memory) when the handler retu
 
 
 <div class="description">
-    <p>If present, true when the image came from the front (top) side of a physical sheet, 
+    <p>If present, true when the image came from the front (top) side of a physical sheet,
 false for the back/bottom side.</p>
-<p>If omitted, this information could not be confidently determined e.g. the scan is from 
+<p>If omitted, this information could not be confidently determined e.g. the scan is from
 a device that does not feed sheets.</p>
 </div>
 
@@ -761,7 +761,7 @@ a device that does not feed sheets.</p>
 <div class="description">
     <p>If present, the index of the physical sheet within the scan job of which this is an image (front or back side).</p>
 <p>The first sheet scanned is index 0.</p>
-<p>If not present, this information could not be confidently determined e.g. the scan is from 
+<p>If not present, this information could not be confidently determined e.g. the scan is from
 a device that does not feed sheets.</p>
 </div>
 
@@ -1238,7 +1238,7 @@ a device that does not feed sheets.</p>
 
 <div class="description">
     <p>'0', '1', '2', '3', '4', '6', or 'T'. The '0' value means 'no patch code detected'.</p>
-<p>Note that the values are 1-character strings, but of course this is JavaScript so you can write 
+<p>Note that the values are 1-character strings, but of course this is JavaScript so you can write
 either image.patchCode == '2' or image.patchCode == 2, as you wish.</p>
 <p>When patch code detection is not enabled, the patchCode of each acquired image is '0'.</p>
 <pre class="prettyprint source lang-javascript"><code>Atalasoft.Controls.Capture.WebScanning.scanningOptions = { onImageAcquired: _onImageAcquired, patchCodes: true }
@@ -1248,7 +1248,8 @@ function _onImageAcquired(eventName, image) {
   if (image.patchCode == 'T') {
     // 'T' patch-code detected
   }
-}</code></pre>
+}
+</code></pre>
 </div>
 
 
@@ -2195,7 +2196,7 @@ function _onImageAcquired(eventName, image) {
 
 
 <div class="description">
-    <p>Resets the image object to an empty state, releasing any (possibly large) internal memory being 
+    <p>Resets the image object to an empty state, releasing any (possibly large) internal memory being
 used to store pixel data. This is as close to a 'destroy' or 'dispose' method as we can get with a javascript object.</p>
 </div>
 
@@ -2427,7 +2428,7 @@ used to store pixel data. This is as close to a 'destroy' or 'dispose' method as
 
         
 <div class="param-desc">
-    <p>created local file identifier if executed synchronously; <code>undefined</code> otherwise.</p>
+    <p>created local file identifier if executed synchronously; &quot;undefined&quot; otherwise.</p>
 </div>
 
 

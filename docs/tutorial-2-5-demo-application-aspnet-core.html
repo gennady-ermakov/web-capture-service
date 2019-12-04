@@ -48,14 +48,15 @@
 </header>
 
 <article>
-    <p>﻿Starting with DotImage 11.0 WebCapture supports <a href="https://www.asp.net/core">ASP.NET Core</a> framework. 
-This topic tells you how to create a sample application using <a href="https://nuget.org">Nuget</a> and <a href="https://bower.io">Bower</a> packages. 
+    <p>Starting with DotImage 11.0 WebCapture supports <a href="https://www.asp.net/core">ASP.NET Core</a> framework.
+This topic tells you how to create a sample application using <a href="https://nuget.org">Nuget</a> and <a href="https://bower.io">Bower</a> packages.
 It's quite similar to the <a href="tutorial-2-2-demo-application.html">Demo Application</a>, but with some differences specific to the new framework.</p>
 <p>Follow these steps to create a new capture-enabled web project.
 Topics include adding the document viewer and scanning controls to your web page and handling uploaded content on the server.</p>
 <p>This guide is intended to be followed precisely, but it is not supposed to give you a solution that is ready to
 deploy. Once you have succeeded building the example project, you can begin modifying it to fit your organization.</p>
-<h2>Set up a new project</h2><p>A capture-enabled web application requires these essential elements:</p>
+<h2>Set up a new project</h2>
+<p>A capture-enabled web application requires these essential elements:</p>
 <ul>
 <li>A client-side HTML page containing the web scanning controls and document viewer.</li>
 <li>A server-side startup class that will be used for configuring our web host.</li>
@@ -68,44 +69,55 @@ deploy. Once you have succeeded building the example project, you can begin modi
 <p>Choose <code>Empty</code> template on the following window</p>
 <p><img src="img/EmptyTemplate.png" alt=""></p>
 <p>Visual Studio automatically will create you a project with &quot;Hello world&quot; application. It already has a <code>Startup</code> class and
-all necessary Nuget packages for running this application as self-hosted, of course, you can use IIS Express instead. </p>
-<h3>Add Nuget packages for server-side</h3><p>Add the Nuget package <a href="https://www.nuget.org/packages/Atalasoft.dotImage.WebControls.Core.x86/">Atalasoft.dotImage.WebControls.Core.x86</a>.
-It automatically downloads all necessary dependencies on other DotImage and ASP.NET Core components. 
-If you plan to run your application on a 64-bit server, you should use the package 
+all necessary Nuget packages for running this application as self-hosted, of course, you can use IIS Express instead.</p>
+<h3>Add Nuget packages for server-side</h3>
+<p>Add the Nuget package <a href="https://www.nuget.org/packages/Atalasoft.dotImage.WebControls.Core.x86/">Atalasoft.dotImage.WebControls.Core.x86</a>.
+It automatically downloads all necessary dependencies on other DotImage and ASP.NET Core components.
+If you plan to run your application on a 64-bit server, you should use the package
 <a href="https://www.nuget.org/packages/Atalasoft.dotImage.WebControls.Core.x64/">Atalasoft.dotImage.WebControls.Core.x64</a>.</p>
 <p>Since the Web Document Viewer and Web Capture Service use a file system to save scan results or show results on the page,
 you also need the package <a href="https://www.nuget.org/packages/Microsoft.AspNetCore.StaticFiles">Microsoft.AspNetCore.StaticFiles</a>.</p>
-<h3>Add packages for client-side</h3><p>Web Document Viewer JS package can be downloaded using <a href="https://npmjs.com">npm</a> or <a href="https://bower.io/">Bower</a>. Since the Bower is maintained  and its support was deprecated in VS 2017 15.5 update it's highly recommended to use npm packages, however, using of Bower with VS2017 is easier than npm and requires less additional actions. You can choose any package manager and read only section that is related to it.</p>
-<h4>Add Bower packages for client-side</h4><p>First of all, you need to manually add two empty javascript files to the project root. First of them is <code>bower.json</code> and it will contains
+<h3>Add packages for client-side</h3>
+<p>Web Document Viewer JS package can be downloaded using <a href="https://npmjs.com">npm</a> or <a href="https://bower.io/">Bower</a>. Since the Bower is maintained  and its support was deprecated in VS 2017 15.5 update it's highly recommended to use npm packages, however, using of Bower with VS2017 is easier than npm and requires less additional actions. You can choose any package manager and read only section that is related to it.</p>
+<h4>Add Bower packages for client-side</h4>
+<p>First of all, you need to manually add two empty javascript files to the project root. First of them is <code>bower.json</code> and it will contains
 our project bower dependencies. The second one is <code>.bowerrc</code>, we need it to configure where we want store bower packages and from where they should
 be downloaded.</p>
 <p>Now we should fill these javascript files. We will start from <code>.bowerrc</code> file, in this file we add the folder where bower should download all packages and, since Microsoft doesn't update their bower executable, we need to manually setup where packages should be found. The result file will be looked like this</p>
 <pre class="prettyprint source lang-javascript"><code>{
   &quot;directory&quot;: &quot;wwwroot/lib&quot;,
   &quot;registry&quot;: &quot;https://registry.bower.io&quot;
-}</code></pre><p>Now you can add a Bower package <code>web-document-viewer</code>, it also automatically adds all necessary dependencies. To do this, open the <code>bower.json</code> file, and write its contents like this</p>
+}
+</code></pre>
+<p>Now you can add a Bower package <code>web-document-viewer</code>, it also automatically adds all necessary dependencies. To do this, open the <code>bower.json</code> file, and write its contents like this</p>
 <pre class="prettyprint source lang-javascript"><code>{
   &quot;name&quot;: &quot;asp.net&quot;,
   &quot;private&quot;: true,
   &quot;dependencies&quot;: {
-    &quot;web-document-viewer&quot;: &quot;~11.1.0&quot;,
-    &quot;web-capture-service&quot;: &quot;~11.1.0&quot;
+    &quot;web-document-viewer&quot;: &quot;~11.2.0&quot;,
+    &quot;web-capture-service&quot;: &quot;~11.2.0&quot;
   }
-}</code></pre><p>In this file we setup package name, made it private, in order to do not publish it accindentally, and added two dependencies to a <a href="https://github.com/Atalasoft/web-document-viewer">web-document-viewer</a> package and to a <a href="https://github.com/Atalasoft/web-capture-service">web-capture-service</a> package. The <code>~</code> symbol before the version allows us to download latest patch version of the package.</p>
-<h4>Add npm packages for client-side</h4><p>To add npm packages you need to create a <code>package.json</code> from <code>npm Configuration file</code> template, add there a <a href="https://www.npmjs.com/package/web-document-viewer">web-document-viewer</a> and a <a href="https://www.npmjs.com/package/web-capture-service">web-capture-service</a> packages, and save the file. After that the Visual Studion installs this package with all dependencies to <code>node_modules</code> folder in project root. This folder can not be accessed from the web application without additional code modifications on server-side, but for security reasons it's totally okay. You need to place all necessary files from this folder to <code>wwwroot\&lt;subfolder&gt;</code> path, it can be done manually of with using help of scripts.
+}
+</code></pre>
+<p>In this file we setup package name, made it private, in order to do not publish it accindentally, and added two dependencies to a <a href="https://github.com/Atalasoft/web-document-viewer">web-document-viewer</a> package and to a <a href="https://github.com/Atalasoft/web-capture-service">web-capture-service</a> package. The <code>~</code> symbol before the version allows us to download latest patch version of the package.</p>
+<h4>Add npm packages for client-side</h4>
+<p>To add npm packages you need to create a <code>package.json</code> from <code>npm Configuration file</code> template, add there a <a href="https://www.npmjs.com/package/web-document-viewer">web-document-viewer</a> and a <a href="https://www.npmjs.com/package/web-capture-service">web-capture-service</a> packages, and save the file. After that the Visual Studion installs this package with all dependencies to <code>node_modules</code> folder in project root. This folder can not be accessed from the web application without additional code modifications on server-side, but for security reasons it's totally okay. You need to place all necessary files from this folder to <code>wwwroot\&lt;subfolder&gt;</code> path, it can be done manually of with using help of scripts.
 Also, if you use npm version 5 or higher, don't forget to commit <code>package-lock.json</code> file in order to be sure, that every time the same set of packages with same versions will be installed.</p>
-<h5>Configure npm packages deployment</h5><p>To make life easier with scripts deployment we add some packages in our <code>package.json</code> file. First of them is <a href="https://www.npmjs.com/package/gulp">gulp</a>, using it we create several tasks that will be run on every build target &quot;Build&quot; and &quot;Clean&quot;. The second package is <a href="https://www.npmjs.com/package/rimraf">rimraf</a> - it's needed for easy folde removal on &quot;Clean&quot;. As a result, <code>package.json</code> file could be look like this:</p>
+<h5>Configure npm packages deployment</h5>
+<p>To make life easier with scripts deployment we add some packages in our <code>package.json</code> file. First of them is <a href="https://www.npmjs.com/package/gulp">gulp</a>, using it we create several tasks that will be run on every build target &quot;Build&quot; and &quot;Clean&quot;. The second package is <a href="https://www.npmjs.com/package/rimraf">rimraf</a> - it's needed for easy folde removal on &quot;Clean&quot;. As a result, <code>package.json</code> file could be look like this:</p>
 <pre class="prettyprint source lang-javascript"><code>{
   &quot;version&quot;: &quot;1.0.0&quot;,
   &quot;name&quot;: &quot;web-capture-service-basic&quot;,
   &quot;private&quot;: true,
   &quot;devDependencies&quot;: {
-    &quot;web-document-viewer&quot;: &quot;~11.1.0&quot;,
-    &quot;web-capture-service&quot;: &quot;~11.1.0&quot;,
+    &quot;web-document-viewer&quot;: &quot;~11.2.0&quot;,
+    &quot;web-capture-service&quot;: &quot;~11.2.0&quot;,
     &quot;gulp&quot;: &quot;^4.0.0&quot;,
     &quot;rimraf&quot;: &quot;^2.0.0&quot;
   }
-}</code></pre><p>After that, when all packages are installed, you need to add a <code>gulpfile.js</code>, VS2017 doesn't provide a special template for it, so you can use a generic template for JavaScript files, or don't use anything. And there we add all necessary code, that will help us to manipulate with scripts files from <code>node_modules</code> folder and copy them to <code>wwwroot\lib</code>. See the code below:</p>
+}
+</code></pre>
+<p>After that, when all packages are installed, you need to add a <code>gulpfile.js</code>, VS2017 doesn't provide a special template for it, so you can use a generic template for JavaScript files, or don't use anything. And there we add all necessary code, that will help us to manipulate with scripts files from <code>node_modules</code> folder and copy them to <code>wwwroot\lib</code>. See the code below:</p>
 <pre class="prettyprint source lang-javascript"><code>/// &lt;binding BeforeBuild='build' Clean='clean' />
 &quot;use strict&quot;;
 
@@ -170,17 +182,22 @@ gulp.task(&quot;clean&quot;,
         return rimraf(libPath, done);
     });
 
-gulp.task(&quot;rebuild&quot;, gulp.series(&quot;clean&quot;, &quot;build&quot;));</code></pre><p>Besides comments in the code, there are several notes about it:</p>
+gulp.task(&quot;rebuild&quot;, gulp.series(&quot;clean&quot;, &quot;build&quot;));
+</code></pre>
+<p>Besides comments in the code, there are several notes about it:</p>
 <ul>
-<li>The first line of this code is a special hint for <code>Task Runner Explorer</code> that's built-in Visual Studio. It tell VS to run gulp tasks before MSBuild targets &quot;Build&quot; and before &quot;Clean&quot; targets. </li>
+<li>The first line of this code is a special hint for <code>Task Runner Explorer</code> that's built-in Visual Studio. It tell VS to run gulp tasks before MSBuild targets &quot;Build&quot; and before &quot;Clean&quot; targets.</li>
 <li>The list of dependencies in this sample is configured manually, and needs to be carefully revised when you upgrade some of packages, in order to don't miss any important file.</li>
 <li>The task &quot;rebuild&quot; doesn't attached to any MSBuild target, and could be launched manually from <code>Task Runner Explorer</code> window.</li>
 </ul>
 <p>That's all, now when you build your project, the <code>lib</code> folder will be added to <code>wwwroot</code> with all necessary scripts and resources, and application can easily access to them without any hacks. Note, that you can manipulate by list of files, and for instance doesn't copy unminified resources at all, which makes your application smaller.</p>
-<h3>Create the upload location</h3><p>Create a new directory under the <code>wwwroot</code> folder of your project called <code>atala-capture-upload</code>.
+<h3>Create the upload location</h3>
+<p>Create a new directory under the <code>wwwroot</code> folder of your project called <code>atala-capture-upload</code>.
 It is the folder that will be used for storing images uploaded by the web scanning controls.</p>
-<h3>Prepare Startup class</h3><p>Before we can use DotImage middlewares, we need to configure our application for them.</p>
-<h4>ConfigureServices method</h4><p>Web Capture Service uses multipart content-type to upload scanned or imported images to a server.
+<h3>Prepare Startup class</h3>
+<p>Before we can use DotImage middlewares, we need to configure our application for them.</p>
+<h4>ConfigureServices method</h4>
+<p>Web Capture Service uses multipart content-type to upload scanned or imported images to a server.
 So, we need to setup our server length limits of these requests. To simplify our code, we extend limits to the maximum values.
 To do this, we configure a <code>FormOptions</code> using next code:</p>
 <pre class="prettyprint source lang-csharp"><code>services.Configure&lt;FormOptions>(opt =>
@@ -188,25 +205,40 @@ To do this, we configure a <code>FormOptions</code> using next code:</p>
     opt.BufferBodyLengthLimit = long.MaxValue;
     opt.ValueLengthLimit = int.MaxValue;
     opt.MultipartBodyLengthLimit = long.MaxValue;
-});</code></pre><h4>Configure method</h4><p>How was mentioned before, Web Document Viewer and Web Capture need to access to the file system.
+});
+</code></pre>
+<h4>Configure method</h4>
+<p>How was mentioned before, Web Document Viewer and Web Capture need to access to the file system.
 So, we need to add middlewares to work with files. To do this, you need to add following strings in the <code>Startup.Configure</code> method:</p>
 <pre class="prettyprint source lang-csharp"><code>app.UseDefaultFiles()
-   .UseStaticFiles();</code></pre><p>Also, you need to delete &quot;Hello world&quot; code string, since we don't need it.</p>
-<h2>Set up server-side components</h2><h3>Add the Web Document Viewer middleware</h3><p>The Web Document Viewer middleware is responsible for communicating with the Web Document Viewer
+   .UseStaticFiles();
+</code></pre>
+<p>Also, you need to delete &quot;Hello world&quot; code string, since we don't need it.</p>
+<h2>Set up server-side components</h2>
+<h3>Add the Web Document Viewer middleware</h3>
+<p>The Web Document Viewer middleware is responsible for communicating with the Web Document Viewer
 embedded in your page and is separate from the capture middleware.</p>
 <p>Add a new line of code to the <code>Startup.Configure</code> method:</p>
-<pre class="prettyprint source lang-csharp"><code>app.Map(&quot;/wdv&quot;, wdvApp => { wdvApp.RunWebDocumentViewerMiddleware(); });</code></pre><p>That's all! If you want to customize this middleware, you can choose another overload of the method
+<pre class="prettyprint source lang-csharp"><code>app.Map(&quot;/wdv&quot;, wdvApp => { wdvApp.RunWebDocumentViewerMiddleware(); });
+</code></pre>
+<p>That's all! If you want to customize this middleware, you can choose another overload of the method
 <code>RunWebDocumentViewerMiddleware</code> that accepts implementation of the interface <code>IWebDocumentViewerCallbacks</code>.</p>
-<h3>Add the Web Capture middleware</h3><p>The Web Capture middleware is responsible for handling file uploads from the scanning controls embedded in your page,
+<h3>Add the Web Capture middleware</h3>
+<p>The Web Capture middleware is responsible for handling file uploads from the scanning controls embedded in your page,
 and routing them to their next destination along with any necessary metadata.
 It is also responsible for supplying the scanning controls with the available content and document types, and status information.</p>
 <p>For this guide, we will create a default middleware, without any customization.
 But you can implement the interface <code>IWebCaptureServiceCallbacks</code> and pass it to the method <code>RunWebcaptureMiddleware</code>.</p>
 <p>Add a new line of code to the <code>Startup.Configure</code> method, so the result code will be looked the next way:</p>
 <pre class="prettyprint source lang-csharp"><code>app.Map(&quot;/wcs&quot;, wcsApp => wcsApp.RunWebCaptureMiddleware())
-   .Map(&quot;/wdv&quot;, wdvApp => wdvApp.RunWebDocumentViewerMiddleware());</code></pre><h2>Set up the scanning controls and viewer</h2><p>The setup for web scanning just requires placing some JavaScript, CSS, and HTML into your page. And the first step is to add the new page to your web application. To do this, add a new HTML file with name <code>index.html</code> to the <code>wwwroot</code> folder.</p>
-<h3>Include the web resources</h3><p>Open <code>index.html</code> and replace its <code>head</code> section with the following script and link tags to include the necessary Web Document Viewer code and dependencies. There are some differences in scripts locations if you using Bower or nmp. Choose the code that corresponds to selected package manager system:</p>
-<h4>Bower resources location</h4><pre class="prettyprint source lang-html"><code>&lt;head>
+   .Map(&quot;/wdv&quot;, wdvApp => wdvApp.RunWebDocumentViewerMiddleware());
+</code></pre>
+<h2>Set up the scanning controls and viewer</h2>
+<p>The setup for web scanning just requires placing some JavaScript, CSS, and HTML into your page. And the first step is to add the new page to your web application. To do this, add a new HTML file with name <code>index.html</code> to the <code>wwwroot</code> folder.</p>
+<h3>Include the web resources</h3>
+<p>Open <code>index.html</code> and replace its <code>head</code> section with the following script and link tags to include the necessary Web Document Viewer code and dependencies. There are some differences in scripts locations if you using Bower or nmp. Choose the code that corresponds to selected package manager system:</p>
+<h4>Bower resources location</h4>
+<pre class="prettyprint source lang-html"><code>&lt;head>
     &lt;!-- Scripts for Web Viewing -->
     &lt;script src=&quot;lib/jquery/jquery.min.js&quot; type=&quot;text/javascript&quot;>&lt;/script>
     &lt;script src=&quot;lib/jquery-ui/jquery-ui.min.js&quot; type=&quot;text/javascript&quot;>&lt;/script>
@@ -220,7 +252,10 @@ But you can implement the interface <code>IWebCaptureServiceCallbacks</code> and
     &lt;!-- Style for Web Viewer -->
     &lt;link href=&quot;lib/jquery-ui/css/jquery-ui.min.css&quot; rel=&quot;stylesheet&quot; />
     &lt;link href=&quot;lib/web-document-viewer/atalaWebDocumentViewer.css&quot; rel=&quot;stylesheet&quot; />
-&lt;/head></code></pre><h4>npm resources location</h4><pre class="prettyprint source lang-html"><code>&lt;head>
+&lt;/head>
+</code></pre>
+<h4>npm resources location</h4>
+<pre class="prettyprint source lang-html"><code>&lt;head>
     &lt;!-- Scripts for Web Viewing -->
     &lt;script src=&quot;lib/jquery/jquery.min.js&quot; type=&quot;text/javascript&quot;>&lt;/script>
     &lt;script src=&quot;lib/jquery-ui/jquery-ui.min.js&quot; type=&quot;text/javascript&quot;>&lt;/script>
@@ -234,7 +269,10 @@ But you can implement the interface <code>IWebCaptureServiceCallbacks</code> and
     &lt;!-- Style for Web Viewer -->
     &lt;link href=&quot;lib/jquery-ui/css/jquery-ui.min.css&quot; rel=&quot;stylesheet&quot; />
     &lt;link href=&quot;lib/web-document-viewer/atalaWebDocumentViewer.css&quot; rel=&quot;stylesheet&quot; />
-&lt;/head></code></pre><h3>Configure the controls</h3><p>The web scanning and web viewing controls need to be initialized and configured to set up connections to the right middlewares,
+&lt;/head>
+</code></pre>
+<h3>Configure the controls</h3>
+<p>The web scanning and web viewing controls need to be initialized and configured to set up connections to the right middlewares,
 specify behavior for events, and so forth.
 This can be done with another block of JavaScript, either included or pasted directly within your page's head below the previously added dependencies.</p>
 <pre class="prettyprint source lang-html"><code>&lt;script type=&quot;text/javascript&quot;>
@@ -246,7 +284,7 @@ This can be done with another block of JavaScript, either included or pasted dir
                 toolbarparent: $('.atala-document-toolbar'),
                 serverurl: 'wdv'
             });
-
+            
             Atalasoft.Controls.Capture.WebScanning.initialize({
                 handlerUrl: 'wcs',
                 onScanClientReady: function (eventName, eventObj) {
@@ -281,10 +319,13 @@ This can be done with another block of JavaScript, either included or pasted dir
             alert('Thrown error: ' + error.description);
         }
     });
-&lt;/script></code></pre><p>Several additional options and handlers can be specified in the initialization routines for web scanning and viewing.
+&lt;/script>
+</code></pre>
+<p>Several additional options and handlers can be specified in the initialization routines for web scanning and viewing.
 However, this example represents the minimal configuration necessary for web scanning with an integrated document viewer.
 Additional information can be found in the <a href="https://atalasoft.github.io/2016/08/03/nuget-tutorial-wcs/">blog post</a> about Web Capture Service.</p>
-<h3>Add the UI</h3><p>Insert the following HTML code to your project to create a basic viewer UI.
+<h3>Add the UI</h3>
+<p>Insert the following HTML code to your project to create a basic viewer UI.
 This includes the Web Document Viewer, drop-down box to choose scanners and buttons to drive the UI.</p>
 <pre class="prettyprint source lang-html"><code>&lt;body>
   &lt;p>
@@ -301,7 +342,8 @@ This includes the Web Document Viewer, drop-down box to choose scanners and butt
     &lt;div class=&quot;atala-document-toolbar&quot; style=&quot;width: 670px;&quot;>&lt;/div>
     &lt;div class=&quot;atala-document-container&quot; style=&quot;width: 670px; height: 500px;&quot;>&lt;/div>
   &lt;/div>
-&lt;/body></code></pre>
+&lt;/body>
+</code></pre>
 </article>
 
 </section>

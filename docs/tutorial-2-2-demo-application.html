@@ -52,7 +52,8 @@
 <p>This guide is intended to be followed exactly, but it is not intended to give you a solution that is ready to
 deploy. Once you have succeeded building the example project, you can begin modifying it to fit your organization.</p>
 <p>Also see <a href="tutorial-2-5-demo-application-aspnet-core.html">Demo Application (ASP.NET Core)</a>.</p>
-<h2>Set up a new project</h2><p>A capture-enabled web application requires these basic elements:</p>
+<h2>Set up a new project</h2>
+<p>A capture-enabled web application requires these basic elements:</p>
 <ul>
 <li>A client-side ASPX page containing the web scanning controls and document viewer.</li>
 <li>A server-side ASHX handler for the Web Document Viewer.</li>
@@ -64,36 +65,46 @@ deploy. Once you have succeeded building the example project, you can begin modi
 <p><em><strong>Note</strong></em> <code>In the following instructions the project is called BasicWebCapture.</code></p>
 <p>Visual Studio automatically gives you Default.aspx as a page, which we will use for placing the web
 scanning controls and viewer.</p>
-<h4>Add assembly references</h4><p>Add the following DotImage assemblies to your project:</p>
+<h4>Add assembly references</h4>
+<p>Add the following DotImage assemblies to your project:</p>
 <ul>
 <li>Atalasoft.dotImage.WebControls</li>
 <li>Atalasoft.Shared</li>
 </ul>
-<p>In a default installation, these assemblies can be found in <code>C:\Program Files (x86)\Atalasoft\DotImage 11.1\bin\3.5\x86</code>.</p>
+<p>In a default installation, these assemblies can be found in <code>C:\Program Files (x86)\Atalasoft\DotImage 11.2\bin\3.5\x86</code>.</p>
 <p>There may be further dependencies on any of the remaining DotImage assemblies. Include all DotImage assemblies in your project if there are problems resolving them.</p>
-<h4>Copy web resources</h4><p>WingScan comes with two sets of web resources: WebCapture and WebDocumentViewer.
+<h4>Copy web resources</h4>
+<p>WingScan comes with two sets of web resources: WebCapture and WebDocumentViewer.
 Copy the WebCapture and WebDocumentViewer directories into the root of your project.</p>
-<h4>Create the upload location</h4><p>Create a new directory in the root of your project called atala-capture-upload. This is the default path that will be used for storing images uploaded by the web scanning controls.</p>
+<h4>Create the upload location</h4>
+<p>Create a new directory in the root of your project called atala-capture-upload. This is the default path that will be used for storing images uploaded by the web scanning controls.</p>
 <p>If you need to change the location of the upload path (for example, to place it in a location outside of your document root), you can set an <code>atala_uploadpath</code> value in the <code>appSettings</code> section of either your web.config.</p>
 <pre class="prettyprint source"><code>&lt;appSettings>
     &lt;add key=&quot;atala_uploadpath&quot; value=&quot;c:\path\to\location&quot;/>
-&lt;/appSettings></code></pre><h2>Add the Web Document Viewer handler</h2><p>The Web Document Viewer handler is responsible for communicating with the Web Document Viewer
+&lt;/appSettings>
+</code></pre>
+<h2>Add the Web Document Viewer handler</h2>
+<p>The Web Document Viewer handler is responsible for communicating with the Web Document Viewer
 embedded in your page, and is separate from the capture handler.</p>
 <p>Add a new Generic Handler to your project. For the purposes of this guide, it is assumed this file will be called WebDocViewerHandler.
 Change the class definition to extend WebDocumentRequestHandler (part of ). Your handler should resemble the following example.</p>
 <pre class="prettyprint source lang-c#"><code>using Atalasoft.Imaging.WebControls;
 namespace BasicWebCapture
 {
-    public class WebDocViewerHandler : WebDocumentRequestHandler
-    { 
-    }
-}</code></pre><p>Further modification to your handler is optional and allows to modify default behavior according to application logic.</p>
-<h2>Add the Web Capture handler</h2><p>The Web Capture handler is responsible for handling file uploads from the scanning controls embedded in your page, and routing them to their next destination along with any necessary metadata. It is also responsible for supplying the scanning controls with the available content and document types, and status information.</p>
+	public class WebDocViewerHandler : WebDocumentRequestHandler
+	{ 
+	}
+}
+</code></pre>
+<p>Further modification to your handler is optional and allows to modify default behavior according to application logic.</p>
+<h2>Add the Web Capture handler</h2>
+<p>The Web Capture handler is responsible for handling file uploads from the scanning controls embedded in your page, and routing them to their next destination along with any necessary metadata. It is also responsible for supplying the scanning controls with the available content and document types, and status information.</p>
 <p><em><strong>Note</strong></em>, <code>WebCaptureRequestHandler customizations described below is required only in case if application utilizing document capture functionality. For regular scanning, WebCaptureRequestHandler is required for licensing and default scanned files upload mechanism and don't requires customization.</code></p>
 <p>For this guide, we will create a custom handler that provides a few static content and document types, and saves uploaded files to another location. Using this baseline, you can continue modifying the handler to suit your own document handling needs.</p>
 <p>If your organization uses Kofax Import Connector (KIC) or Microsoft SharePoint for document
 management, DotImage ships with handlers to connect to these services. Check their respective topics for more information on how to use these handlers.</p>
-<h3>Create a handler</h3><p>Add a new Generic Handler to your project. For the purposes of this guide, it is assumed this file will be called .</p>
+<h3>Create a handler</h3>
+<p>Add a new Generic Handler to your project. For the purposes of this guide, it is assumed this file will be called .</p>
 <p>The handler should be modified to extend from WebCaptureRequestHandler, and should not implement the IHttpHandler interface, as is done when a generic handler is first created. Instead your handler will need to override several methods of WebCaptureRequestHandler. Your handler should resemble the following example.</p>
 <pre class="prettyprint source lang-c#"><code>using System;
 using System.Collections.Generic;
@@ -121,13 +132,19 @@ namespace BasicWebCapture
             // ...
         }
     }
-}</code></pre><p>The three stubs represent the minimum number of methods that must be implemented for basic functionality, but there are other methods available in the public API that can also have their behavior overridden, such as methods to generate IDs or query the status of documents. Refer to the accompanying object reference for the complete WebCaptureRequestHandler API.</p>
-<h4>GetContentTypeList</h4><p>This method returns the collection of available content types that can be used to organize scanned and uploaded documents. Content types are the top-level organizational unit, and each one has its own collection of document types (also called document classes) below it.</p>
+}
+</code></pre>
+<p>The three stubs represent the minimum number of methods that must be implemented for basic functionality, but there are other methods available in the public API that can also have their behavior overridden, such as methods to generate IDs or query the status of documents. Refer to the accompanying object reference for the complete WebCaptureRequestHandler API.</p>
+<h4>GetContentTypeList</h4>
+<p>This method returns the collection of available content types that can be used to organize scanned and uploaded documents. Content types are the top-level organizational unit, and each one has its own collection of document types (also called document classes) below it.</p>
 <p>For this example, GetContentTypeList will be implemented to return a fixed list of two types: Accounts and HR. In a real system, this would probably query a database or other data source instead. In the KIC and SharePoint handlers, this method queries the system for these values.</p>
 <pre class="prettyprint source lang-c#"><code>protected override List&lt;string> GetContentTypeList(HttpContext context)
 {
     return new List&lt;string>() { &quot;Accounts&quot;, &quot;HR&quot; };
-}</code></pre><h4>GetContentTypeDescription</h4><p>This method returns a collection of data describing all the document types under a single content type. The return data is a list of dictionaries, where each dictionary contains a set of properties describing a single document type. In this example, the only property returned for a document type is its documentClass, which serves as its name.</p>
+}
+</code></pre>
+<h4>GetContentTypeDescription</h4>
+<p>This method returns a collection of data describing all the document types under a single content type. The return data is a list of dictionaries, where each dictionary contains a set of properties describing a single document type. In this example, the only property returned for a document type is its documentClass, which serves as its name.</p>
 <pre class="prettyprint source lang-c#"><code>protected override List&lt;Dictionary&lt;string, string>> GetContentTypeDescription(HttpContext context, String contentType)
 {
     switch (contentType)
@@ -144,8 +161,11 @@ namespace BasicWebCapture
 private List&lt;Dictionary&lt;String, String>> CreateDocumentClassDictionaryList(String[] docList)
 {
     return docList.Select(doc => new Dictionary&lt;String, String> {{&quot;documentClass&quot;, doc}}).ToList();
-}</code></pre><p>A helper method is provided to produce the actual list of document types, while GetContentTypeDescription switches on a given content type to determine what document types should be included in the list. As with content types, it is expected that this data will originate from another data source, instead of being hard-coded.</p>
-<h4>ImportDocument</h4><p>This method is responsible for actually moving a document and its metadata to its real destination, which could be a directory, database, or system like KIC and SharePoint.</p>
+}
+</code></pre>
+<p>A helper method is provided to produce the actual list of document types, while GetContentTypeDescription switches on a given content type to determine what document types should be included in the list. As with content types, it is expected that this data will originate from another data source, instead of being hard-coded.</p>
+<h4>ImportDocument</h4>
+<p>This method is responsible for actually moving a document and its metadata to its real destination, which could be a directory, database, or system like KIC and SharePoint.</p>
 <pre class="prettyprint source lang-c#"><code>protected override Dictionary&lt;string, string> ImportDocument(HttpContext context, string filename, string contentType, string contentTypeDocumentClass, string contentTypeDescription)
 {
     string docId = Guid.NewGuid().ToString();
@@ -161,17 +181,24 @@ private List&lt;Dictionary&lt;String, String>> CreateDocumentClassDictionaryList
         {&quot;id&quot;, docId},
         {&quot;status&quot;, &quot;Import succeeded&quot;},
     };
-}</code></pre><p>In this example, imported documents are copied into a directory tree rooted at <code>C:\DocumentStore</code>, using the content type and document class as subdirectories for organizing files. The imported file is copied and given a new name based on a GUID, which is also passed back to the client in the &quot;id&quot; field of a dictionary. The id could be used by the client to query the handler at a future time for the status of the imported document, but this functionality is not included in the guide.</p>
-<h2>Set up the scanning controls and viewer</h2><p>The setup for web scanning just requires placing some JavaScript, CSS, and HTML into your page. For this guide however, we will update the document , which was originally included in the new web project.</p>
-<h3>Include the web resources</h3><p>Include the following script and link tags in your page's head section to include the necessary Web Document Viewer and Web Capture code and dependencies.</p>
+}
+</code></pre>
+<p>In this example, imported documents are copied into a directory tree rooted at <code>C:\DocumentStore</code>, using the content type and document class as subdirectories for organizing files. The imported file is copied and given a new name based on a GUID, which is also passed back to the client in the &quot;id&quot; field of a dictionary. The id could be used by the client to query the handler at a future time for the status of the imported document, but this functionality is not included in the guide.</p>
+<h2>Set up the scanning controls and viewer</h2>
+<p>The setup for web scanning just requires placing some JavaScript, CSS, and HTML into your page. For this guide however, we will update the document , which was originally included in the new web project.</p>
+<h3>Include the web resources</h3>
+<p>Include the following script and link tags in your page's head section to include the necessary Web Document Viewer and Web Capture code and dependencies.</p>
 <pre class="prettyprint source lang-javascript"><code>&lt;!-- Script includes for Web Viewing -->
-&lt;script src=&quot;jquery-3.3.1.min.js&quot; type=&quot;text/javascript&quot;>&lt;/script>
+&lt;script src=&quot;jquery-3.4.1.min.js&quot; type=&quot;text/javascript&quot;>&lt;/script>
 &lt;script src=&quot;atalaWebDocumentViewer.js&quot; type=&quot;text/javascript&quot;>&lt;/script>
 &lt;!-- Style for Web Viewer -->
 &lt;link href=&quot;jquery-ui-1.12.1.min.css&quot; rel=&quot;Stylesheet&quot; type=&quot;text/css&quot; />
 &lt;link href=&quot;atalaWebDocumentViewer.css&quot; rel=&quot;Stylesheet&quot; type=&quot;text/css&quot; />
 &lt;!-- Script includes for Web Capture -->
-&lt;script src=&quot;atalaWebCapture.js&quot; type=&quot;text/javascript&quot;>&lt;/script></code></pre><h3>Configure the controls</h3><p>The web scanning and web viewing controls need to be initialized and configured to set up connections to the right handlers, specify behavior for events, and so forth. This can be done with another block of JavaScript, either included or pasted directly within your page's head somewhere below the included dependencies.</p>
+&lt;script src=&quot;atalaWebCapture.js&quot; type=&quot;text/javascript&quot;>&lt;/script>
+</code></pre>
+<h3>Configure the controls</h3>
+<p>The web scanning and web viewing controls need to be initialized and configured to set up connections to the right handlers, specify behavior for events, and so forth. This can be done with another block of JavaScript, either included or pasted directly within your page's head somewhere below the included dependencies.</p>
 <pre class="prettyprint source lang-html"><code>&lt;script type=&quot;text/javascript&quot;>
 // Initialize Web Scanning and Web Viewing
 $(function() {
@@ -200,10 +227,13 @@ $(function() {
         alert('Thrown error: ' + error.description);
     }
 });
-&lt;/script></code></pre><p>Note that the URL for the WebDocViewer handler is specified once and the URL for the WebCapture handler is specified twice, since two capture services must be initialized.</p>
-<p>There are several additional options and handlers that can be specified in the initialization routines for web scanning and viewing. 
+&lt;/script>
+</code></pre>
+<p>Note that the URL for the WebDocViewer handler is specified once and the URL for the WebCapture handler is specified twice, since two capture services must be initialized.</p>
+<p>There are several additional options and handlers that can be specified in the initialization routines for web scanning and viewing.
 This example represents the minimal configuration necessary for web scanning with an integrated document viewer.</p>
-<h3>Add the UI</h3><p>Add the following HTML to your project to create a basic viewer UI. This includes the Web Document Viewer, drop-down boxes to choose scanners, content types, and document types, and buttons to drive the UI. The web scanning demos included with DotImage also include more complete examples.</p>
+<h3>Add the UI</h3>
+<p>Add the following HTML to your project to create a basic viewer UI. This includes the Web Document Viewer, drop-down boxes to choose scanners, content types, and document types, and buttons to drive the UI. The web scanning demos included with DotImage also include more complete examples.</p>
 <pre class="prettyprint source lang-html"><code>&lt;p>
     Select Scanner:
     &lt;select class=&quot;atala-scanner-list&quot; disabled=&quot;disabled&quot; name=&quot;scannerList&quot; style=&quot;width: 22em&quot;>
@@ -226,18 +256,29 @@ This example represents the minimal configuration necessary for web scanning wit
     &lt;div class=&quot;atala-document-toolbar&quot; style=&quot;width: 670px;&quot;>&lt;/div>
     &lt;div class=&quot;atala-document-container&quot; style=&quot;width: 670px; height: 500px;&quot;>&lt;/div>
 &lt;/div>
-</code></pre><h3>Wrap-up</h3><p>Your project should be ready to deploy to IIS. It is also ready to run from your developing environment, for testing purposes.</p>
-<h3>Web server Upload size limits</h3><p>By default, IIS limits uploads to 30MB. If your application may sometimes generate larger uploads, you will need to adjust this limit for the server, or at least for your web application.</p>
-<h4>Estimating Upload Sizes</h4><p> The size of an upload is approximately the sum of the compressed
+
+</code></pre>
+<h3>Wrap-up</h3>
+<p>Your project should be ready to deploy to IIS. It is also ready to run from your developing environment, for testing purposes.</p>
+<h3>Web server Upload size limits</h3>
+<p>By default, IIS limits uploads to 30MB. If your application may sometimes generate larger uploads, you will need to adjust this limit for the server, or at least for your web application.</p>
+<h4>Estimating Upload Sizes</h4>
+<p>The size of an upload is approximately the sum of the compressed
 sizes of the uploaded images x 4/3 (1.333). The calculations below are for images. Remember
 that duplex scanning generates two images per page, minus any blank sides discarded by setting discardBlankPages:true.</p>
-<h4>Raw Uncompressed Image Size</h4><p>Uncompressed image size in bytes is calculated according to following formula</p>
-<pre class="prettyprint source"><code>(width x DPI x height x DPI x depth) / 8</code></pre><p>Where: depth is 24 for color, 8 for grayscale, and 1 for B&amp;W images. For example, an 8.5&quot; x 11&quot; color page, scanned at 200 DPI: (8.5 x 200 x 11 x 200 x 24) / 8 = 11,220,000 bytes (~11MB).</p>
-<h4>Compression Ratios</h4><p>Typical office documents in B&amp;W will compress by ~10X. White space increases
+<h4>Raw Uncompressed Image Size</h4>
+<p>Uncompressed image size in bytes is calculated according to following formula</p>
+<pre><code>(width x DPI x height x DPI x depth) / 8
+</code></pre>
+<p>Where: depth is 24 for color, 8 for grayscale, and 1 for B&amp;W images. For example, an 8.5&quot; x 11&quot; color page, scanned at 200 DPI: (8.5 x 200 x 11 x 200 x 24) / 8 = 11,220,000 bytes (~11MB).</p>
+<h4>Compression Ratios</h4>
+<p>Typical office documents in B&amp;W will compress by ~10X. White space increases
 the compression, lots of text or detailed graphics of any kind decreases the compression. 50KB per compressed B&amp;W image is not a bad average, 70KB is conservative. Grayscale and color images will compress by 20X-30X, sometimes more. As with B&amp;W, blank paper compresses more, detailed content compresses less. For our example 8.5&quot; x 11&quot; color page scanned at 200 DPI, with a raw size of 11MB we estimate a compressed size in the range 374KB - 560KB.</p>
-<h4>Factor In Base64 Encoding</h4><p>We multiply by 4/3 (1.33) because uploads are encoded in Base64,
+<h4>Factor In Base64 Encoding</h4>
+<p>We multiply by 4/3 (1.33) because uploads are encoded in Base64,
 which encodes 3 binary bytes as 4 text characters</p>
-<h4>Adjusting The ASP.NET and IIS Upload Limits</h4><p>IIS, by default, limits any single upload to 30MB. And ASP.NET have even stricter limit for incoming request in 4MB. 
+<h4>Adjusting The ASP.NET and IIS Upload Limits</h4>
+<p>IIS, by default, limits any single upload to 30MB. And ASP.NET have even stricter limit for incoming request in 4MB.
 If you expect to upload larger files, you will need to increase this limit by editing web.config:</p>
 <pre class="prettyprint source lang-xml"><code>&lt;configuration>
   &lt;system.web>
@@ -254,7 +295,9 @@ If you expect to upload larger files, you will need to increase this limit by ed
       &lt;/requestFiltering>
     &lt;/security>
   &lt;/system.webServer>
-&lt;/configuration></code></pre><p>Alternatively, the IIS limit can also be changed interactively:</p>
+&lt;/configuration>
+</code></pre>
+<p>Alternatively, the IIS limit can also be changed interactively:</p>
 <ol>
 <li>Open IIS 7 SnapIn</li>
 <li>Select the website you want enable to accept large file uploads.</li>

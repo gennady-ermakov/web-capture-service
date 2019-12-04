@@ -48,7 +48,7 @@
 </header>
 
 <article>
-    <p>﻿By default all errors are sent to the javascript console in the browser. However, application can override this by specifying an error-handling function in the parameters to <a href="Atalasoft.Controls.Capture.WebScanning.html#.initialize"><code>Atalasoft.Controls.Capture.WebScanning.initialize</code></a> and <a href="Atalasoft.Controls.Capture.UploadToCaptureServer.html#.initialize"><code>Atalasoft.Controls.Capture.UploadToCaptureServer.initialize</code></a>.</p>
+    <p>By default all errors are sent to the javascript console in the browser. However, application can override this by specifying an error-handling function in the parameters to <a href="Atalasoft.Controls.Capture.WebScanning.html#.initialize"><code>Atalasoft.Controls.Capture.WebScanning.initialize</code></a> and <a href="Atalasoft.Controls.Capture.UploadToCaptureServer.html#.initialize"><code>Atalasoft.Controls.Capture.UploadToCaptureServer.initialize</code></a>.</p>
 <p>This example shows the basic technique of specifying error-handling functions. There is a longer code example at the end of this section.</p>
 <pre class="prettyprint source lang-javascript"><code>(function () {
     try {
@@ -62,73 +62,83 @@
         console.log(&quot;WebScanning initialization error: &quot; + error.description);
     }
 })();
-</code></pre><h2>Errors identification</h2><p>Web Capture Service JavaScript API provides as set of typed error identifiers, so the application could distinguish and appropriate handle different kinds that errors.</p>
+
+</code></pre>
+<h2>Errors identification</h2>
+<p>Web Capture Service JavaScript API provides as set of typed error identifiers, so the application could distinguish and appropriate handle different kinds that errors.</p>
 <p>All WebCapture errors are string members of <a href="Atalasoft.Controls.Capture.html#.Errors"><code>Atalasoft.Controls.Capture.Errors</code></a>. Each of the property of that object represents a particular error - the property name is the error identifier while the property value is the message that could be presented to user.</p>
-<p> The value of the corresponding <a href="Atalasoft.Controls.Capture.html#.Errors"><code>Atalasoft.Controls.Capture.Errors</code></a> property is passed to the error-handling functions as the firs parameter. So the error handling could be based on a comparison of msg with different <a href="Atalasoft.Controls.Capture.html#.Errors"><code>Atalasoft.Controls.Capture.Errors</code></a> values.
- The second parameter of the error-handling function is the additional data having structure specific to particular error.</p>
-<h2>Errors localization</h2><p>Error strings could be localized by providing <code>params.localization</code> values to the
+<p>The value of the corresponding <a href="Atalasoft.Controls.Capture.html#.Errors"><code>Atalasoft.Controls.Capture.Errors</code></a> property is passed to the error-handling functions as the firs parameter. So the error handling could be based on a comparison of msg with different <a href="Atalasoft.Controls.Capture.html#.Errors"><code>Atalasoft.Controls.Capture.Errors</code></a> values.
+The second parameter of the error-handling function is the additional data having structure specific to particular error.</p>
+<h2>Errors localization</h2>
+<p>Error strings could be localized by providing <code>params.localization</code> values to the
 <a href="Atalasoft.Controls.Capture.WebScanning.html#.initialize"><code>Atalasoft.Controls.Capture.WebScanning.initialize</code></a> function.
 Those values will be merged with <a href="Atalasoft.Controls.Capture.html#.Errors"><code>Atalasoft.Controls.Capture.Errors</code></a> and thus default error messages could be overridden.</p>
-<h2>Most recent scan errors definition</h2><ul>
-<li><p><a href="Atalasoft.Controls.Capture.html#.Errors"><code>Atalasoft.Controls.Capture.Errors.badBrowser</code></a></p>
-<p>  <em>Fired in</em>: Any unsupported browser</p>
-<p>  <strong>During</strong>: <em>Atalasoft.Controls.Capture.WebScanning.initialize</em></p>
-<p>  <em>Cause</em>: WingScan detected that it is running in a browser it does support. Common reasons WingScan 10.6.1 might fire this error:</p>
+<h2>Most recent scan errors definition</h2>
 <ul>
-<li>The browser is not Internet Explorer, Firefox, or Chrome</li>
-<li>The browser is one of the above, but not a supported version, for example, Internet Explorer 6.0</li>
-<li><p>The operating system is not Windows</p>
+<li>
+<p><a href="Atalasoft.Controls.Capture.html#.Errors"><code>Atalasoft.Controls.Capture.Errors.badBrowser</code></a></p>
+<p><em>Fired in</em>: Any unsupported browser</p>
+<p><strong>During</strong>: <em>Atalasoft.Controls.Capture.WebScanning.initialize</em></p>
+<p><em>Cause</em>: WebCapture Service detected that it is running in a browser it does not support. Common reasons WebCapture Service might fire this error:</p>
+<ul>
+<li>The browser is not Internet Explorer, Firefox, Chrome, or Safary</li>
+<li>The browser is one of the above, but not a supported version, for example, Internet Explorer 9.0</li>
+<li>The operating system is not Windows or macOS</li>
+</ul>
 <p><em>How to Handle</em>: We strongly recommend that your application display the msg parameter to the handler, or your own equivalent message. If you also display the value of the params parameter, which will be a string, it would help a technical support specialist identify the browser causing the problem.
 __</p>
 </li>
-</ul>
+<li>
+<p><a href="Atalasoft.Controls.Capture.html#.Errors"><code>Atalasoft.Controls.Capture.Errors.noTwain</code></a>
+<em>Fired in</em>: All browsers.</p>
+<p><em>During</em>: <em>Atalasoft.Controls.Capture.WebScanning.initialize</em></p>
+<p><em>Cause</em>: Support for the TWAIN protocol itself not found on the client computer.</p>
+<p><em>Background</em>: This error is extremely unlikely to happen on a typical end-user PC running Vista or higher, because retail editions of Windows all include a copy of the TWAIN manager. However, a user on  Windows Servers 2008 R2 or higher can be missing TWAIN which will cause this error.</p>
+<p><em>How to Handle</em>: Using scanners in Windows Server 2008 R2 with TWAIN drivers requires the installation of Desktop Experience Pack.
+You could just display the error string (the value of the msg parameter of the onScanError handler) or display your own message that TWAIN was not found on the computer.</p>
 </li>
-<li><p><a href="Atalasoft.Controls.Capture.html#.Errors"><code>Atalasoft.Controls.Capture.Errors.noTwain</code></a>
-   <em>Fired in</em>: All browsers.</p>
-<p>   <em>During</em>: <em>Atalasoft.Controls.Capture.WebScanning.initialize</em></p>
-<p>   <em>Cause</em>: Support for the TWAIN protocol itself not found on the client computer.</p>
-<p>   <em>Background</em>: This error is extremely unlikely to happen on a typical end-user PC running Vista or higher, because retail editions of Windows all include a copy of the TWAIN manager. However, a user on  Windows Servers 2008 R2 or higher can be missing TWAIN which will cause this error. </p>
-<p>   <em>How to Handle</em>: Using scanners in Windows Server 2008 R2 with TWAIN drivers requires the installation of Desktop Experience Pack.
-   You could just display the error string (the value of the msg parameter of the onScanError handler) or display your own message that TWAIN was not found on the computer.</p>
+<li>
+<p><a href="Atalasoft.Controls.Capture.html#.Errors"><code>Atalasoft.Controls.Capture.Errors.noPlugin</code></a></p>
+<p><em>Fired in</em>:All browsers</p>
+<p><em>During</em>: <em>Atalasoft.Controls.Capture.WebScanning.initialize</em></p>
+<p><em>Cause</em>: The required Web Scanning Service is either not installed or not running.</p>
+<p><em>How to Handle</em>: Link to Web Scanning Service should be provided to end user to download and install service. Reinstalling service is also a legal way to restart it.<br>
+The filename of the appropriate download is passed to your error handler as <em>params.filename</em></p>
+<p>Alternatively user could start Web Scanning Service manually if it's already installed.</p>
 </li>
-<li><p><a href="Atalasoft.Controls.Capture.html#.Errors"><code>Atalasoft.Controls.Capture.Errors.noPlugin</code></a></p>
-<p>   <em>Fired in</em>:All browsers</p>
-<p>   <em>During</em>: <em>Atalasoft.Controls.Capture.WebScanning.initialize</em></p>
-<p>   <em>Cause</em>: The required Web Scanning Service is either not installed or not running.</p>
-<p>   <em>How to Handle</em>: Link to Web Scanning Service should be provided to end user to download and install service. Reinstalling service is also a legal way to restart it.  </p>
-<pre class="prettyprint source"><code>   The filename of the appropriate download is passed to your error handler as _params.filename_</code></pre><p>Alternatively user could start Web Scanning Service manually if it's already installed.</p>
-<ul>
-<li><a href="Atalasoft.Controls.Capture.html#.Errors"><code>Atalasoft.Controls.Capture.Errors.oldPlugin</code></a></li>
+<li>
+<p><a href="Atalasoft.Controls.Capture.html#.Errors"><code>Atalasoft.Controls.Capture.Errors.oldPlugin</code></a></p>
+</li>
 </ul>
 <p><em>Fired in</em>: All browsers</p>
 <p><em>During</em>: <em>Atalasoft.Controls.Capture.WebScanning.initialize</em></p>
 <p><em>Cause</em>: The Web Scanning Service is installed and running but JavaScript API was updated on server to newer version.</p>
 <p><em>How to Handle</em>: Similar to handling <em>noPlugin</em>. User end user should download Web Scanning Service installer and update local service installation.</p>
-</li>
-</ul>
 <ul>
-<li><p><a href="Atalasoft.Controls.Capture.html#.Errors"><code>Atalasoft.Controls.Capture.Errors.oldWindowsService</code></a></p>
-<p>   <em>Fired in</em>: All browsers</p>
-<p>   <em>During</em>: <em>Atalasoft.Controls.Capture.WebScanning.initialize</em></p>
-<p>   <em>Cause</em>: The Web Scanning Service is installed as windows service and running but JavaScript API was updated on server to newer version.</p>
-<p>   <em>How to Handle</em>: Most likely windows service installation indicates that Web Scanning Service is running in multiuser environment and regular user won't have enough permissions to update windows service. For such installations, shared servers should be upgraded to newer version of Web Scanning Service along with web servers by system administrators. In such case user could only be notified about error.</p>
+<li>
+<p><a href="Atalasoft.Controls.Capture.html#.Errors"><code>Atalasoft.Controls.Capture.Errors.oldWindowsService</code></a></p>
+<p><em>Fired in</em>: All browsers</p>
+<p><em>During</em>: <em>Atalasoft.Controls.Capture.WebScanning.initialize</em></p>
+<p><em>Cause</em>: The Web Scanning Service is installed as windows service and running but JavaScript API was updated on server to newer version.</p>
+<p><em>How to Handle</em>: Most likely windows service installation indicates that Web Scanning Service is running in multiuser environment and regular user won't have enough permissions to update windows service. For such installations, shared servers should be upgraded to newer version of Web Scanning Service along with web servers by system administrators. In such case user could only be notified about error.</p>
 </li>
-</ul>
-<ul>
-<li><p><a href="Atalasoft.Controls.Capture.html#.Errors"><code>Atalasoft.Controls.Capture.Errors.licensingError</code></a></p>
-<p>   <em>Fired in</em>: All browsers</p>
-<p>   <em>During</em>: Asynchronously, after <code>Atalasoft.Controls.Capture.WebScanning.initialize</code></p>
-<p>   <em>Cause</em>: When queried, the server did not return the expected JSON licensing information in a timely fashion.</p>
-<p>   <em>How to Handle</em>: If you see this during development, it suggests some server configuration problem, the <code>handlerUrl</code> passed to <code>WebScanning.initialize</code> isn't right, the server is actually off-line or not accessible, or (maybe, even) the licensing isn't right for Web Capture Service on the server.
-   Assuming you resolve any logical problems during development, if this error occurs after deployment it  almost certainly represents a typical &quot;server not responding&quot; error, with all the usual causes.</p>
+<li>
+<p><a href="Atalasoft.Controls.Capture.html#.Errors"><code>Atalasoft.Controls.Capture.Errors.licensingError</code></a></p>
+<p><em>Fired in</em>: All browsers</p>
+<p><em>During</em>: Asynchronously, after <code>Atalasoft.Controls.Capture.WebScanning.initialize</code></p>
+<p><em>Cause</em>: When queried, the server did not return the expected JSON licensing information in a timely fashion.</p>
+<p><em>How to Handle</em>: If you see this during development, it suggests some server configuration problem, the <code>handlerUrl</code> passed to <code>WebScanning.initialize</code> isn't right, the server is actually off-line or not accessible, or (maybe, even) the licensing isn't right for Web Capture Service on the server.
+Assuming you resolve any logical problems during development, if this error occurs after deployment it  almost certainly represents a typical &quot;server not responding&quot; error, with all the usual causes.</p>
 </li>
-<li><p><em>Other errors</em></p>
+<li>
+<p><em>Other errors</em></p>
 <p>Other errors are possible, and additional errors may be added in future updates to Web Capture Service. We recommend that you defend against that possibility by displaying the text of the error (the msg parameter to the onScanError handler) to the user, and offering them as much flexibility as possible - for example, by linking to a troubleshooting &amp; support page that you can revise based on experience.</p>
-<h2>Handler: onScanError(msg, params)</h2></li>
+<h2>Handler: onScanError(msg, params)</h2>
+</li>
 </ul>
 <p>The WingScan service can be initialized with a scan error handler, and that handler will potentially be called back by WingScan with one of various scanning-related errors.</p>
 <p><strong><em>Note</em></strong>, <code>It is essential to a well-functioning web scanning application that you handle at least the noPlugin and oldPlugin errors. This is the standard way to deploy local service installer packages to the end user.</code></p>
-<p>Sample implementation of the <code>onScanError</code> handler </p>
+<p>Sample implementation of the <code>onScanError</code> handler</p>
 <pre class="prettyprint source lang-javascript"><code>function scanErrorHandler(msg, params)
 {    
     switch (msg) {
@@ -163,14 +173,20 @@ __</p>
 function prompt(content) {
   // present content.
   console.log(content);
-}</code></pre><h2>Handler: onUploadError(msg, params)</h2><p>Called when an error is detected during upload to the server.
+}
+</code></pre>
+<h2>Handler: onUploadError(msg, params)</h2>
+<p>Called when an error is detected during upload to the server.
 The msg parameter will be one of the following:</p>
 <ul>
-<li><p><a href="Atalasoft.Controls.Capture.html#.Errors"><code>Atalasoft.Controls.Capture.Errors.ajax</code></a> - could not create/initialize the XMLHttpRequest object.</p>
+<li>
+<p><a href="Atalasoft.Controls.Capture.html#.Errors"><code>Atalasoft.Controls.Capture.Errors.ajax</code></a> - could not create/initialize the XMLHttpRequest object.</p>
 </li>
-<li><p><a href="Atalasoft.Controls.Capture.html#.Errors"><code>Atalasoft.Controls.Capture.Errors.serverNotResponding</code></a> - connection to the server timed out.</p>
+<li>
+<p><a href="Atalasoft.Controls.Capture.html#.Errors"><code>Atalasoft.Controls.Capture.Errors.serverNotResponding</code></a> - connection to the server timed out.</p>
 </li>
-<li><p><a href="Atalasoft.Controls.Capture.html#.Errors"><code>Atalasoft.Controls.Capture.Errors.uploadError</code></a> - the params object will contain three properties: <code>responseStatus, response, and handlerUrl</code>.</p>
+<li>
+<p><a href="Atalasoft.Controls.Capture.html#.Errors"><code>Atalasoft.Controls.Capture.Errors.uploadError</code></a> - the params object will contain three properties: <code>responseStatus, response, and handlerUrl</code>.</p>
 </li>
 </ul>
 </article>

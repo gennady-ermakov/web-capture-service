@@ -48,60 +48,73 @@
 </header>
 
 <article>
-    <p>﻿## Automatic scanned document upload</p>
-<p>For scanned documents automatic upload is triggered after scan completes. 
-All scanned images that was'n discarded during scan are combined into multipage tiff file 
+    <p>## Automatic scanned document upload</p>
+<p>For scanned documents automatic upload is triggered after scan completes.
+All scanned images that was'n discarded during scan are combined into multipage tiff file
 on the local scanning service side, downloaded by the browser and then sent to the <code>WebCaptureRequestHandler</code>.</p>
-<h2>Preffered way to handle scanned images</h2><p>Automatic upload allows quickly setup small scanning application without writing additional code 
-for upload and images storage infrastructure. This works well for small scans, but breaks on big 
-documents or high-resolution images, because of memory allocation issues - such scans produces 
+<h2>Preffered way to handle scanned images</h2>
+<p>Automatic upload allows quickly setup small scanning application without writing additional code
+for upload and images storage infrastructure. This works well for small scans, but breaks on big
+documents or high-resolution images, because of memory allocation issues - such scans produces
 quite big multipage file and usually 32bit browser or 32bit Web Scanning Service can't handle such allocations.</p>
-<p>Preferred way to handling uploaded images is to configure scanning options 
-<a href="Atalasoft.Controls.Capture.WebScanning.ScanningOptions.html#.deliverables"><code>deliverables</code></a> settings 
-to save each scanned image to encrypted local file in a desired format and <a href="BaseImage.html#discard"><code>discard</code></a> 
-image itself right in the <a href="Atalasoft.Controls.Capture.WebScanning.html#event:onImageAcquired"><code>onImageAcquired</code></a> 
+<p>Preferred way to handling uploaded images is to configure scanning options
+<a href="Atalasoft.Controls.Capture.WebScanning.ScanningOptions.html#.deliverables"><code>deliverables</code></a> settings
+to save each scanned image to encrypted local file in a desired format and <a href="BaseImage.html#discard"><code>discard</code></a>
+image itself right in the <a href="Atalasoft.Controls.Capture.WebScanning.html#event:onImageAcquired"><code>onImageAcquired</code></a>
 handler.  After that, images data could be requested and uploaded to the server asynchronously while scanner will be unblocked right after scan.</p>
-<h2>Overriding Automatic Upload</h2><p>Application is able to override or disable automatic file upload and optionally reuse existing upload code to handle individual single-page images.</p>
+<h2>Overriding Automatic Upload</h2>
+<p>Application is able to override or disable automatic file upload and optionally reuse existing upload code to handle individual single-page images.</p>
 <p>Upload handler is retrieved using public API method which returns upload handler and getting called before each new scan request.</p>
 <p><a href="Atalasoft.Controls.Capture.UploadToCaptureServer.html#.getUploadCallback"><code>Atalasoft.Controls.Capture.UploadToCaptureServer.getUploadCallback</code></a></p>
 <p>The default upload callback itself have is available using following API</p>
 <p><a href="Atalasoft.Controls.Capture.UploadToCaptureServer.html#.uploadToServer"><code>Atalasoft.Controls.Capture.UploadToCaptureServer.uploadToServer</code></a></p>
 <p>To disable automatic upload application could override upload handler factory to return null instead of actual upload handler.</p>
-<pre class="prettyprint source"><code>Atalasoft.Controls.Capture.UploadToCaptureServer.getUploadCallback = function() { return null; };</code></pre><h2>Upload Options</h2><p>The following are the supported properties of the <code>uploadOptions</code> object that can be included in the parameters to <a href="Atalasoft.Controls.Capture.WebScanning.html#.initialize"><code>Atalasoft.Controls.Capture.WebScanning.initialize</code></a>.</p>
+<pre><code>Atalasoft.Controls.Capture.UploadToCaptureServer.getUploadCallback = function() { return null; };
+</code></pre>
+<h2>Upload Options</h2>
+<p>The following are the supported properties of the <code>uploadOptions</code> object that can be included in the parameters to <a href="Atalasoft.Controls.Capture.WebScanning.html#.initialize"><code>Atalasoft.Controls.Capture.WebScanning.initialize</code></a>.</p>
 <p>Keep in mind that an upload is submitted to the server as a POST of a MIME message, per <a href="https://www.ietf.org/rfc/rfc2046.txt">RFC2046 &quot;Multipurpose Internet Mail Extensions.&quot;</a> The uploaded file is included as a form-data part with <code>name=&quot;file&quot;</code>.</p>
 <ul>
-<li><p><code>formData</code> object</p>
-<p>  <em>Default value</em>: <em>null</em></p>
-<p>  Each 'own' property of the <code>formData</code> object is inserted in uploads as a form-data part, with its name and value. On the server, if you override the HandleUpload method, each property of the formData object will be available in the context.Request.Form dictionary. Numbers are converted to strings, strings are sent unquoted. Objects and arrays are sent (as strings) in JSON format. Unicode characters are handled correctly in both names and values.</p>
-<pre class="prettyprint source lang-javascript"><code>    Atalasoft.Controls.Capture.UploadToCaptureServer.initialize({
-        uploadOptions: {   
-          formData: {
-            application: 'Doc-U-droid 9000',
-            operator: '',
-            pages: [1, 3, 7]
-        }
-      }
-    });</code></pre><p>  On the server those properties are available as</p>
-<pre class="prettyprint source lang-c#"><code>  string app = context.Request.Form[&quot;application&quot;];
-  string oper = context.Request.Form[&quot;operator&quot;];
-  string pages = context.Request.Form[&quot;pages&quot;];</code></pre></li>
-<li><p><code>extraParts</code> array of strings</p>
-<p>  <em>Default value</em>: undefined
-  This optional parameter is a list of additional parts to be inserted in the multipart body of each upload. Each string must conform to the rules in RFC2046 for a body-part. This option is retrieved from the <code>uploadOptions</code> object at the beginning of each upload, so its contents at that moment are included in the subsequent upload.</p>
+<li>
+<p><code>formData</code> object</p>
+<p><em>Default value</em>: <em>null</em></p>
+<p>Each 'own' property of the <code>formData</code> object is inserted in uploads as a form-data part, with its name and value. On the server, if you override the HandleUpload method, each property of the formData object will be available in the context.Request.Form dictionary. Numbers are converted to strings, strings are sent unquoted. Objects and arrays are sent (as strings) in JSON format. Unicode characters are handled correctly in both names and values.</p>
+<pre class="prettyprint source lang-javascript"><code>   Atalasoft.Controls.Capture.UploadToCaptureServer.initialize({
+       uploadOptions: {   
+         formData: {
+           application: 'Doc-U-droid 9000',
+           operator: '',
+           pages: [1, 3, 7]
+       }
+     }
+   });
+</code></pre>
+<p>On the server those properties are available as</p>
+<pre class="prettyprint source lang-c#"><code>string app = context.Request.Form[&quot;application&quot;];
+string oper = context.Request.Form[&quot;operator&quot;];
+string pages = context.Request.Form[&quot;pages&quot;];
+</code></pre>
+</li>
+<li>
+<p><code>extraParts</code> array of strings</p>
+<p><em>Default value</em>: undefined
+This optional parameter is a list of additional parts to be inserted in the multipart body of each upload. Each string must conform to the rules in RFC2046 for a body-part. This option is retrieved from the <code>uploadOptions</code> object at the beginning of each upload, so its contents at that moment are included in the subsequent upload.</p>
+</li>
+</ul>
 <p><strong><em>Note</em></strong> <code>The order of strings in the array is not necessarily preserved in the upload.</code></p>
 <pre class="prettyprint source lang-javascript"><code>
-Atalasoft.Controls.Capture.UploadToCaptureServer.initialize({
-    uploadOptions: {
-          // an upload initiated now will include the 'application' field
-          // above, in the multipart MIME message sent to the server.
-          extraParts: [
-              'Content-Disposition: form-data; name=&quot;application&quot;\n'+
-              '\n'+ 
-              'Doc-U-droid 9000'
-          ]
-     }
-});</code></pre></li>
-</ul>
+  Atalasoft.Controls.Capture.UploadToCaptureServer.initialize({
+      uploadOptions: {
+            // an upload initiated now will include the 'application' field
+            // above, in the multipart MIME message sent to the server.
+            extraParts: [
+                'Content-Disposition: form-data; name=&quot;application&quot;\n'+
+                '\n'+ 
+                'Doc-U-droid 9000'
+            ]
+       }
+  });
+</code></pre>
 </article>
 
 </section>

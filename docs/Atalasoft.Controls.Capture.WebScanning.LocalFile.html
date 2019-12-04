@@ -61,13 +61,13 @@
     <div class="container-overview">
     
         
-            <div class="description"><p>Local files are stored in this folder: </p>
+            <div class="description"><p>Local files are stored in this folder:</p>
 <ul>
 <li>On Windows: <code>%LOCALAPPDATA%\Kofax\WebCapture\Persistent</code></li>
 <li>On macOS: <code>/Users/&lt;current user&gt;/Library/WebCapture</code></li>
 </ul>
-<p>The file names follow this pattern: </p>
-<p><pre><code>(T|U)<sessionid>-<filenumber>.elf</pre></code></p>
+<p>The file names follow this pattern:</p>
+<pre><code>(T|U)<sessionid>-<filenumber>.elf</pre></code>
 <p><strong>T</strong> indicates a <em>trusted</em> file – WebCapture generated the contents.</p>
 <p><strong>U</strong> indicates an <em>untrusted</em> file – contents came from outside the plugin e.g. via LocalFile.fromBase64String</p>
 <p>The <strong>session-id</strong> is generated each time the plugin is instantiated, and should be unique on any given computer for ~13 years.</p>
@@ -528,7 +528,7 @@
 
 
 <div class="description">
-    <p>Immediately deletes all local files written more than <em>hours</em> ago. Deletes ALL local files meeting the age criterion, 
+    <p>Immediately deletes all local files written more than <em>hours</em> ago. Deletes ALL local files meeting the age criterion,
 no matter how or when they were created, or by which instance of WingScan. Obviously, use with caution.</p>
 </div>
 
@@ -1001,7 +1001,7 @@ no matter how or when they were created, or by which instance of WingScan. Obvio
 
 
 <div class="description">
-    <p>Immediately deletes all local files associated with (created by) this instance of WingScan. 
+    <p>Immediately deletes all local files associated with (created by) this instance of WingScan.
 Has no effect on local files created in other instances of the client application, or files created by previous incarnations of WingScan.</p>
 </div>
 
@@ -1143,7 +1143,7 @@ Has no effect on local files created in other instances of the client applicatio
 
 
 <div class="description">
-    <p>Sets the encryption key for subsequent encrypted local file load/saves. The basis is an arbitrary string, 
+    <p>Sets the encryption key for subsequent encrypted local file load/saves. The basis is an arbitrary string,
 which is used to generate the symmetric encryption key.</p>
 <p>The basis is immediately discarded, and the generated key is moved into the Windows secure cryptographic storage.</p>
 <p><strong>macOS version of Web Capture Service does not use encryption key</strong></p>

@@ -7,9 +7,10 @@
   "main": "atalaWebCapture.js",
   "keywords": [
     "Atalasoft",
-    "web-capture",
-    "capture",
-    "web-scanning"
+    "imaging",
+    "image scanning",
+    "web",
+    "javascript"
   ],
   "license": "https://www.atalasoft.com/Pricing/Licensing-Overview",
   "homepage": "https://www.atalasoft.com/Products/DotImage",
@@ -20,7 +21,7 @@
     "!atalaWebCapture.js"
   ],
   "dependencies": {
-    "jquery": ">=3.3.1"
+    "jquery": "^3.4.1"
   },
-  "version": "11.1.7"
+  "version": "11.2.0"
 }

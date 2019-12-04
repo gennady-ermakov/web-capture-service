@@ -210,7 +210,9 @@ function _onImageAcquired(event, imageProxy) {
     alert('first barcode type=' + imageProxy.barcodes[0].symbology +
           ', data='+imageProxy.barcodes[0].data);
   }
-}</code></pre><p>To enable barcode recognition, include barcodes as a property of the scanningOptions object, and set it to an object with one or more of the
+}
+</code></pre>
+<p>To enable barcode recognition, include barcodes as a property of the scanningOptions object, and set it to an object with one or more of the
 following properties:</p>
 <table>
 <thead>
@@ -352,7 +354,8 @@ WingScan/WebCapture.</p>
     '_LoadSetting_&lt;PropertyName=&quot;CBinarize.Do_Adv_Clarity.Bool&quot; Value=&quot;1&quot; Comment=&quot;DEFAULT 0&quot;/>'
   },
   // ...
-}</code></pre></td>
+}
+</code></pre></td>
         </tr>
 
     
@@ -378,8 +381,8 @@ WingScan/WebCapture.</p>
             
 
             <td class="description last"><p>Allows to configure scanner's imprinter devices.</p>
-<p> <strong>Note</strong>:
- This option is not supported by Web Capture Service for macOS.</p></td>
+<p><strong>Note</strong>:
+This option is not supported by Web Capture Service for macOS.</p></td>
         </tr>
 
     
@@ -406,8 +409,8 @@ WingScan/WebCapture.</p>
 
             <td class="description last"><p>Specifies the name of VRS Elite profile which is supposed to be used,
 during scan using VRS.</p>
-<p> <strong>Note</strong>:
- This option is not supported by Web Capture Service for macOS.</p>
+<p><strong>Note</strong>:
+This option is not supported by Web Capture Service for macOS.</p>
 <p>If the profile name is not defined, default profile is used during scan. If the specified profile does not exist,
 previously selected profile is used.</p>
 <p>This option has effect only in case of using VRS for scan.</p></td>
@@ -465,8 +468,8 @@ previously selected profile is used.</p>
             
 
             <td class="description last"><p>Show (true) or hide (false) the scanner's user interface during scanning.</p>
-<p> <strong>Note</strong>:
- This option is not supported by Web Capture Service for macOS.</p>
+<p><strong>Note</strong>:
+This option is not supported by Web Capture Service for macOS.</p>
 <p>This option is ignored by <a href="Atalasoft.Controls.Capture.WebScanning.html#.importFiles"><code>importFiles</code></a>.</p></td>
         </tr>
 
@@ -495,8 +498,8 @@ previously selected profile is used.</p>
             
 
             <td class="description last"><p>This scanning option specifies the threshold to be used when scanning to B&amp;W (bitonal) images.</p>
-<p> <strong>Note</strong>:
- This option is not supported by Web Capture Service for macOS.</p>
+<p><strong>Note</strong>:
+This option is not supported by Web Capture Service for macOS.</p>
 <p>The value range is -1 to 255. The threshold value T is applied roughly as follows:</p>
 <p>A value of -1 means 'let the scanner choose the threshold'</p>
 <p>Imagine that each pixel of the document is measured as 8-bit grayscale to give a value V, with 0=black and 255=white.
@@ -622,8 +625,8 @@ sideways - and rotates the image so the text is upright.</p>
             
 
             <td class="description last"><p>This scanning option specifies how the brightness of scanned images should be adjusted by the scanner.</p>
-<p> <strong>Note</strong>:
- This option is not supported by Web Capture Service for macOS.</p>
+<p><strong>Note</strong>:
+This option is not supported by Web Capture Service for macOS.</p>
 <p>Following TWAIN convention, the value range is -1000 to +1000.</p>
 <table>
 <thead>
@@ -689,8 +692,8 @@ sideways - and rotates the image so the text is upright.</p>
             
 
             <td class="description last"><p>This scanning option specifies how the contrast of scanned images should be adjusted by the scanner.</p>
-<p> <strong>Note</strong>:
- This option is not supported by Web Capture Service for macOS.</p>
+<p><strong>Note</strong>:
+This option is not supported by Web Capture Service for macOS.</p>
 <p>Following TWAIN convention, the value range is -1000 to +1000.</p>
 <table>
 <thead>
@@ -839,8 +842,8 @@ to correct for the paper being scanned slightly crooked. This is not the same as
             <td class="description last"><p>If this property is true, automatically disable VRS processing if VRS
 is detected on the client workstation. The idea is that if VRS is detected on the workstation, the user is probably using a VRS-equipped
 TWAIN driver, so there is no need to apply VRS processing twice to each image.</p>
-<p> <strong>Note</strong>:
- This option is not supported by Web Capture Service for macOS.</p>
+<p><strong>Note</strong>:
+This option is not supported by Web Capture Service for macOS.</p>
 <p><strong>Default value</strong>: false</p></td>
         </tr>
 
@@ -1269,7 +1272,8 @@ Almost all scanners can scan grayscale and color. Many scanners, but certainly n
 <li>otherwise if <strong>applyVRS</strong> is true then <em>Color</em></li>
 <li>otherwise: <em>B&amp;W</em></li>
 </ol>
-<h4>Scan with <strong>applyVRS</strong> = true</h4><table>
+<h4>Scan with <strong>applyVRS</strong> = true</h4>
+<table>
 <thead>
 <tr>
 <th>resultPixelType</th>
@@ -1305,7 +1309,8 @@ Almost all scanners can scan grayscale and color. Many scanners, but certainly n
 </tr>
 </tbody>
 </table>
-<h4>Scan with <strong>applyVRS</strong> = false</h4><p>Note that when VRS is disabled, <strong>resultPixelType</strong> can be effectively used in place of pixelType to control the scanner.</p>
+<h4>Scan with <strong>applyVRS</strong> = false</h4>
+<p>Note that when VRS is disabled, <strong>resultPixelType</strong> can be effectively used in place of pixelType to control the scanner.</p>
 <table>
 <thead>
 <tr>
@@ -1342,7 +1347,8 @@ Almost all scanners can scan grayscale and color. Many scanners, but certainly n
 </tr>
 </tbody>
 </table>
-<h4>Import with <strong>applyVRS</strong> = true</h4><table>
+<h4>Import with <strong>applyVRS</strong> = true</h4>
+<table>
 <thead>
 <tr>
 <th>resultPixelType</th>
@@ -1372,7 +1378,8 @@ Almost all scanners can scan grayscale and color. Many scanners, but certainly n
 </tr>
 </tbody>
 </table>
-<h4>Import with <strong>applyVRS</strong> = false</h4><table>
+<h4>Import with <strong>applyVRS</strong> = false</h4>
+<table>
 <thead>
 <tr>
 <th>resultPixelType</th>

@@ -514,7 +514,7 @@
 
 
 <div class="description">
-    <p>This method loads the scanning options (<code>scanningOptions</code>) from a 
+    <p>This method loads the scanning options (<code>scanningOptions</code>) from a
 string previously produced by <a href="Atalasoft.Controls.Capture.WebScanning.html#.getProfile"><code>getProfile</code></a>.</p>
 </div>
 
@@ -659,7 +659,7 @@ string previously produced by <a href="Atalasoft.Controls.Capture.WebScanning.ht
 
             
 
-            <td class="description last"><p>Callback accepting array of available scanners.</p></td>
+            <td class="description last"><p>Callback accepting array of available scanners. If not passed, method is executed synchronously.</p></td>
         </tr>
 
     
@@ -1289,12 +1289,15 @@ The string is in JSON format, but you should not rely on that.</p>
 </ul>
 <p><em><strong>Note</strong></em>,</p>
 <ul>
-<li><p>Note A few models of scanner may provide incorrect or misleading information through this query, such as a flatbed scanner that lists the value 1 for feeder, implying that you can scan from its (nonexistent) ADF.</p>
+<li>
+<p>Note A few models of scanner may provide incorrect or misleading information through this query, such as a flatbed scanner that lists the value 1 for feeder, implying that you can scan from its (nonexistent) ADF.</p>
 </li>
-<li><p>Querying the scanner's capabilities requires opening the scanner, which may fail (scanner offline, unplugged, etc.) which may display an error box to the user. 
+<li>
+<p>Querying the scanner's capabilities requires opening the scanner, which may fail (scanner offline, unplugged, etc.) which may display an error box to the user.
 For friendly user interface design, make 'choose your scanner' or 'change scanner' into a separate dialog or screen, and call getSupportedValues when the user OK's a new scanner choice.</p>
 </li>
-<li><p>Completing the getSupportedValues operation can take several seconds.</p>
+<li>
+<p>Completing the getSupportedValues operation can take several seconds.</p>
 </li>
 </ul>
 <p>Code sample(see, <a href="global.html#getSupportedValuesCallback"><code>getSupportedValuesCallback</code></a> for complete list of available properties):</p>
@@ -1308,7 +1311,8 @@ For friendly user interface design, make 'choose your scanner' or 'change scanne
   //     paperSize: [0, 1, 2, 4, 7, 9],
   //     orientation: [0, 1]
   // }
-  });</code></pre>
+  });
+</code></pre>
 </div>
 
 
@@ -1455,7 +1459,7 @@ Setting scanning options before querying scanner allows to start from some predi
 
 <div class="description">
     <p>Set's the barcode license.</p>
-<p>If license is not set default barcode engine is used. It's possible to enable Honeywell Omniplanar/SwiftDecoder engine, but license key should be purchased separately. 
+<p>If license is not set default barcode engine is used. It's possible to enable Honeywell Omniplanar/SwiftDecoder engine, but license key should be purchased separately.
 Applicable for Web Capture Service for Windows only.</p>
 </div>
 
@@ -1563,7 +1567,7 @@ files.</p>
 except for PDF files, which are passed through 'verbatim'.</p>
 <p>Files are processed in an order determined by Windows, and <em>not</em> necessarily in the order they appear in the File Open dialog nor the order of
 selection. If order of processing is important, the user must do separate Import operations.</p>
-<p>importFiles calls the <a href="Atalasoft.Controls.Capture.WebScanning.html#event:onScanStarted"><code>onScanStarted</code></a> handler before doing anything else, 
+<p>importFiles calls the <a href="Atalasoft.Controls.Capture.WebScanning.html#event:onScanStarted"><code>onScanStarted</code></a> handler before doing anything else,
 then calls the <a href="Atalasoft.Controls.Capture.WebScanning.html#event:onImageAcquired"><code>onImageAcquired</code></a> handler with each successfully
 imported image or PDF file, and finally calls the <a href="Atalasoft.Controls.Capture.WebScanning.html#event:onScanCompleted"><code>onScanCompleted</code></a>
 handler when finished, whether successful or not.</p>
@@ -1571,7 +1575,7 @@ handler when finished, whether successful or not.</p>
 <a href="Atalasoft.Controls.Capture.WebScanning.html#event:onImageAcquired"><code>onImageAcquired</code></a> event for details of how PDF files are imported.</p>
 <p>If the user attempts to import any files of unsupported type (such as .doc or .psd) the error unsupportedFileFormat is fired to the
 <a href="Atalasoft.Controls.Capture.WebScanning.html#event:onScanError"><code>onScanError</code></a> handler and the import proceeds, completely ignoring all those files.</p>
-<p>If a file of supported type cannot be imported (e.g. corrupted data, access error), an appropriate error is fired to the 
+<p>If a file of supported type cannot be imported (e.g. corrupted data, access error), an appropriate error is fired to the
 <a href="Atalasoft.Controls.Capture.WebScanning.html#event:onScanError"><code>onScanError</code></a> handler and the import process is aborted i.e. completes unsuccessfully.</p>
 <p>The images and files imported by importFiles are not retained by the control or uploaded automatically to the server.</p>
 <p>This method is called (with no parameters) when the user clicks the designated import button, if any.</p>
@@ -1727,8 +1731,6 @@ and/or import button, if they exist with the appropriate classes:</p>
 <li>Any controls with class atala-scan-button are given a click-handler that calls <a href="Atalasoft.Controls.Capture.WebScanning.html#.scan"><code>scan</code></a></li>
 <li>Any controls with class atala-local-file-import-button are given a click-handler that calls <a href="Atalasoft.Controls.Capture.WebScanning.html#.importFiles"><code>importFiles</code></a></li>
 </ul>
-<p>Remember, the initialization process is asynchronous and may not have finished when the initialize function returns. In fact it may never complete,
-for example if the browser has ActiveX controls disabled, or if the user declines to install and activate the ActiveX or plugin.</p>
 </div>
 
 
@@ -1815,7 +1817,7 @@ for example if the browser has ActiveX controls disabled, or if the user decline
             
 
             <td class="description last"><p>The URL of the web request handler. This is normally a relative URL, for example: 'TestCaptureHandler.ashx'.</p>
-<p> <strong>Default value</strong>: no default.</p></td>
+<p><strong>Default value</strong>: no default.</p></td>
         </tr>
 
     
@@ -1879,8 +1881,8 @@ for example if the browser has ActiveX controls disabled, or if the user decline
             
 
             <td class="description last"><p>This handler is called when scanning initialization is complete, no matter whether it was successful or not.
-   Note that the scanner list could still be empty if no scanners were detected.</p>
-<p>  <strong>Important</strong>: This handler may never be called! Some possible causes:</p>
+Note that the scanner list could still be empty if no scanners were detected.</p>
+<p><strong>Important</strong>: This handler may never be called! Some possible causes:</p>
 <ul>
 <li>The user declines to install/approve the WebCapture plugin</li>
 <li>Plugin installation fails.</li>
@@ -1906,11 +1908,11 @@ for example if the browser has ActiveX controls disabled, or if the user decline
 
             
 
-            <td class="description last"><p>This optional handler is called when the web page is unloaded or reloaded, 
-  prior to any internal WingScan cleanup or shutdown. </p>
-<p>  <strong>Note</strong>: any scan or import that is in progress is aborted before this handler is called. 
-  If <a href="Atalasoft.Controls.Capture.WebScanning.html#.initialize"><code>initialize</code></a> did not succeed, it is possible this handler will not be called. 
-  And if you are somehow using WingScan in the Opera browser, this handler will never be called because Opera famously does not support the page-unload event.</p></td>
+            <td class="description last"><p>This optional handler is called when the web page is unloaded or reloaded,
+prior to any internal WingScan cleanup or shutdown.</p>
+<p><strong>Note</strong>: any scan or import that is in progress is aborted before this handler is called.
+If <a href="Atalasoft.Controls.Capture.WebScanning.html#.initialize"><code>initialize</code></a> did not succeed, it is possible this handler will not be called.
+And if you are somehow using WingScan in the Opera browser, this handler will never be called because Opera famously does not support the page-unload event.</p></td>
         </tr>
 
     
@@ -1932,7 +1934,7 @@ for example if the browser has ActiveX controls disabled, or if the user decline
             
 
             <td class="description last"><p>This handler is called to report any errors detected by WingScan/WebCapture.
-  Note that it can be called during a call to any WingScan method, or asynchronously by background operations such as importFiles.</p></td>
+Note that it can be called during a call to any WingScan method, or asynchronously by background operations such as importFiles.</p></td>
         </tr>
 
     
@@ -1954,7 +1956,7 @@ for example if the browser has ActiveX controls disabled, or if the user decline
             
 
             <td class="description last"><p>This handler is called when a <a href="Atalasoft.Controls.Capture.WebScanning.html#.scan"><code>scan</code></a>
-  or <a href="Atalasoft.Controls.Capture.WebScanning.html#.importFiles"><code>importFiles</code></a> is started.</p></td>
+or <a href="Atalasoft.Controls.Capture.WebScanning.html#.importFiles"><code>importFiles</code></a> is started.</p></td>
         </tr>
 
     
@@ -1976,7 +1978,7 @@ for example if the browser has ActiveX controls disabled, or if the user decline
             
 
             <td class="description last"><p>This handler is called when a <a href="Atalasoft.Controls.Capture.WebScanning.html#.scan"><code>scan</code></a>
-  or <a href="Atalasoft.Controls.Capture.WebScanning.html#.importFiles"><code>importFiles</code></a> ends - successfully or not.</p></td>
+or <a href="Atalasoft.Controls.Capture.WebScanning.html#.importFiles"><code>importFiles</code></a> ends - successfully or not.</p></td>
         </tr>
 
     
@@ -2060,10 +2062,10 @@ for example if the browser has ActiveX controls disabled, or if the user decline
 
             
 
-            <td class="description last"><p>This is the number of seconds to wait for the server response after starting an upload. 
-  After this number of seconds, the upload is considered to
-  have failed, it is canceled, and an error is signaled by calling the <a href="Atalasoft.Controls.Capture.WebScanning.html#event:onUploadError"><code>onUploadError</code></a> handler.</p>
-<p>  <strong>Default value</strong>: 50 (seconds)</p></td>
+            <td class="description last"><p>This is the number of seconds to wait for the server response after starting an upload.
+After this number of seconds, the upload is considered to
+have failed, it is canceled, and an error is signaled by calling the <a href="Atalasoft.Controls.Capture.WebScanning.html#event:onUploadError"><code>onUploadError</code></a> handler.</p>
+<p><strong>Default value</strong>: 50 (seconds)</p></td>
         </tr>
 
     
@@ -2127,8 +2129,8 @@ for example if the browser has ActiveX controls disabled, or if the user decline
             
 
             <td class="description last"><p>This object provides a translation table for all potentially user-visible strings used by Atalasoft DotImage.
-  See <a href="Atalasoft.Controls.Capture.html#.Errors"><code>Atalasoft.Controls.Capture.Errors</code></a> for all possible strings.</p>
-<p>  <strong>Default value</strong>: {} - which selects the default American English localization.</p></td>
+See <a href="Atalasoft.Controls.Capture.html#.Errors"><code>Atalasoft.Controls.Capture.Errors</code></a> for all possible strings.</p>
+<p><strong>Default value</strong>: {} - which selects the default American English localization.</p></td>
         </tr>
 
     
@@ -2332,7 +2334,7 @@ for example if the browser has ActiveX controls disabled, or if the user decline
 null or undefined, it uses the scanning options stored in Atalasoft.Controls.Capture.WebScanning.scanningOptions.</p>
 <p>This method is called (with no parameters) when the user clicks the designated scan button.</p>
 <p>Use <a href="Atalasoft.Controls.Capture.WebScanning.html#.abortScan"><code>abortScan</code></a> to abort a running scan.</p>
-<p>When a scan is started it calls the <a href="Atalasoft.Controls.Capture.WebScanning.html#event:onScanStarted"><code>onScanStarted</code></a> handler, 
+<p>When a scan is started it calls the <a href="Atalasoft.Controls.Capture.WebScanning.html#event:onScanStarted"><code>onScanStarted</code></a> handler,
 and when it ends, normally or not, it always calls the <a href="Atalasoft.Controls.Capture.WebScanning.html#event:onScanCompleted"><code>onScanCompleted</code></a> handler.</p>
 </div>
 
@@ -3040,11 +3042,11 @@ successfully displayed and closed by the user, false if the dialog could not be 
     <p>The onImageAcquired handler is called during scanning, once for each image received from the scanner, with a single parameter which is an
 image object - that is, an object that represents the received image held by WingScan. The image object provides a rich set of properties and a
 small set of methods for exporting the image data in various ways.</p>
-<p>The onImageAcquired handler is also called by the <a href="Atalasoft.Controls.Capture.WebScanning.html#.importFiles"><code>importFiles</code></a> method, 
+<p>The onImageAcquired handler is also called by the <a href="Atalasoft.Controls.Capture.WebScanning.html#.importFiles"><code>importFiles</code></a> method,
 once for each imported image, and once for each imported PDF file.</p>
 <p>Imported PDF files are handled somewhat specially: they are represented by an image object with the distinguishing property filename - which
 is the full path of the imported file. When the <a href="Image.html#filename"><code>filename</code></a> property is present, the usual image properties are absent. The image object that
-represents an imported PDF still supports the methods <a href="Image.html#asBase64String"><code>asBase64String</code></a>, <a href="Image.html#clear"><code>clear</code></a>, 
+represents an imported PDF still supports the methods <a href="Image.html#asBase64String"><code>asBase64String</code></a>, <a href="Image.html#clear"><code>clear</code></a>,
 <a href="Image.html#saveEncryptedLocal"><code>saveEncryptedLocal</code></a>, and <a href="Image.html#thumbnail"><code>thumbnail</code></a>.</p>
 </div>
 

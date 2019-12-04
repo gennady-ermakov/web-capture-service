@@ -61,31 +61,36 @@
 
 <article>
     <p>Web Capture Service includes a set of integrated components that can be used to easily capture-enable a website.
-It uses Javascript, supported by an local scanning service on the client machine which 
-could be deployed either as windows service or regular desktop application. </p>
+It uses Javascript, supported by an local scanning service on the client machine which
+could be deployed either as windows service or regular desktop application.</p>
 <p>Also Web Capture Service supports scanning in multiuser environments - MS Terminal Server and Citrix. On these environments, multiple users work with Web Capture Service at the same time from different Windows logon sessions with the same user experience as on single-user machine.</p>
 <p>The Web Capture Service SDK includes a demo web application that can scan, upload and import documents into Kofax Capture.</p>
-<h2>System requirements</h2><h3>Server</h3><ul>
+<h2>System requirements</h2>
+<h3>Server</h3>
+<ul>
 <li>Any Web Capture assemblies you use are licensed in your request handler</li>
-<li>Using .NET handlers for ASP.NET deployment and </li>
+<li>Using .NET handlers for ASP.NET deployment and</li>
 <li>IIS 6 or higher</li>
 <li>In case of automatic scanned images upload, a writable location for files to be uploaded on the disk that the application can read and write to.</li>
 </ul>
 <p><em>Note This is needed only if there is a need to save the scanned images. It is possible to simply
 discard the images after they have been processed.</em></p>
-<h3>Client machine</h3><ul>
-<li>Windows 7 with Service Pack 1 or higher, Windows Server 2008 R2 or higher<ul>
+<h3>Client machine</h3>
+<ul>
+<li>Windows 7 with Service Pack 1 or higher, Windows Server 2008 R2 or higher
+<ul>
 <li>A scanning device with a working TWAIN driver.</li>
 </ul>
 </li>
-<li>macOS Sierra or higher<ul>
+<li>macOS Sierra or higher
+<ul>
 <li>A scanning device with a working Image Capture driver.</li>
 </ul>
 </li>
 <li>Microsoft Internet Explorer 11, Edge, Mozilla Firefox, or Google Chrome.</li>
 <li>Web Capture Service must be installed or be allowed to install.</li>
 </ul>
-<p><strong><em>Note</em></strong></p>
+<p><em><strong>Note</strong></em></p>
 <p><em>When multiple Web Capture Service workers are running concurrently in the same browser, the
 general responsiveness of the system may slow down, especially in 32bit browsers. This is caused by the browser limitation of the number of the simultaneous tcp connections opened. The precise number of workers at which this becomes noticeable depends on which browser is being used, how many active requests are being
 processed, and how many tabs are open.</em></p>
@@ -93,8 +98,10 @@ processed, and how many tabs are open.</em></p>
 may help.
 Also, when using Citrix, the WebCapture.Host can create only about 50 WebCapture.Workers
 (sessions) per server. This large a number is uncommon, and should not affect the majority of users.</em></p>
-<h3>Multiuser environments</h3><p><strong><em>Note</em></strong>, the multiuser environments don't supported on macOS systems.</p>
-<h4>Terminal server</h4><p>When using a terminal server, users can connect to the scan server simultaneously and perform scanning
+<h3>Multiuser environments</h3>
+<p><em><strong>Note</strong></em>, the multiuser environments don't supported on macOS systems.</p>
+<h4>Terminal server</h4>
+<p>When using a terminal server, users can connect to the scan server simultaneously and perform scanning
 tasks or import files in parallel.
 In this case, the Web Capture Service Host determines who exactly has made a request to it, and
 forwards the request to the appropriate Web Capture Service Worker which, in turn, works with devices
@@ -103,7 +110,8 @@ takes the same as in the simple single-user environment.
 Web Capture Service can work only with scanners attached to a remote Terminal Server. Locally
 connected scanners are not available in this scenario. The same goes for file import – Web Capture
 Service provides access to files on a Terminal Server.</p>
-<h4>Citrix</h4><p>The major difference, in comparison with the standalone scenario, when both the Browser app and Web
+<h4>Citrix</h4>
+<p>The major difference, in comparison with the standalone scenario, when both the Browser app and Web
 Capture Service are installed on client machine, is that Web Capture Service is physically running on a
 remote Citrix server, while a scanner is connected to the client user’s computer. This works transparently
 for Web Capture Service when Citrix TWAIN Redirection is enabled.</p>
