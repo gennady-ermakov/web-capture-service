@@ -21,7 +21,7 @@
     "!atalaWebCapture.js"
   ],
   "dependencies": {
-    "jquery": "^3.4.1"
+    "jquery": "^3.5.1"
   },
-  "version": "11.2.3"
+  "version": "11.2.4"
 }
