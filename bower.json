@@ -3,25 +3,25 @@
   "authors": [
     "Atalasoft"
   ],
-  "description": "Scanning service for web-scenning",
+  "description": "Atalasoft JavaScript library for requesting documents from a client-side scanner.",
   "main": "atalaWebCapture.js",
   "keywords": [
     "Atalasoft",
-    "web-capture",
-    "capture",
-    "web-scanning"
+    "imaging",
+    "image scanning",
+    "web",
+    "javascript"
   ],
   "license": "https://www.atalasoft.com/Pricing/Licensing-Overview",
   "homepage": "https://www.atalasoft.com/Products/DotImage",
   "ignore": [
-    "**/.*",
-    "node_modules",
-    "bower_components",
-    "test",
-    "tests",
-    "favicon.ico"
+    "*",
+    "!Kofax.WebCapture.Installer.msi",
+    "!Kofax.WebCapture.macOS.pkg",
+    "!atalaWebCapture.js"
   ],
   "dependencies": {
-    "jquery": "^1.7.1"
-  }
+    "jquery": "^3.5.1"
+  },
+  "version": "11.3.4"
 }
